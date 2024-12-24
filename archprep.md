@@ -39,7 +39,7 @@ sudo pacman -S rust lua go jdk-openjdk
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S bat fzf fd ripgrep libsixel docker docker-compose podman cmake neovim putty wezterm zellij nerd-fonts
+sudo pacman -S bat fzf fd ripgrep libsixel docker docker-compose podman cmake neovim putty wezterm zellij nerd-fonts ttf-ms-fonts ttf-aptos
 paru -S jetbrains-toolbox
 ```
 
