@@ -1,4 +1,4 @@
-# Ubuntu (24.04 LTS)
+# CachyOS
 
 [Return to README](./README.md)
 
@@ -39,7 +39,7 @@ sudo pacman -S rust lua go jdk-openjdk
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S bat fzf fd ripgrep libsixel docker docker-compose podman cmake neovim putty wezterm zellij nerd-fonts ttf-ms-fonts ttf-aptos
+sudo pacman -S bat fzf fd eza ripgrep libsixel docker docker-compose podman cmake neovim putty wezterm zellij nerd-fonts ttf-ms-fonts ttf-aptos
 paru -S jetbrains-toolbox
 ```
 
@@ -49,7 +49,6 @@ go install github.com/jesseduffield/lazygit@latest \
 && go install github.com/jesseduffield/lazydocker@latest \
 && go install github.com/air-verse/air@latest \
 && go install github.com/nao1215/gup@latest \
-&& cargo install eza \
 && cargo install starship --locked \
 && cargo install cargo-update
 ```
