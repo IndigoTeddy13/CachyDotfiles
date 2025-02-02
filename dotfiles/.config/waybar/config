@@ -31,14 +31,14 @@
         "custom/power"
     ],
     // Modules configuration
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{name}: {icon}",
         "format-icons": {
             "urgent": "",
-            "focused": "",
+            "active": "",
             "default": ""
         }
     },
