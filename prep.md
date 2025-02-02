@@ -14,7 +14,9 @@ sudo ln -s -f $PWD/dotfiles/.bashrc ~/.bashrc \
 && sudo ln -s -f $PWD/dotfiles/.gitconfig ~/.gitconfig \
 && sudo ln -s -f  $PWD/dotfiles/.hushlogin ~/.hushlogin \
 && sudo ln -s -f $PWD/dotfiles/.config/starship.toml ~/.config/starship.toml \
-&& sudo ln -s -f $PWD/dotfiles/.wezterm.lua ~/.wezterm.lua
+&& sudo ln -s -f $PWD/dotfiles/.wezterm.lua ~/.wezterm.lua \
+&& sudo ln -s -f $PWD/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf \
+&& sudo ln -s -f $PWD/dotfiles/.config/waybar/config ~/.config/waybar/config
 ```
 
 ```bash
