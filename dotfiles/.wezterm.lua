@@ -7,6 +7,7 @@ config.enable_wayland = false
 
 -- Set font and color scheme
 config.font = wezterm.font "Source Code Pro"
+config.font_size = 15
 config.background = {
     {
         source = {
