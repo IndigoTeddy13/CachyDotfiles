@@ -1,0 +1,27 @@
+window {
+	margin: 0px;
+	background-color: rgba(0,0,0,0);
+}
+
+#input {
+	margin: 0px;
+}
+
+#inner-box {
+	border-radius: 3px 3px 3px 3px;
+	background-color: #303030;
+	border: 1px solid #404040;
+}
+
+#outer-box {
+	margin: 0px;
+}
+
+#scroll {
+	margin: 0px;
+}
+
+#text {
+	margin: 0px;
+	color: #e1f2f5;
+} 
