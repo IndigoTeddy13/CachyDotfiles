@@ -19,7 +19,6 @@ sudo ln -s -f $PWD/dotfiles/.bashrc ~/.bashrc \
 && sudo ln -s -f $PWD/dotfiles/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf \
 && sudo ln -s -f $PWD/dotfiles/.config/hypr/hypridle.conf ~/.config/hypr/hypridle.conf \
 && sudo ln -s -f $PWD/dotfiles/.config/waybar/config ~/.config/waybar/config \
-&& sudo ln -s -f $PWD/dotfiles/.config/wofi/style.css ~/.config/wofi/style.css \
 && sudo ln -s -f $PWD/dotfiles/.config/rofi/config.rasi ~/.config/rofi/config.rasi
 ```
 
