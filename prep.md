@@ -20,7 +20,8 @@ sudo ln -s -f $PWD/dotfiles/.bashrc ~/.bashrc \
 && sudo ln -s -f $PWD/dotfiles/.config/hypr/hypridle.conf ~/.config/hypr/hypridle.conf \
 && sudo ln -s -f $PWD/dotfiles/.config/waybar/config ~/.config/waybar/config \
 && sudo ln -s -f $PWD/dotfiles/.config/rofi/config.rasi ~/.config/rofi/config.rasi \
-&& sudo ln -s -f $PWD/dotfiles/.config/hyprpanel/config.json ~/.config/hyprpanel/config.json
+&& sudo ln -s -f $PWD/dotfiles/.config/hyprpanel/config.json ~/.config/hyprpanel/config.json \
+&& sudo ln -s -f $PWD/dotfiles/.config/hyprpanel/theme.json ~/.config/hyprpanel/theme.json
 ```
 
 ```bash
