@@ -36,9 +36,10 @@ paru
 
 ```bash
 # Add essential tools
-# (git, fastfetch, python-pip, pyenv, pyenv-virtualenv)
-sudo pacman -S git fastfetch python-pip pyenv
+# (git, fastfetch, python tools)
+sudo pacman -S git fastfetch python-pip pyenv python-virtualenv
 paru pyenv-virtualenv
+# Tutorial for creating virtual environments: https://github.com/pyenv/pyenv-virtualenv/issues/408#issuecomment-1644298267
 ```
 
 ```bash
