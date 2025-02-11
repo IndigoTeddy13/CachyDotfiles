@@ -35,8 +35,8 @@ paru
 ```
 
 ```bash
-# Add essential tools (git, fastfetch, python-pip)
-sudo pacman -S git fastfetch python-pip
+# Add essential tools (git, fastfetch, python-pip, pyenv)
+sudo pacman -S git fastfetch python-pip pyenv
 ```
 
 ```bash
