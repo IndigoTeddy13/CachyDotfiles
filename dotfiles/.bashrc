@@ -30,6 +30,12 @@ fi
 # NVM config
 source /usr/share/nvm/init-nvm.sh
 
+# Pyenv config
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # Cargo config
 export PATH="$HOME/.cargo/bin:$PATH"
 
