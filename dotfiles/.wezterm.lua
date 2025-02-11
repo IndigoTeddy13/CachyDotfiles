@@ -3,11 +3,11 @@ local wezterm = require "wezterm"
 local config = {}
 
 -- Disable Wayland support to run in Hyprland
-config.enable_wayland = false
+-- config.enable_wayland = false
 
 -- Set font and color scheme
 config.font = wezterm.font "Source Code Pro"
-config.font_size = 15
+-- config.font_size = 15
 config.background = {
     {
         source = {

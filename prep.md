@@ -49,8 +49,8 @@ sudo pacman -S rust lua go jdk-openjdk
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S bat fzf fd eza ripgrep libsixel docker docker-compose podman cmake neovim putty cargo-update wezterm zellij starship nerd-fonts ttf-ms-fonts ttf-aptos
-paru -S jetbrains-toolbox ibus-m17n fcitx5 fcitx5-gtk fcitx5-qt fcitx5-m17n ttf-sil-abyssinica
+sudo pacman -S bat fzf fd eza ripgrep libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship nerd-fonts ttf-ms-fonts ttf-aptos
+paru -S jetbrains-toolbox ibus-m17n fcitx5 fcitx5-gtk fcitx5-qt fcitx5-m17n ttf-sil-abyssinica wezterm-git
 ```
 
 ```bash
@@ -58,7 +58,7 @@ paru -S jetbrains-toolbox ibus-m17n fcitx5 fcitx5-gtk fcitx5-qt fcitx5-m17n ttf-
 go install github.com/jesseduffield/lazygit@latest \
 && go install github.com/jesseduffield/lazydocker@latest \
 && go install github.com/air-verse/air@latest \
-&& go install github.com/nao1215/gup@latest \
+&& go install github.com/nao1215/gup@latest
 ```
 
 ```bash
