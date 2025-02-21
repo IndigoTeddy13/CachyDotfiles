@@ -161,3 +161,4 @@ configuration {
   }
 }
 @theme "/usr/share/rofi/themes/material.rasi"
+@import "~/.cache/wal/colors-rofi-dark.rasi"
