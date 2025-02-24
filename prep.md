@@ -23,6 +23,7 @@ sudo ln -s -f $PWD/dotfiles/.bashrc ~/.bashrc \
 && sudo ln -s -f $PWD/dotfiles/.config/rofi/config.rasi ~/.config/rofi/config.rasi \
 && sudo ln -s -f $PWD/dotfiles/.config/hyprpanel/config.json ~/.config/hyprpanel/config.json \
 && sudo ln -s -f $PWD/dotfiles/.config/hyprpanel/theme.json ~/.config/hyprpanel/theme.json
+&& sudo ln -s -f $PWD/dotfiles/.config/waypaper/config.ini ~/.config/waypaper/config.ini
 ```
 
 ```bash
