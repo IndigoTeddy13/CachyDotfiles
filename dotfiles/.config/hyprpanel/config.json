@@ -269,20 +269,20 @@
       "left": [
         "dashboard",
         "workspaces",
-        "windowtitle"
+        "windowtitle",
+        "media"
       ],
       "middle": [
         "hypridle",
-        "media"
+        "notifications",
+        "clock"
       ],
       "right": [
         "volume",
         "network",
         "bluetooth",
         "battery",
-        "systray",
-        "clock",
-        "notifications"
+        "systray"
       ]
     },
     "1": {
