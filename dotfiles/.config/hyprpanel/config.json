@@ -218,7 +218,7 @@
   "bar.autoHide": "never",
   "notifications.showActionsOnHover": false,
   "menus.clock.time.military": true,
-  "notifications.position": "top right",
+  "notifications.position": "top",
   "theme.bar.scaling": 90,
   "theme.notification.scaling": 100,
   "theme.osd.scaling": 100,
