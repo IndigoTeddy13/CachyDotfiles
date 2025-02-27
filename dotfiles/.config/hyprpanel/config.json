@@ -319,5 +319,6 @@
   "bar.workspaces.showWsIcons": false,
   "bar.workspaces.showApplicationIcons": false,
   "theme.bar.transparent": true,
-  "theme.bar.buttons.monochrome": false
+  "theme.bar.buttons.monochrome": false,
+  "theme.bar.buttons.style": "wave2"
 }
