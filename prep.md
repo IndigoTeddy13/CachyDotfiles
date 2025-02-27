@@ -6,24 +6,9 @@
 - Update non-pacman curl requests in case new versions come out
 
 ```bash
-# Remove original dotfiles and symlink this repo's dotfiles
+# Remove original dotfiles and symlink this repo's dotfiles (requires GNU Stow installed)
 # Make the directories if they don't exist yet
-sudo ln -s -f $PWD/dotfiles/.bashrc ~/.bashrc \
-&& sudo ln -s -f $PWD/dotfiles/.bash_profile ~/.bash_profile \
-&& sudo ln -s -f $PWD/dotfiles/.bash_aliases ~/.bash_aliases \
-&& sudo ln -s -f $PWD/dotfiles/.gitconfig ~/.gitconfig \
-&& sudo ln -s -f  $PWD/dotfiles/.hushlogin ~/.hushlogin \
-&& sudo ln -s -f $PWD/dotfiles/.config/starship.toml ~/.config/starship.toml \
-&& sudo ln -s -f $PWD/dotfiles/.wezterm.lua ~/.wezterm.lua \
-&& sudo ln -s -f $PWD/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf \
-&& sudo ln -s -f $PWD/dotfiles/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf \
-&& sudo ln -s -f $PWD/dotfiles/.config/hypr/hypridle.conf ~/.config/hypr/hypridle.conf \
-&& sudo ln -s -f $PWD/dotfiles/.config/wal/templates/hypr.conf ~/.config/wal/templates/hypr.conf \
-&& sudo ln -s -f $PWD/dotfiles/.config/waybar/config ~/.config/waybar/config \
-&& sudo ln -s -f $PWD/dotfiles/.config/rofi/config.rasi ~/.config/rofi/config.rasi \
-&& sudo ln -s -f $PWD/dotfiles/.config/hyprpanel/config.json ~/.config/hyprpanel/config.json \
-&& sudo ln -s -f $PWD/dotfiles/.config/hyprpanel/theme.json ~/.config/hyprpanel/theme.json \
-&& sudo ln -s -f $PWD/dotfiles/.config/waypaper/config.ini ~/.config/waypaper/config.ini
+stow --adopt dotfiles -t ~
 ```
 
 ```bash
@@ -51,7 +36,7 @@ sudo pacman -S rust lua go jdk-openjdk
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S bat fzf fd eza ripgrep libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship nerd-fonts ttf-ms-fonts ttf-aptos
+sudo pacman -S bat fzf fd eza ripgrep libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship stow nerd-fonts ttf-ms-fonts ttf-aptos
 paru -S jetbrains-toolbox ibus-m17n fcitx5 fcitx5-gtk fcitx5-qt fcitx5-m17n ttf-sil-abyssinica wezterm-git
 ```
 
