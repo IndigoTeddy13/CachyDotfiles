@@ -156,7 +156,7 @@ configuration {
       sorting-method:    "name";
   }
   recursivebrowser {
-      directory: "/home/alejo";
+      directory: "~";
       command: "junction";
   }
 }
