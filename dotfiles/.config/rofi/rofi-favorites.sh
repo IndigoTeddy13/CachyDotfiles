@@ -4,11 +4,13 @@
 
 GET_FAVORITES_CMD="gsettings get org.gnome.shell favorite-apps"
 DESKTOP_FILES_PATH="/usr/share/applications/"
+LOCAL_FILES_PATH="$HOME/.local/share/applications/"
 FLATPAK_FILES_PATH="/var/lib/flatpak/exports/share/applications/"
 PWA_FILES_PATH="$HOME/Desktop/"
 
 $GET_FAVORITES_CMD | grep -Po "\'(.+?)\'" | sed -r "s/'$|^'//g" | while read -r favorite ; do
     desktop_file="${DESKTOP_FILES_PATH}${favorite}"
+    local_desktop_file="${LOCAL_FILES_PATH}${favorite}"
     flatpak_desktop_file="${FLATPAK_FILES_PATH}${favorite}"
     pwa_desktop_file="${PWA_FILES_PATH}${favorite}"
 
@@ -16,6 +18,10 @@ $GET_FAVORITES_CMD | grep -Po "\'(.+?)\'" | sed -r "s/'$|^'//g" | while read -r 
         name=$(cat $desktop_file | awk -F "=" '/Name=/ {print $2}' | head -1)
         command=$(cat $desktop_file | awk -F "=" '/Exec=/ {print $2}' | head -1)
         icon=$(cat $desktop_file | awk -F "=" '/Icon=/ {print $2}' | head -1)
+    elif [ -f "$local_desktop_file" ]; then
+        name=$(cat $local_desktop_file | awk -F "=" '/Name=/ {print $2}' | head -1)
+        command=$(cat $local_desktop_file | awk -F "=" '/Exec=/ {print $2}' | head -1)
+        icon=$(cat $local_desktop_file | awk -F "=" '/Icon=/ {print $2}' | head -1)
     elif [ -f "$flatpak_desktop_file" ]; then
         name=$(cat $flatpak_desktop_file | awk -F "=" '/Name=/ {print $2}' | head -1)
         command=$(cat $flatpak_desktop_file | awk -F "=" '/Exec=/ {print $2}' | head -1)
@@ -23,7 +29,7 @@ $GET_FAVORITES_CMD | grep -Po "\'(.+?)\'" | sed -r "s/'$|^'//g" | while read -r 
     elif [ -f "$pwa_desktop_file" ]; then
         name=$(cat $pwa_desktop_file | awk -F "=" '/Name=/ {print $2}' | head -1)
         command=$(cat $pwa_desktop_file | awk -F "=" '/Exec=/ {print $2}' | head -1)
-        icon=$(cat $pwa_desktop_file | awk -F "=" '/Icon=/ {print $2}' | head -1)
+        icon=$(cat $pwa_desktop_finohup gtk-launch com.discordapp.Discordle | awk -F "=" '/Icon=/ {print $2}' | head -1)
     else
         continue
     fi
@@ -35,7 +41,8 @@ $GET_FAVORITES_CMD | grep -Po "\'(.+?)\'" | sed -r "s/'$|^'//g" | while read -r 
     if [ $# -eq 1 ]; then
         chosen="$1"
         if [ "$chosen" == "$name" ]; then
-            coproc gtk-launch ${favorite}
+            # notify-send "$favorite" # for debugging
+            nohup gtk-launch ${favorite} >/dev/null 2>&1 &
             exit
         fi
     fi
