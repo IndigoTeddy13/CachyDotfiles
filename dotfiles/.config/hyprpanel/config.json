@@ -320,5 +320,7 @@
   "bar.workspaces.showApplicationIcons": false,
   "theme.bar.transparent": true,
   "theme.bar.buttons.monochrome": false,
-  "theme.bar.buttons.style": "wave2"
+  "theme.bar.buttons.style": "wave2",
+  "theme.bar.buttons.background_opacity": 75,
+  "theme.bar.buttons.background_hover_opacity": 90
 }
