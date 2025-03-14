@@ -1,25 +1,25 @@
 #!/bin/bash
 
-# Source: https://geek.co.il/2023/03/13/script-day-check-the-currently-set-plasma-desktop-wallpaper
+# Source: https://gist.github.com/guss77/5d4f85e0160121952432e3e611da9576
 
 ##
 # Helper to find the user configured name of an activity, by its ID
 function getActivityName() {
-  qdbus org.kde.ActivityManager /ActivityManager/Activities \
+  qdbus6 org.kde.ActivityManager /ActivityManager/Activities \
     org.kde.ActivityManager.Activities.ActivityName "$1"
 }
 
 ##
 # Helper to list all the currently configured activities by their ID
 function listActivityIds() {
-  qdbus org.kde.ActivityManager /ActivityManager/Activities \
+  qdbus6 org.kde.ActivityManager /ActivityManager/Activities \
     org.kde.ActivityManager.Activities.ListActivities
 }
 
 ##
 # Helper to get the ID of the current activity
 function currentActivity() {
-  qdbus org.kde.ActivityManager /ActivityManager/Activities \
+  qdbus6 org.kde.ActivityManager /ActivityManager/Activities \
     org.kde.ActivityManager.Activities.CurrentActivity
 }
 
@@ -47,7 +47,7 @@ fi
 [ -z "$activity" ] && { echo "Activity '$activity' was not found!">&2; exit 1; }
 
 # The meat of the thing - ask Plasma to run our script
-qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "
+qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "
   var actId = '$activity';
   var scr = $screen;
   var ds = desktops(); // load the containments
