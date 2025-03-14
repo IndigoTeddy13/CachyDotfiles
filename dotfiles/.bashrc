@@ -31,9 +31,12 @@ fi
 # GNOME:
 if [ "$XDG_CURRENT_DESKTOP" == "GNOME" ]; then
     magick $(gsettings get org.gnome.desktop.background picture-uri-dark | awk -F"'" '{print $2}' | sed 's|file://||') -colorspace sRGB /tmp/wall.png
-    wal -i /tmp/wall.png
+    wal --cols16 darken -n -i /tmp/wall.png
 fi
 # KDE Plasma (TBD)
+if [ "$XDG_CURRENT_DESKTOP" == "KDE" ]; then
+    wal --cols16 darken -n -i $(get-kde-wallpaper.sh)contents/images_dark/1080x1920.png
+fi
 
 # NVM config
 source /usr/share/nvm/init-nvm.sh
