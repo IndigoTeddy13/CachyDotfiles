@@ -1,0 +1,8 @@
+[Desktop Entry]
+Exec=/home/indigo/.local/bin/kde-pywal-update
+Icon=application-x-shellscript
+Name=kde-pywal-update
+Type=Application
+X-KDE-AutostartScript=true
+Comment=Update pywal colors when wallpaper changes in KDE
+

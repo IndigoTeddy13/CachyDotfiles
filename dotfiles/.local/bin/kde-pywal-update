@@ -1,7 +1,11 @@
 #!/usr/bin/bash
 
 # Kill old instances
-pkill -f "dbus-monitor.*org.kde.plasmashell"
+pkill -f "dbus-monitor"
+# Get initial wallpaper
+WALLPAPER_PATH="$(get-kde-wallpaper)contents/images_dark/1080x1920.png"
+# Run Pywal immediately
+wal --cols16 darken -n -i "$WALLPAPER_PATH"
 
 # Scan for wallpaper changes
 dbus-monitor "interface='org.kde.plasmashell'" |
