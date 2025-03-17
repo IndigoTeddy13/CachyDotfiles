@@ -27,18 +27,6 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export GDK_BACKEND=wayland
 fi
 
-# Run Pywal depending on DE in use:
-# GNOME:
-if [ "$XDG_CURRENT_DESKTOP" == "GNOME" ]; then
-    magick $(gsettings get org.gnome.desktop.background picture-uri-dark | awk -F"'" '{print $2}' | sed 's|file://||') -colorspace sRGB /tmp/wall.png
-    wal --cols16 darken -n -i /tmp/wall.png
-fi
-# KDE Plasma
-if [ "$XDG_CURRENT_DESKTOP" == "KDE" ]; then
-    export WALLPAPER_PATH="$(~/.local/bin/get-kde-wallpaper)contents/images_dark/1080x1920.png"
-    ~/.local/bin/wal --cols16 darken -n -i $WALLPAPER_PATH
-fi
-
 # NVM config
 source /usr/share/nvm/init-nvm.sh
 

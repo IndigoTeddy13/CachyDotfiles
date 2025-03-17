@@ -41,7 +41,7 @@ paru -S jetbrains-toolbox ibus-m17n fcitx5 fcitx5-gtk fcitx5-qt fcitx5-m17n ttf-
 ```
 
 ```bash
-# Install LazyGit, LazyDocker, btop, starship.rs, eza, zoxide
+# Install LazyGit, LazyDocker, air, gup
 go install github.com/jesseduffield/lazygit@latest \
 && go install github.com/jesseduffield/lazydocker@latest \
 && go install github.com/air-verse/air@latest \
