@@ -36,7 +36,7 @@ fi
 # KDE Plasma
 if [ "$XDG_CURRENT_DESKTOP" == "KDE" ]; then
     export WALLPAPER_PATH="$(~/.local/bin/get-kde-wallpaper)contents/images_dark/1080x1920.png"
-    wal --cols16 darken -n -i $WALLPAPER_PATH
+    ~/.local/bin/wal --cols16 darken -n -i $WALLPAPER_PATH
 fi
 
 # NVM config
