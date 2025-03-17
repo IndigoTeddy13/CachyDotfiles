@@ -23,8 +23,8 @@ paru
 
 ```bash
 # Add essential tools
-# (git, fastfetch, python tools)
-sudo pacman -S git fastfetch python-pip pyenv python-virtualenv python-pipx
+# (git, fastfetch, python tools, crontab)
+sudo pacman -S git fastfetch python-pip pyenv python-virtualenv python-pipx cronie
 paru pyenv-virtualenv
 # Tutorial for creating virtual environments: https://github.com/pyenv/pyenv-virtualenv/issues/408#issuecomment-1644298267
 ```
@@ -41,11 +41,13 @@ paru -S jetbrains-toolbox ibus-m17n fcitx5 fcitx5-gtk fcitx5-qt fcitx5-m17n ttf-
 ```
 
 ```bash
-# Install LazyGit, LazyDocker, air, gup
+# Install LazyGit, LazyDocker, air, gup, pywal, waypaper
 go install github.com/jesseduffield/lazygit@latest \
 && go install github.com/jesseduffield/lazydocker@latest \
 && go install github.com/air-verse/air@latest \
-&& go install github.com/nao1215/gup@latest
+&& go install github.com/nao1215/gup@latest \
+&& pipx install pywal16 \
+&& pipx install waypaper
 ```
 
 ```bash

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Exec=/home/indigo/.local/bin/gnome-pywal-update
-Icon=application-x-shellscript
-Name=gnome-pywal-update
-Type=Application
-X-GNOME-Autostart-enabled=true
-Comment=Update pywal colors when wallpaper changes in GNOME
-
