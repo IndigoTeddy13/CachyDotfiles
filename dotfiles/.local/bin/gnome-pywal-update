@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+# Kill old instances
+dbus-monitor "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged'" |
+
+# Scan for wallpaper changes
+while read -r line; do
+    if echo "$line" | grep -q "org.gnome.desktop.background"; then
+        WALLPAPER_PATH=$(gsettings get org.gnome.desktop.background picture-uri-dark | awk -F"'" '{print $2}' | sed 's|file://||')
+        magick "$WALLPAPER_PATH" -colorspace sRGB /tmp/wall.png
+        wal --cols16 darken -n -i /tmp/wall.png
+    fi
+done

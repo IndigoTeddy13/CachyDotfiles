@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+# Kill old instances
+pkill -f "dbus-monitor.*org.kde.plasmashell"
+
+# Scan for wallpaper changes
+dbus-monitor "interface='org.kde.plasmashell'" |
+while read -r line; do
+    if echo "$line" | grep -q "org.kde.PlasmaShell.evaluateScript"; then
+        WALLPAPER_PATH="$(get-kde-wallpaper)contents/images_dark/1080x1920.png"
+        wal --cols16 darken -n -i "$WALLPAPER_PATH"
+    fi
+done
