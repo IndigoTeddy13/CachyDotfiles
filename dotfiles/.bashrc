@@ -56,8 +56,6 @@ if [ "$XDG_CURRENT_DESKTOP" == "GNOME" ]; then
 elif [ "$XDG_CURRENT_DESKTOP" == "KDE" ]; then
     WALLPAPER_PATH="$(get-kde-wallpaper)contents/images_dark/1080x1920.png"
     wal --cols16 darken -n -i "$WALLPAPER_PATH"
-else
-    waypaper --restore
 fi
 
 # Initialize ble.sh
