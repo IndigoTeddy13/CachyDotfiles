@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -47,6 +47,18 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Config for installed Go binaries
 export PATH="$(go env GOPATH)/bin:$PATH"
+
+# If already run, just process the wallpaper once
+if [ "$XDG_CURRENT_DESKTOP" == "GNOME" ]; then
+    WALLPAPER_PATH=$(gsettings get org.gnome.desktop.background picture-uri-dark | sed -E "s/^'|'$//g" | sed 's|file://||')
+    magick "$WALLPAPER_PATH" -resize 1920x1080 -colorspace sRGB /tmp/wall.png
+    wal --cols16 darken -n -i /tmp/wall.png
+elif [ "$XDG_CURRENT_DESKTOP" == "KDE" ]; then
+    WALLPAPER_PATH="$(get-kde-wallpaper)contents/images_dark/1080x1920.png"
+    wal --cols16 darken -n -i "$WALLPAPER_PATH"
+else
+    waypaper --restore
+fi
 
 # Initialize ble.sh
 [[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
