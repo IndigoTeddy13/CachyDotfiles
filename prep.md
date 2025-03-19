@@ -12,6 +12,14 @@ stow --adopt dotfiles -t ~
 ```
 
 ```bash
+# Symlinks for Kvantum Pywal16 theme:
+sudo ln -fs ~/.cache/wal/Pywal.kvconfig ~/.config/Kvantum/Pywal/Pywal.kvconfig \
+&& sudo ln -fs ~/.cache/wal/Pywal.svg ~/.config/Kvantum/Pywal/Pywal.svg \
+&& sudo ln -fs ~/.cache/wal/color-scheme.colors ~/.local/share/color-schemes/Pywal.colors \
+&& sudo ln -fs ~/.cache/wal/colors-konsole.colorscheme ~/.local/share/konsole/Pywal.colorscheme
+```
+
+```bash
 # Update and upgrade pacman (default)
 sudo pacman -Syu
 ```
