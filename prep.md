@@ -45,8 +45,7 @@ paru -S jetbrains-toolbox ibus-m17n fcitx5 fcitx5-gtk fcitx5-qt fcitx5-m17n ttf-
 go install github.com/jesseduffield/lazygit@latest \
 && go install github.com/jesseduffield/lazydocker@latest \
 && go install github.com/air-verse/air@latest \
-&& go install github.com/nao1215/gup@latest \
-&& pipx install pywal16
+&& go install github.com/nao1215/gup@latest
 ```
 
 ```bash
