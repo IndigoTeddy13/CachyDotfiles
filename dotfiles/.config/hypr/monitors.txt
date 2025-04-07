@@ -1,0 +1,6 @@
+################
+### MONITORS ###
+################
+# Copy into $PROJ_DIR/dotfiles/.config/hypr/monitors.conf and edit appropriately before symlinking
+# See https://wiki.hyprland.org/Configuring/Monitors/
+monitor=, preferred, auto, 1
