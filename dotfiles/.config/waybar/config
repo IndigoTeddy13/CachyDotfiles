@@ -22,13 +22,13 @@
         "memory",
         "temperature",
         "backlight",
-        "keyboard-state",
-        "sway/language",
+        // "keyboard-state",
+        // "sway/language",
         "battery",
         "battery#bat2",
         "clock",
-        "tray",
-        "custom/power"
+        "tray"//,
+        // "custom/power"
     ],
     // Modules configuration
     "hyprland/workspaces": {
@@ -41,6 +41,13 @@
             "active": "",
             "default": ""
         }
+    },
+    "hyprland/window": {
+        "format": "{initialClass}",
+        // "rewrite":  — Mozilla Firefox": "🌎 $1",
+        //     "(.*) - fish": "> [$1]"
+        // },
+        "separate-outputs": true
     },
     "keyboard-state": {
         "numlock": true,
