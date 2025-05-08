@@ -116,11 +116,11 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: @color7;
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: @cursor;
     color: #000000;
 }
 
@@ -184,7 +184,7 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: @color15;
 }
 
 #network {
@@ -227,7 +227,7 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: @color8;
 }
 
 #idle_inhibitor.activated {
