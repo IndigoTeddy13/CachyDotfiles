@@ -13,16 +13,16 @@ window {
 
 button {
     border-radius: 0;
-    border-color: black;
+    border-color: transparent;
 	text-decoration-color: #FFFFFF;
     color: #FFFFFF;
-	background-color: #1E1E1E;
+	background-color: transparent;
 	border-style: solid;
-	border-width: 1px;
+	border-width: 5px;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 25%;
-	opacity: 0.75;
+	background-size: 40%;
+	opacity: 1.0;
 }
 
 button:focus, button:active, button:hover {

@@ -6,7 +6,7 @@ local config = {}
 -- config.enable_wayland = false
 
 -- Set font and color scheme
-config.font = wezterm.font "Source Code Pro"
+config.font = wezterm.font "Firacode Nerd Font Mono"
 -- config.font_size = 15
 config.background = {
     {
