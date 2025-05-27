@@ -44,8 +44,9 @@ sudo pacman -S rust lua go jdk-openjdk
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S bat fzf fd eza ripgrep libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship stow nerd-fonts ttf-ms-fonts ttf-aptos
-paru -S jetbrains-toolbox ibus-m17n fcitx5 fcitx5-gtk fcitx5-qt fcitx5-m17n ttf-sil-abyssinica wezterm-git waypaper-git python-pywal16 matugen-bin
+sudo pacman -S bat fzf fd eza ripgrep libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship stow nerd-fonts ttf-ms-fonts ttf-aptos ghostty chafa
+paru -S jetbrains-toolbox ibus-m17n fcitx5 fcitx5-gtk fcitx5-qt fcitx5-m17n ttf-sil-abyssinica waypaper-git python-pywal16 matugen-bin anki-bin
+# If installing WezTerm, install the git version to work with Hyprland
 ```
 
 ```bash

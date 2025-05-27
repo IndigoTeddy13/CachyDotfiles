@@ -1,0 +1,7 @@
+# This is the configuration file for Ghostty.
+# Fonts
+font-family = "FiraCode Nerd Font Mono"
+# Colors
+background = #000000
+background-opacity = 0.85
+
