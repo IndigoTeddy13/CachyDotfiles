@@ -12,14 +12,6 @@ stow --adopt dotfiles -t ~
 ```
 
 ```bash
-# Symlinks for Kvantum Pywal16 theme:
-sudo ln -fs ~/.cache/wal/Pywal.kvconfig ~/.config/Kvantum/Pywal/Pywal.kvconfig \
-&& sudo ln -fs ~/.cache/wal/Pywal.svg ~/.config/Kvantum/Pywal/Pywal.svg \
-&& sudo ln -fs ~/.cache/wal/color-scheme.colors ~/.local/share/color-schemes/Pywal.colors \
-&& sudo ln -fs ~/.cache/wal/colors-konsole.colorscheme ~/.local/share/konsole/Pywal.colorscheme
-```
-
-```bash
 # Update and upgrade pacman (default)
 sudo pacman -Syu
 ```
@@ -32,7 +24,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch python-pip pyenv python-virtualenv python-pipx cronie
+sudo pacman -S git fastfetch python-pip pyenv python-pipx cronie cuda
 paru -S pyenv-virtualenv powershell-bin
 # Tutorial for creating virtual environments: https://github.com/pyenv/pyenv-virtualenv/issues/408#issuecomment-1644298267
 ```
@@ -44,9 +36,9 @@ sudo pacman -S rust lua go jdk-openjdk
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship stow nerd-fonts ghostty chafa
+sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship stow nerd-fonts ghostty chafa waydroid
 paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n ttf-sil-abyssinica waypaper-git python-pywal16 matugen-bin
-# If installing WezTerm, install the git version to work with Hyprland
+# If installing WezTerm instead of Ghostty, use `paru -S wezterm-nightly-bin` to work with Hyprland
 ```
 
 ```bash
