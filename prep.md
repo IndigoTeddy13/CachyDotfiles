@@ -54,3 +54,8 @@ go install github.com/jesseduffield/lazygit@latest \
 # Install NVM and ble.sh via Paru
 paru -S nvm blesh
 ```
+
+```bash
+# Prevent FlatPak from installing the deprecated Breeze-Dark theme
+sudo flatpak mask org.gtk.Gtk3theme.Breeze-Dark
+```
