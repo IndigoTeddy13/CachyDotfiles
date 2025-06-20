@@ -42,7 +42,7 @@ $GET_FAVORITES_CMD | grep -Po "\'(.+?)\'" | sed -r "s/'$|^'//g" | while read -r 
         chosen="$1"
         if [ "$chosen" == "$name" ]; then
             # notify-send "$favorite" # for debugging
-            nohup gtk-launch ${favorite} >/dev/null 2>&1 &
+            gtk-launch ${favorite} >/dev/null 2>&1 &
             exit
         fi
     fi
