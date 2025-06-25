@@ -48,18 +48,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # Config for installed Go binaries
 export PATH="$(go env GOPATH)/bin:$PATH"
 
-# If already run, just process the wallpaper once
-if [ "$XDG_CURRENT_DESKTOP" == "GNOME" ]; then
-    WALLPAPER_PATH=$(gsettings get org.gnome.desktop.background picture-uri-dark | sed -E "s/^'|'$//g" | sed 's|file://||')
-    magick "$WALLPAPER_PATH" -resize 1920x1080 -colorspace sRGB /tmp/wall.png
-    wal --cols16 darken -b 000000 -n -i /tmp/wall.png
-    matugen image /tmp/wall.png -d
-elif [ "$XDG_CURRENT_DESKTOP" == "KDE" ]; then
-    WALLPAPER_PATH="$(get-kde-wallpaper)contents/images_dark/1080x1920.png"
-    wal --cols16 darken -b 000000 -n -i "$WALLPAPER_PATH"
-    matugen image "$WALLPAPER_PATH" -d
-fi
-
 # Initialize ble.sh
 [[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
 
