@@ -38,7 +38,7 @@ sudo pacman -S rust lua go jdk-openjdk nodejs-lts-jod
 ```bash
 # Install other tools and Nerd Fonts
 sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship stow nerd-fonts ghostty chafa waydroid
-paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n ttf-sil-abyssinica waypaper-git python-pywal16 matugen-bin blesh
+paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n ttf-sil-abyssinica waypaper-git python-pywal16 matugen-bin blesh
 # If installing WezTerm instead of Ghostty, use `paru -S wezterm-nightly-bin` to work with Hyprland
 ```
 
