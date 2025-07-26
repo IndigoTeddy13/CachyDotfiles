@@ -55,14 +55,3 @@ go install github.com/jesseduffield/lazygit@latest \
 # Prevent FlatPak from installing the deprecated Breeze-Dark theme
 sudo flatpak mask org.gtk.Gtk3theme.Breeze-Dark
 ```
-
-```bash
-# Polkit rule (/etc/polkit-1/rules.d/50-suspend.rules) to permit loginctl suspend to run in wlogout and hypridle
-polkit.addRule(function(action, subject) {
-    if ((action.id == "org.freedesktop.login1.suspend") &&
-        subject.isInGroup("wheel")) {
-        return polkit.Result.YES;
-    }
-});
-
-```
