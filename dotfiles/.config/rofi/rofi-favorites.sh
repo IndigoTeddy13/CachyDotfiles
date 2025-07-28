@@ -39,36 +39,51 @@ get_favorites() {
 # Store as an array
 favorites=( $(get_favorites) )
 total=${#favorites[@]}
-pad_length=${#total} # Number of digits
+pad=${#total} # Number of digits
+i=0
+
+# Function to get index of element in array
+get_index() {
+    local item="$1"
+    local i=0
+    for fav in "${favorites[@]}"; do
+        if [[ "$fav" == "$item" ]]; then
+            echo "$i"
+            return
+        fi
+        ((i++))
+    done
+    echo "-1"
+}
 
 # Loop over array
-for (( i=0; i<total; i++ )); do
-    favorite="${favorites[i]}"
-    index=$((i + 1))
-    # Apply padding
-    padded_index=$(printf "%0${pad_length}d" "$index")
-    padded_total=$(printf "%0${pad_length}d" "$total")
-    
-    # Extract relevant informaiton from .desktop files
+printf "%s\n" "${favorites[@]}" | while read -r favorite ; do
+    # Retrieve the current favorite app
+    idx=$(get_index "$favorite")
+    ((idx++))
+    padded_idx=$(printf "%0${pad}d" "$idx")
+    padded_total=$(printf "%0${pad}d" "$total")
+
+    # Extract relevant information from the .desktop files
     if [ -f "$favorite" ]; then
-        name=$(cat $favorite | awk -F "=" '/Name=/ {print $2}' | head -1)
-        command=$(cat $favorite | awk -F "=" '/Exec=/ {print $2}' | head -1)
-        icon=$(cat $favorite | awk -F "=" '/Icon=/ {print $2}' | head -1)
+        name=$(awk -F "=" '/^Name=/ {print $2; exit}' "$favorite")
+        command=$(awk -F "=" '/^Exec=/ {print $2; exit}' "$favorite")
+        icon=$(awk -F "=" '/^Icon=/ {print $2; exit}' "$favorite")
     else
         continue
     fi
 
     if [ $# -eq 0 ]; then
-        echo -en " ${padded_index}/${padded_total} | ${name}\0icon\x1f${icon}\n"
+        echo -en "${padded_idx}/${padded_total} | ${name}\0icon\x1f${icon}\n"
     fi
 
     if [ $# -eq 1 ]; then
-        chosen="$1"
-        if [ "$chosen" == "$name" ]; then
+        input="$1"
+        clean_input=$(echo "$input" | sed 's/^[0-9]\+\/[0-9]\+ | //')
+        if [ "$clean_input" == "$name" ]; then
             # notify-send "$favorite" # for debugging
-            gtk-launch ${favorite} >/dev/null 2>&1 &
+            gtk-launch "$(basename "$favorite")" >/dev/null 2>&1 &
             exit
         fi
     fi
-
 done
