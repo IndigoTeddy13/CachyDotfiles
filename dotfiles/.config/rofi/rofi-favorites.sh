@@ -1,41 +1,65 @@
-#! /bin/bash
+#! /usr/bin/bash
 
 # Source: https://github.com/luiscrjunior/rofi-favorites
+CONFIG="$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
+SEARCH_DIRS=(
+    "/usr/share/applications"
+    "$HOME/.local/share/applications"
+    "/var/lib/flatpak/exports/share/applications"
+    "$HOME/Desktop"
+)
 
-GET_FAVORITES_CMD="gsettings get org.gnome.shell favorite-apps"
-DESKTOP_FILES_PATH="/usr/share/applications/"
-LOCAL_FILES_PATH="$HOME/.local/share/applications/"
-FLATPAK_FILES_PATH="/var/lib/flatpak/exports/share/applications/"
-PWA_FILES_PATH="$HOME/Desktop/"
+# Retrieve list of favorites from KDE Plasma
+get_favorites() {
+    launcher_paths=$(awk -F= '/^\[Containments\]/{s=0} /^\[Containments\]\[2\]\[Applets\]\[5\]\[Configuration\]\[General\]/{s=1} s && /^launchers=/{print $2; exit}' $CONFIG | tr ',' '\n' | sed 's|^file://||')
 
-$GET_FAVORITES_CMD | grep -Po "\'(.+?)\'" | sed -r "s/'$|^'//g" | while read -r favorite ; do
-    desktop_file="${DESKTOP_FILES_PATH}${favorite}"
-    local_desktop_file="${LOCAL_FILES_PATH}${favorite}"
-    flatpak_desktop_file="${FLATPAK_FILES_PATH}${favorite}"
-    pwa_desktop_file="${PWA_FILES_PATH}${favorite}"
+    echo "$launcher_paths" | while read -r path; do
+        if [[ "$path" == applications:* ]]; then
+            # Strip 'applications:' prefix
+            file="${path#applications:}"
+            found=""
+            for dir in "${SEARCH_DIRS[@]}"; do
+                if [[ -f "$dir/$file" ]]; then
+                    found="$dir/$file"
+                    break
+                fi
+            done
+            if [[ -n "$found" ]]; then
+                echo "$found"
+            else
+                echo "Warning: Desktop file $file not found in known directories." >&2
+            fi
+        else
+            # Already a full path
+            echo "$path"
+        fi
+    done
+}
 
-    if [ -f "$desktop_file" ]; then
-        name=$(cat $desktop_file | awk -F "=" '/Name=/ {print $2}' | head -1)
-        command=$(cat $desktop_file | awk -F "=" '/Exec=/ {print $2}' | head -1)
-        icon=$(cat $desktop_file | awk -F "=" '/Icon=/ {print $2}' | head -1)
-    elif [ -f "$local_desktop_file" ]; then
-        name=$(cat $local_desktop_file | awk -F "=" '/Name=/ {print $2}' | head -1)
-        command=$(cat $local_desktop_file | awk -F "=" '/Exec=/ {print $2}' | head -1)
-        icon=$(cat $local_desktop_file | awk -F "=" '/Icon=/ {print $2}' | head -1)
-    elif [ -f "$flatpak_desktop_file" ]; then
-        name=$(cat $flatpak_desktop_file | awk -F "=" '/Name=/ {print $2}' | head -1)
-        command=$(cat $flatpak_desktop_file | awk -F "=" '/Exec=/ {print $2}' | head -1)
-        icon=$(cat $flatpak_desktop_file | awk -F "=" '/Icon=/ {print $2}' | head -1)
-    elif [ -f "$pwa_desktop_file" ]; then
-        name=$(cat $pwa_desktop_file | awk -F "=" '/Name=/ {print $2}' | head -1)
-        command=$(cat $pwa_desktop_file | awk -F "=" '/Exec=/ {print $2}' | head -1)
-        icon=$(cat $pwa_desktop_finohup gtk-launch com.discordapp.Discordle | awk -F "=" '/Icon=/ {print $2}' | head -1)
+# Store as an array
+favorites=( $(get_favorites) )
+total=${#favorites[@]}
+pad_length=${#total} # Number of digits
+
+# Loop over array
+for (( i=0; i<total; i++ )); do
+    favorite="${favorites[i]}"
+    index=$((i + 1))
+    # Apply padding
+    padded_index=$(printf "%0${pad_length}d" "$index")
+    padded_total=$(printf "%0${pad_length}d" "$total")
+    
+    # Extract relevant informaiton from .desktop files
+    if [ -f "$favorite" ]; then
+        name=$(cat $favorite | awk -F "=" '/Name=/ {print $2}' | head -1)
+        command=$(cat $favorite | awk -F "=" '/Exec=/ {print $2}' | head -1)
+        icon=$(cat $favorite | awk -F "=" '/Icon=/ {print $2}' | head -1)
     else
         continue
     fi
 
     if [ $# -eq 0 ]; then
-      echo -en "${name}\0icon\x1f${icon}\n"
+        echo -en " ${padded_index}/${padded_total} | ${name}\0icon\x1f${icon}\n"
     fi
 
     if [ $# -eq 1 ]; then
