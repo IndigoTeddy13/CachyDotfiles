@@ -11,7 +11,7 @@ SEARCH_DIRS=(
 
 # Retrieve list of favorites from KDE Plasma
 get_favorites() {
-    launcher_paths=$(awk -F= '/^\[Containments\]/{s=0} /^\[Containments\]\[2\]\[Applets\]\[5\]\[Configuration\]\[General\]/{s=1} s && /^launchers=/{print $2; exit}' $CONFIG | tr ',' '\n' | sed 's|^file://||')
+    launcher_paths=$(awk -F= '/^\[Containments\]\[[0-9]+\]\[Applets\]\[[0-9]+\]\[Configuration\]\[General\]/ { in_section=1 } in_section && /^launchers=/ { print $2; exit }' "$CONFIG" | tr ',' '\n' | sed 's|^file://||')
 
     echo "$launcher_paths" | while read -r path; do
         if [[ "$path" == applications:* ]]; then
