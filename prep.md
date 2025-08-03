@@ -37,8 +37,11 @@ sudo pacman -S rust lua go jdk-openjdk nodejs-lts-jod
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship stow nerd-fonts ghostty chafa waydroid
-paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n ttf-sil-abyssinica waypaper-git python-pywal16 matugen-bin blesh
+sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij starship stow nerd-fonts ghostty chafa waydroid copyq
+paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n ttf-sil-abyssinica blesh waypaper-git python-pywal16 matugen-bin
+# Also install tools to help with Hyprland
+sudo pacman -S hyprland hypridle hyprlock rofi waybar qt5ct qt6ct swww junction wlogout
+paru -S gradia poweralertd xwaylandvideobridge
 # If installing WezTerm instead of Ghostty, use `paru -S wezterm-nightly-bin` to work with Hyprland
 ```
 
@@ -48,6 +51,8 @@ go install github.com/jesseduffield/lazygit@latest \
 && go install github.com/jesseduffield/lazydocker@latest \
 && go install github.com/air-verse/air@latest \
 && go install github.com/nao1215/gup@latest \
+&& go install honnef.co/go/tools/cmd/staticcheck@latest \
+&& go install golang.org/x/tools/gopls@latest \
 && cargo install --git https://github.com/AlexKnauth/livesplit-one-druid
 ```
 
