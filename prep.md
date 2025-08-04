@@ -24,7 +24,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch python-pip pyenv python-pipx cronie cuda
+sudo pacman -S git fastfetch python-pip pyenv python-pipx cronie sbctl cuda
 paru -S pyenv-virtualenv powershell-bin
 # Tutorial for creating virtual environments: https://github.com/pyenv/pyenv-virtualenv/issues/408#issuecomment-1644298267
 ```
@@ -44,10 +44,18 @@ sudo pacman -S asusctl supergfxctl
 # Install other tools and Nerd Fonts
 sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij fzf eza bat ripgrep fd starship stow nerd-fonts otf-font-awesome ghostty chafa waydroid copyq
 paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n ttf-sil-abyssinica blesh waypaper-git python-pywal16 matugen-bin
+# If installing WezTerm instead of Ghostty, use `paru -S wezterm-nightly-bin` to work with Hyprland
+```
+
+```bash
 # Also install tools to help with Hyprland
 sudo pacman -S hyprland hypridle hyprlock hyprland-protocols wl-clipboard rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs libsecret gnome-keyring seahorse dconf-editor gnome-tweaks xorg-xeyes
 paru -S gradia poweralertd xwaylandvideobridge
-# If installing WezTerm instead of Ghostty, use `paru -S wezterm-nightly-bin` to work with Hyprland
+```
+
+```bash
+# Cool non-developer tools (not including FlatPaks)
+sudo pacman -S ardour cava yt-dlp
 ```
 
 ```bash
@@ -64,4 +72,12 @@ go install github.com/jesseduffield/lazygit@latest \
 ```bash
 # Prevent FlatPak from installing the deprecated Breeze-Dark theme
 sudo flatpak mask org.gtk.Gtk3theme.Breeze-Dark
+
+# Use system themes
+flatpak override --user ---filesystem=xdg-config/gtk-3.0:ro \
+&& flatpak override --user --filesystem=xdg-config/gtk-4.0:ro \
+&& flatpak override --user --filesystem=/home/$USER/.icons:ro \
+&& flatpak override --user --filesystem=/home/$USER/.themes:ro \
+&& flatpak override --user --filesystem=/usr/share/icons:ro \
+&& flatpak override --user --filesystem=/usr/share/themes:ro
 ```
