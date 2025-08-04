@@ -45,7 +45,7 @@ sudo pacman -S asusctl supergfxctl
 sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij fzf eza bat ripgrep fd starship stow nerd-fonts otf-font-awesome ghostty chafa waydroid copyq
 paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n ttf-sil-abyssinica blesh waypaper-git python-pywal16 matugen-bin
 # Also install tools to help with Hyprland
-sudo pacman -S hyprland hypridle hyprlock hyprland-protocols wl-clipboard rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs libsecret gnome-keyring seahorse dconf-editor gnome-tweaks
+sudo pacman -S hyprland hypridle hyprlock hyprland-protocols wl-clipboard rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs libsecret gnome-keyring seahorse dconf-editor gnome-tweaks xorg-xeyes
 paru -S gradia poweralertd xwaylandvideobridge
 # If installing WezTerm instead of Ghostty, use `paru -S wezterm-nightly-bin` to work with Hyprland
 ```
