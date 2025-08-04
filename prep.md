@@ -24,7 +24,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch python-pip pyenv python-pipx cronie sbctl cuda
+sudo pacman -S git fastfetch python-pip pyenv python-pipx cronie sbctl brightnessctl cuda
 paru -S pyenv-virtualenv powershell-bin
 # Tutorial for creating virtual environments: https://github.com/pyenv/pyenv-virtualenv/issues/408#issuecomment-1644298267
 ```
@@ -49,7 +49,7 @@ paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma fcit
 
 ```bash
 # Also install tools to help with Hyprland
-sudo pacman -S hyprland hypridle hyprlock hyprland-protocols wl-clipboard rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs libsecret gnome-keyring seahorse dconf-editor gnome-tweaks xorg-xeyes
+sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs libsecret gnome-keyring seahorse dconf-editor gnome-tweaks xorg-xeyes xorg-xev
 paru -S gradia poweralertd xwaylandvideobridge
 ```
 
