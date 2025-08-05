@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#! /usr/bin/env bash
 
 # Source: https://github.com/luiscrjunior/rofi-favorites
 CONFIG="$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"

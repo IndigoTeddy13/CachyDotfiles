@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 alias python="python3"
 alias activenv="source .venv/bin/activate"

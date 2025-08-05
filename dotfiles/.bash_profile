@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Load ~/.bashrc if possible
 if [ -r ~/.bashrc ]; then

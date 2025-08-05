@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 cp ~/.cache/wal/colors-mako ~/.config/mako/config
 killall mako

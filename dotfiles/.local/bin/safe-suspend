@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 systemd-run --user --no-ask-password \
   dbus-send --system --print-reply \
