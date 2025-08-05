@@ -1,0 +1,12 @@
+be.alexandervanhee.gradia
+com.discordapp.Discord
+com.github.tchx84.Flatseal
+com.obsproject.Studio
+com.slack.Slack
+net.ankiweb.Anki
+org.audacityteam.Audacity
+org.inkscape.Inkscape
+org.kde.kdenlive
+org.kde.krita
+org.libreoffice.LibreOffice
+us.zoom.Zoom
