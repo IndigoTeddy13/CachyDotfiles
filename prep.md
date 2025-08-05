@@ -2,6 +2,7 @@
 
 [Return to README](./README.md)
 
+## Installation and Environment Variables:
 - Run the commands one by one in the repo's main directory
 - Update non-pacman curl requests in case new versions come out
 
@@ -12,7 +13,7 @@
 stow --adopt dotfiles -t ~
 # Command to reinstall FlatPaks from a list (requires flatpak installed)
 # (Also requires a backup list from "flatpak list --columns=application --app")
-xargs flatpak install -y < ~/.config/flatpak-list.txt
+xargs flatpak install --or-update -y < ~/.config/flatpak-list.txt
 ```
 
 ```bash
@@ -86,4 +87,16 @@ flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
 && flatpak override --user --filesystem=/usr/share/themes:ro
 
 # Remember to set $XDG_SESSION_TYPE=x11 for Electron-based FlatPaks that don't have proper screenshare on Wayland (Discord, Slack, Zoom, etc)
+```
+
+## Global Configs
+
+```bash
+# Add to /etc/NetworkManager/NetworkManager.conf for MAC randomization 
+[device]
+wifi.scan-rand-mac-address=yes
+
+[connection]
+wifi.cloned-mac-address=random
+ethernet.cloned-mac-address=random
 ```
