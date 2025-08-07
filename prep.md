@@ -48,14 +48,14 @@ sudo pacman -S asusctl supergfxctl
 ```bash
 # Install other tools and Nerd Fonts
 sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij fzf eza bat ripgrep fd starship stow nerd-fonts otf-font-awesome ghostty chafa waydroid copyq
-paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n ttf-sil-abyssinica blesh waypaper-git python-pywal16 matugen-bin
+paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n blesh
 # If installing WezTerm instead of Ghostty, use `paru -S wezterm-nightly-bin` to work with Hyprland
 ```
 
 ```bash
 # Also install tools to help with Hyprland
-sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs libsecret gnome-keyring seahorse dconf-editor gnome-tweaks xorg-xeyes xorg-xev archlinux-xdg-menu
-paru -S gradia poweralertd xwaylandvideobridge
+sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs libsecret gnome-keyring seahorse dconf-editor gnome-tweaks xorg-xeyes xorg-xev archlinux-xdg-menu
+paru -S poweralertd xwaylandvideobridge
 ```
 
 ```bash
@@ -71,7 +71,9 @@ go install github.com/jesseduffield/lazygit@latest \
 && go install github.com/nao1215/gup@latest \
 && go install honnef.co/go/tools/cmd/staticcheck@latest \
 && go install golang.org/x/tools/gopls@latest \
-&& cargo install --git https://github.com/AlexKnauth/livesplit-one-druid
+&& cargo install matugen \
+&& cargo install --git https://github.com/AlexKnauth/livesplit-one-druid \
+&& pipx install waypaper pywal16
 ```
 
 ```bash
@@ -90,6 +92,12 @@ flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
 ```
 
 ## Global Configs
+
+```bash
+# Edit /usr/share/themes/default/index.theme to use the desired theme
+[Icon Theme]
+Inherits=Breeze
+```
 
 ```bash
 # Add to /etc/NetworkManager/NetworkManager.conf for MAC randomization 

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Set PATH
+PATH=$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH
+
+# Run waypaper and log success
+waypaper --restore > /tmp/waypaper.log 2>&1
