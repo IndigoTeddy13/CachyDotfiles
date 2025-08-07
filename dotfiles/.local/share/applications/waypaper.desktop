@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Waypaper
+Comment=Wallpaper manager
+Exec=bash -c "env PATH=$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH /home/indigo/.local/bin/waypaper"
+Icon=waypaper
+Terminal=false
+Type=Application
+Categories=Utility;Settings;
