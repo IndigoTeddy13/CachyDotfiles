@@ -54,7 +54,7 @@ paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-
 
 ```bash
 # Also install tools to help with Hyprland
-sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs libsecret gnome-keyring seahorse dconf-editor gnome-tweaks xorg-xeyes xorg-xev archlinux-xdg-menu
+sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs dconf-editor gnome-tweaks xorg-xeyes xorg-xev archlinux-xdg-menu
 paru -S poweralertd xwaylandvideobridge
 ```
 
@@ -107,4 +107,11 @@ wifi.scan-rand-mac-address=yes
 [connection]
 wifi.cloned-mac-address=random
 ethernet.cloned-mac-address=random
+```
+
+```bash
+# Add these lines to /etc/pam.d/login and /etc/pam.d/sddm to get kwallet6 working on any DE/WM
+# Also for independent WMs, might need to exec-once "/usr/lib/pam_kwallet_init" and "kwalletd6"
+auth       optional    pam_kwallet5.so
+session    optional    pam_kwallet5.so auto_start
 ```
