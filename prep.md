@@ -29,7 +29,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch python-pip pyenv python-pipx flatpak cronie sbctl brightnessctl cuda
+sudo pacman -S git fastfetch git-filter-repo python-pip pyenv python-pipx flatpak cronie sbctl brightnessctl cuda
 paru -S pyenv-virtualenv powershell-bin
 # Tutorial for creating virtual environments: https://github.com/pyenv/pyenv-virtualenv/issues/408#issuecomment-1644298267
 ```
