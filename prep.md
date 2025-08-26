@@ -37,7 +37,7 @@ paru -S pyenv-virtualenv powershell-bin
 ```bash
 # Install programming languages (Python and make are already installed)
 # nodejs-lts-jod is NodeJS 22.x
-sudo pacman -S rust lua go jdk-openjdk jdk21-openjdk nodejs-lts-jod
+sudo pacman -S rust lua go jdk-openjdk jdk21-openjdk nodejs-lts-jod npm
 ```
 
 ```bash
