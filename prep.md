@@ -88,7 +88,7 @@ flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
 && flatpak override --user --filesystem=/usr/share/icons:ro \
 && flatpak override --user --filesystem=/usr/share/themes:ro
 
-# Remember to set $XDG_SESSION_TYPE=x11 for Electron-based FlatPaks that don't have proper screenshare on Wayland (Discord, Slack, Zoom, etc)
+# Remember to set $XDG_SESSION_TYPE=x11 for Electron-based FlatPaks that don't have proper screenshare on Wayland (Discord, Slack, etc)
 ```
 
 ## Global Configs
