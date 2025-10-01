@@ -29,7 +29,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch git-filter-repo python-pip pyenv python-pipx flatpak cronie sbctl brightnessctl cuda
+sudo pacman -S git fastfetch git-filter-repo python-pip pyenv python-pipx flatpak cronie sbctl brightnessctl cuda apparmor
 paru -S pyenv-virtualenv powershell-bin
 # Tutorial for creating virtual environments: https://github.com/pyenv/pyenv-virtualenv/issues/408#issuecomment-1644298267
 ```
@@ -71,7 +71,6 @@ go install github.com/jesseduffield/lazygit@latest \
 && go install github.com/nao1215/gup@latest \
 && go install honnef.co/go/tools/cmd/staticcheck@latest \
 && go install golang.org/x/tools/gopls@latest \
-&& cargo install matugen \
 && cargo install --git https://github.com/AlexKnauth/livesplit-one-druid \
 && pipx install waypaper pywal16
 ```
@@ -114,4 +113,9 @@ ethernet.cloned-mac-address=random
 # Also for independent WMs, might need to exec-once "/usr/lib/pam_kwallet_init" and "kwalletd6"
 auth       optional    pam_kwallet5.so
 session    optional    pam_kwallet5.so auto_start
+```
+
+```bash
+# Add to KERNEL_CMDLINE for your bootloader, along with enabling the apparmor service
+lsm=landlock,lockdown,yama,integrity,apparmor,bpf
 ```

@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
 
+# Mako
 cp ~/.cache/wal/colors-mako ~/.config/mako/config
 killall mako
+
+# GTK CSS
+cp ~/.cache/wal/gtk-colors.css ~/.config/gtk-3.0/colors.css
+cp ~/.cache/wal/gtk-colors.css ~/.config/gtk-4.0/colors.css
+
+# QTCT Settings
+cp ~/.cache/wal/qtct-colors.conf ~/.config/qt5ct/colors/pywal16.conf
+cp ~/.cache/wal/qtct-colors.conf ~/.config/qt6ct/colors/pywal16.conf
