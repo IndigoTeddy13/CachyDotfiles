@@ -29,8 +29,11 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch git-filter-repo python-pip pyenv python-pipx flatpak cronie sbctl brightnessctl cuda apparmor
-paru -S pyenv-virtualenv powershell-bin
+sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak cronie sbctl brightnessctl cachy-update cuda apparmor
+paru -S miniconda3 powershell-bin
+# For cachy-update systray (do once)
+arch-update --tray --enable
+systemctl --user enable --now arch-update-tray.service
 # Tutorial for creating virtual environments: https://github.com/pyenv/pyenv-virtualenv/issues/408#issuecomment-1644298267
 ```
 

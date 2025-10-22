@@ -43,8 +43,9 @@ vtrim() {
 alias python="python3"
 alias activenv="source .venv/bin/activate"
 alias rmvenv="sudo rm -rf .venv"
+alias acticonda="source /opt/miniconda3/etc/profile.d/conda.sh && conda activate"
 alias pip="pip3"
-alias update="paru; gup update; cargo install-update --all; pipx upgrade-all; update_flatpak_list; flatpak update"
+alias update="arch-update;paru; gup update; cargo install-update --all; pipx upgrade-all; update_flatpak_list; flatpak update"
 alias livesplit="GDK_BACKEND=x11 livesplit-one & disown"
 
 

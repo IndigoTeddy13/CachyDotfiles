@@ -1,0 +1,11 @@
+# Refer to Arch Wiki page on conda: https://wiki.archlinux.org/title/Conda
+auto_activate_base: false
+
+create_default_packages:
+    - pip
+    - ipython
+    - numpy
+    - scipy
+    - libgcc-ng
+    - mpich
+    - rust

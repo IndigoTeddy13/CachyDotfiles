@@ -27,19 +27,13 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export GDK_BACKEND=wayland
 fi
 
-# Pyenv config
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # Pywal config
 cat ~/.cache/wal/sequences &
 
 # Cargo config
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Bat (batcat) config
+# Local binaries
 export PATH="$HOME/.local/bin:$PATH"
 
 # Config for installed Go binaries
