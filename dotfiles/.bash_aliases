@@ -39,11 +39,31 @@ vtrim() {
     echo "Trimming complete."
 }
 
+# Function to make a conda environment with a specific Python version
+mkconda() {
+    if [ -n "$1" ]; then
+        conda create -p "$PWD/.venv" python="$1" -y
+    else # Otherwise, default to system Python
+        conda create -p "$PWD/.venv" -y
+    fi
+}
+
+# Function to activate a conda environment
+acticonda() {
+    conda activate "$PWD/.venv"
+}
+
+# Function to remove a conda environment
+rmconda() {
+    conda remove -p "$PWD/.venv" --all
+}
+
 # Aliases
 alias python="python3"
 alias activenv="source .venv/bin/activate"
 alias rmvenv="sudo rm -rf .venv"
-alias acticonda="source /opt/miniconda3/etc/profile.d/conda.sh && conda activate"
+alias condashell="source /opt/miniconda3/etc/profile.d/conda.sh && conda activate"
+alias deacticonda="conda deactivate"
 alias pip="pip3"
 alias update="arch-update;paru; gup update; cargo install-update --all; pipx upgrade-all; update_flatpak_list; flatpak update"
 alias livesplit="GDK_BACKEND=x11 livesplit-one & disown"
