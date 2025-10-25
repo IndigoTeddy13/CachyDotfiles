@@ -64,6 +64,9 @@ paru -S poweralertd xwaylandvideobridge
 ```bash
 # Cool non-developer tools (not including FlatPaks)
 sudo pacman -S ardour cava yt-dlp
+
+# Wallpaper pakcages
+paru -S plasma-workspace-wallpapers aarchlinux-wallpaper cachyos-wallpapers
 ```
 
 ```bash
