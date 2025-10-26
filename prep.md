@@ -66,7 +66,7 @@ paru -S poweralertd xwaylandvideobridge
 sudo pacman -S ardour cava yt-dlp
 
 # Wallpaper pakcages
-paru -S plasma-workspace-wallpapers aarchlinux-wallpaper cachyos-wallpapers
+paru -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers
 ```
 
 ```bash
