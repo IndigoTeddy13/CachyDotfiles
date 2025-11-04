@@ -4,4 +4,5 @@ font-family = "FiraCode Nerd Font Mono"
 # Colors
 background = #000000
 background-opacity = 0.85
-
+# Ghostty sudo fix
+shell-integration-features = sudo
