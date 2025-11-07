@@ -3,6 +3,7 @@ com.discordapp.Discord
 com.github.tchx84.Flatseal
 com.obsproject.Studio
 com.slack.Slack
+io.github.kolunmi.Bazaar
 net.ankiweb.Anki
 org.audacityteam.Audacity
 org.inkscape.Inkscape
