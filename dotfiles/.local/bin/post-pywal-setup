@@ -23,8 +23,8 @@ update_on_change ~/.cache/wal/colors-mako ~/.config/mako/config
 killall mako
 
 # GTK CSS
-update_on_change ~/.cache/wal/gtk-colors.css ~/.config/gtk-3.0/colors.css
-update_on_change ~/.cache/wal/gtk-colors.css ~/.config/gtk-4.0/colors.css
+update_on_change ~/.cache/wal/gtk-colors.css ~/.config/gtk-3.0/gtk.css
+update_on_change ~/.cache/wal/gtk-colors.css ~/.config/gtk-4.0/gtk.css
 
 # QTCT Settings
 update_on_change ~/.cache/wal/qtct-colors.conf ~/.config/qt5ct/colors/pywal16.conf
