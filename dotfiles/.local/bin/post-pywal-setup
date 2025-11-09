@@ -18,9 +18,8 @@ update_on_change() {
     fi
 }
 
-# Mako
-update_on_change ~/.cache/wal/colors-mako ~/.config/mako/config
-killall mako
+# SwayNC
+killall swaync
 
 # GTK CSS
 update_on_change ~/.cache/wal/gtk-colors.css ~/.config/gtk-3.0/gtk.css

@@ -1,0 +1,19 @@
+@import url("/home/indigo/.cache/wal/colors-waybar.css");
+
+* {
+  font-family: "FiraCode Nerd Font Mono";
+  font-size: 16px;
+}
+
+.notification {
+    background-color: {background};
+    border-radius: 10px;
+    color: {foreground};
+    border: 1px solid {color6};
+}
+
+.control-center {
+    background-color: {color4};
+    border-radius: 10px;
+    color: {color15};
+}

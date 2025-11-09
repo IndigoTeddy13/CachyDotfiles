@@ -57,7 +57,7 @@ paru -S jetbrains-toolbox ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-
 
 ```bash
 # Also install tools to help with Hyprland
-sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar mako qt5ct qt6ct swww junction wlogout network-manager-applet blueman nautilus grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs dconf-editor gnome-tweaks xorg-xeyes xorg-xev
+sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman nautilus grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs dconf-editor gnome-tweaks xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
 ```
 
