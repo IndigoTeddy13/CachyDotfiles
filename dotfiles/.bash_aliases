@@ -12,7 +12,7 @@ update_flatpak_list() {
     # Check if the backup file exists and if the content has changed
     if ! diff -q "$temp_list" "$list_file" &>/dev/null; then
         echo -e "\nChanges detected in Flatpak apps. Updating backup file...\n"
-        mv "$temp_list" "$list_file"
+        cp "$temp_list" "$list_file"
 	echo -e "\nUpdated!\n"
     else
         echo -e "\nNo changes detected in Flatpak apps. Backup file is up-to-date.\n"

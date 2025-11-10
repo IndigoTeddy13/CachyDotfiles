@@ -1,6 +1,7 @@
 be.alexandervanhee.gradia
 com.discordapp.Discord
 com.github.tchx84.Flatseal
+com.jetbrains.IntelliJ-IDEA-Ultimate
 com.obsproject.Studio
 com.slack.Slack
 io.github.kolunmi.Bazaar
