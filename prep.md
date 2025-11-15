@@ -56,8 +56,10 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fci
 ```
 
 ```bash
+# Install a limited GNOME desktop and tools
+sudo pacman -S gdm gdm-settings gnome-backgrounds gnome-calendar gnome-color-manager gnome-connections gnome-contacts gnome-control-center gnome-settings-daemon gnome-shell-extensions gnome-remote-desktop gnome-user-docs gnome-screenshot yelp xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-user-dirs-gtk dconf-editor extension-manager nautilus loupe
 # Also install tools to help with Hyprland
-sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman nautilus grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs dconf-editor gnome-tweaks xorg-xeyes xorg-xev
+sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs gnome-tweaks xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
 ```
 
