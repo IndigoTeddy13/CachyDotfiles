@@ -157,12 +157,12 @@ button:hover {
 }
 
 #power-profiles-daemon.balanced {
-    background-color: @color12;
+    background-color: @color14;
     color: #ffffff;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: @color11;
+    background-color: @color12;
     color: #000000;
 }
 
@@ -171,7 +171,7 @@ label:focus {
 }
 
 #cpu {
-    background-color: @color11;
+    background-color: @color12;
     color: #000000;
 }
 

@@ -50,14 +50,17 @@ sudo pacman -S asusctl supergfxctl
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij fzf eza bat ripgrep fd starship stow nerd-fonts otf-font-awesome ghostty chafa waydroid copyq
+sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij fzf eza bat ripgrep fd starship stow nerd-fonts otf-font-awesome ghostty chafa waydroid copyq brave-bin
 paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n blesh python-pywal16 vscodium-bin
+# Auxillary tools for pywal16
+sudo pacman -S python-colorthief
+paru -S colorz python-haishoku
 # If installing WezTerm instead of Ghostty, use `paru -S wezterm-nightly-bin` to work with Hyprland
 ```
 
 ```bash
 # Install a limited GNOME desktop and tools
-sudo pacman -S gdm gdm-settings gnome-backgrounds gnome-calendar gnome-color-manager gnome-connections gnome-contacts gnome-control-center gnome-settings-daemon gnome-shell-extensions gnome-remote-desktop gnome-user-docs gnome-screenshot yelp xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-user-dirs-gtk dconf-editor extension-manager nautilus loupe
+sudo pacman -S gdm gdm-settings gnome-backgrounds gnome-calendar gnome-color-manager gnome-connections gnome-contacts gnome-control-center gnome-settings-daemon gnome-shell-extensions gnome-remote-desktop gnome-user-docs yelp xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-user-dirs-gtk dconf-editor extension-manager nautilus loupe evince
 # Also install tools to help with Hyprland
 sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs gnome-tweaks xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
