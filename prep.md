@@ -130,6 +130,9 @@ session    optional    pam_kwallet5.so auto_start
 # Create, enable, and start the following service as /etc/systemd/system/power-profile-pre-login.service to launch power-saving mode before login
 [Unit]
 Description=Set Power Profiles before Display Manager
+Requires=power-profiles-daemon.service
+After=power-profiles-daemon.service
+Before=graphical.target
 Before=display-manager.service
 
 [Service]
