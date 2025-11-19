@@ -60,9 +60,9 @@ paru -S colorz python-haishoku
 
 ```bash
 # Install a limited GNOME desktop and tools
-sudo pacman -S gdm gdm-settings gnome-backgrounds gnome-calendar gnome-color-manager gnome-connections gnome-contacts gnome-control-center gnome-settings-daemon gnome-shell-extensions gnome-remote-desktop gnome-user-docs yelp xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-user-dirs-gtk dconf-editor extension-manager nautilus loupe evince
+sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gnome xdg-desktop-portal-gtk gvfs nautilus loupe evince
 # Also install tools to help with Hyprland
-sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gvfs gnome-tweaks xorg-xeyes xorg-xev
+sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
 ```
 
@@ -124,6 +124,20 @@ ethernet.cloned-mac-address=random
 # Also for independent WMs, might need to exec-once "/usr/lib/pam_kwallet_init" and "kwalletd6"
 auth       optional    pam_kwallet5.so
 session    optional    pam_kwallet5.so auto_start
+```
+
+```bash
+# Create, enable, and start the following service as /etc/systemd/system/power-profile-pre-login.service to launch power-saving mode before login
+[Unit]
+Description=Set Power Profiles before Display Manager
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/powerprofilesctl set power-saver
+
+[Install]
+WantedBy=multi-user.target
 ```
 
 ```bash
