@@ -5,7 +5,7 @@ GenericName=Web Browser
 Comment=Access the Internet
 StartupNotify=true
 StartupWMClass=brave-tor
-Exec=brave --tor %U
+Exec=brave "--profile-directory=Default" --tor %U
 Terminal=false
 Icon=brave-desktop
 Type=Application
