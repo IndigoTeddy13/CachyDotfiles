@@ -29,8 +29,8 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak cronie sbctl brightnessctl cachy-update cuda apparmor
-paru -S miniconda3 powershell-bin
+sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak cronie sbctl brightnessctl cachy-update cuda sniffnet apparmor
+paru -S miniconda3
 # For cachy-update systray (do once)
 arch-update --tray --enable
 systemctl --user enable --now arch-update-tray.service
@@ -56,8 +56,8 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fci
 ```
 
 ```bash
-# Install a limited GNOME desktop and tools
-sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gnome xdg-desktop-portal-gtk gvfs nautilus loupe evince
+# Install limited GTK tools
+sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gvfs thunar
 # Also install tools to help with Hyprland
 sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
