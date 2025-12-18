@@ -57,7 +57,7 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fci
 
 ```bash
 # Install limited GTK tools
-sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gvfs thunar
+sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gvfs thunar tumbler
 # Also install tools to help with Hyprland
 sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
@@ -104,6 +104,13 @@ flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
 # Edit /usr/share/themes/default/index.theme to use the desired theme
 [Icon Theme]
 Inherits=Breeze
+```
+
+```bash
+# Edit /etc/environment to include the correct environment variables for fcitx5
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
 ```
 
 ```bash
