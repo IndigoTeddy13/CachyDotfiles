@@ -57,7 +57,7 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fci
 
 ```bash
 # Install limited GTK tools
-sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gvfs thunar tumbler
+sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gvfs thunar thunar-archive-plugin tumbler
 # Also install tools to help with Hyprland
 sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
@@ -79,8 +79,9 @@ go install github.com/jesseduffield/lazygit@latest \
 && go install github.com/nao1215/gup@latest \
 && go install honnef.co/go/tools/cmd/staticcheck@latest \
 && go install golang.org/x/tools/gopls@latest \
-&& cargo install --git https://github.com/AlexKnauth/livesplit-one-druid \
 && pipx install waypaper "pywal16[colorthief,colorz,haishoku]"
+
+# Install LiveSplit.exe via Bottles (relevant tutorial: https://youtu.be/4H6MF3baAcw)
 ```
 
 ```bash
@@ -96,6 +97,12 @@ flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
 && flatpak override --user --filesystem=/usr/share/themes:ro
 
 # Remember to set $XDG_SESSION_TYPE=x11 for Electron-based FlatPaks that don't have proper screenshare on Wayland (Discord, Slack, etc)
+# Likewise, set $XDG_SESSION_TYPE=x11 and $QT_QPA_PLATFORM=xcb for OBS Studio to regain X11 popup functionality under XWayland
+
+# Give Bottles access to specific directories
+flatpak override --user --filesystem=home:ro com.usebottles.bottles
+flatpak override --user --filesystem=xdg-data/applications:create com.usebottles.bottles
+flatpak override --user --filesystem="/home/indigo/PersonalCodeProjects/IndigoTeddyPBs" com.usebottles.bottles
 ```
 
 ## Global Configs

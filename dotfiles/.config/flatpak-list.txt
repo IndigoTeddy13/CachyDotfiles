@@ -4,6 +4,7 @@ com.github.tchx84.Flatseal
 com.jetbrains.IntelliJ-IDEA-Ultimate
 com.obsproject.Studio
 com.slack.Slack
+com.usebottles.bottles
 io.github.kolunmi.Bazaar
 net.ankiweb.Anki
 org.audacityteam.Audacity
