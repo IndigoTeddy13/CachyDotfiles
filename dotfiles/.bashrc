@@ -42,6 +42,9 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 # Initialize ble.sh
 [[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
 
+# Intialize zoxide
+eval "$(zoxide init bash)"
+
 # Initialize Starship.rs
 eval $(starship init bash)
 

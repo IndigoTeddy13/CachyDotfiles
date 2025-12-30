@@ -9,15 +9,15 @@ configuration {
         action: "kb-cancel";
         delay: 0;
     }
-    filebrowser {
-        directories-first: true;
-        sorting-method: "name";
-        command: "junction";
-    }
-    recursivebrowser {
-        directory: "~";
-        command: "junction";
-    }
+//    filebrowser {
+//        directories-first: true;
+//        sorting-method: "name";
+//        command: "junction";
+//    }
+//    recursivebrowser {
+//        directory: "~";
+//        command: "junction";
+//    }
 }
 @theme "/usr/share/rofi/themes/material.rasi"
 @import "~/.cache/wal/colors-rofi-dark.rasi"
