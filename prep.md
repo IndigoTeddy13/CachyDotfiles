@@ -40,7 +40,7 @@ systemctl --user enable --now arch-update-tray.service
 ```bash
 # Install programming languages (Python and make are already installed)
 # nodejs-lts-jod is NodeJS 22.x
-sudo pacman -S rust lua go jdk-openjdk jdk21-openjdk nodejs-lts-jod npm
+sudo pacman -S rust lua go jdk-openjdk jdk21-openjdk nodejs-lts-jod npm deno
 ```
 
 ```bash
@@ -57,9 +57,9 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fci
 
 ```bash
 # Install limited GTK tools
-sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gvfs thunar thunar-archive-plugin tumbler
-# Also install tools to help with Hyprland
-sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel rofi waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xorg-xeyes xorg-xev
+sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gvfs thunar thunar-archive-plugin tumbler ristretto
+# Also install Hyprland and relevant tools
+sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel wtype xdotool rofi rofi-emoji waybar swaync qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
 ```
 
@@ -129,7 +129,7 @@ ethernet.cloned-mac-address=random
 ```
 
 ```bash
-# Add these lines to /etc/pam.d/login and /etc/pam.d/sddm to get kwallet6 working on any DE/WM
+# Add these lines to /etc/pam.d/login and /etc/pam.d/sddm (or equivalent) to get kwallet6 working on any DE/WM
 # Also for independent WMs, might need to exec-once "/usr/lib/pam_kwallet_init" and "kwalletd6"
 auth       optional    pam_kwallet5.so
 session    optional    pam_kwallet5.so auto_start
