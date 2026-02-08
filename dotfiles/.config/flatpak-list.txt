@@ -12,4 +12,3 @@ org.inkscape.Inkscape
 org.kde.kdenlive
 org.kde.krita
 org.libreoffice.LibreOffice
-us.zoom.Zoom
