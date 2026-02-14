@@ -62,6 +62,7 @@ rmconda() {
 # Function to update relevant packages
 update() {
 	arch-update
+    flatpak update
 	gup update
 	cargo install-update --all
 	pipx upgrade-all
@@ -74,7 +75,7 @@ alias rmvenv="sudo rm -rf .venv"
 alias condashell="source /opt/miniconda3/etc/profile.d/conda.sh && conda activate"
 alias deacticonda="conda deactivate"
 alias pip="pip3"
-alias livesplit="GDK_BACKEND=x11 livesplit-one & disown"
+alias icat="kitty +kitten icat"
 
 
 
