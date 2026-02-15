@@ -6,6 +6,7 @@ com.jetbrains.IntelliJ-IDEA-Ultimate
 com.obsproject.Studio
 com.slack.Slack
 com.usebottles.bottles
+com.vscodium.codium
 io.github.kolunmi.Bazaar
 net.ankiweb.Anki
 org.audacityteam.Audacity
