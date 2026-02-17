@@ -58,7 +58,7 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fci
 
 ```bash
 # Install limited GTK tools
-sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gvfs thunar thunar-archive-plugin tumbler ristretto
+sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gnome-keyring seahorse gvfs thunar thunar-archive-plugin tumbler ristretto
 # Also install Hyprland and relevant tools
 sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel wtype xdotool rofi rofi-emoji waybar swaync swayosd qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
@@ -134,6 +134,10 @@ ethernet.cloned-mac-address=random
 # Also for independent WMs, might need to exec-once "/usr/lib/pam_kwallet_init" and "kwalletd6"
 auth       optional    pam_kwallet5.so
 session    optional    pam_kwallet5.so auto_start
+# Likewise for GNOME Keyring
+# For independent WMs, might need to exec-once "gnome-keyring-daemon --start --components=secrets,ssh,pkcs11"
+auth       optional     pam_gnome_keyring.so
+session    optional     pam_gnome_keyring.so auto_start
 ```
 
 ```bash
