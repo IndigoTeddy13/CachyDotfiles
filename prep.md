@@ -98,10 +98,13 @@ flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
 # Remember to set $XDG_SESSION_TYPE=x11 for Electron-based FlatPaks that don't have proper screenshare on Wayland (Discord, Slack, etc)
 # Likewise, set $XDG_SESSION_TYPE=x11 and $QT_QPA_PLATFORM=xcb for OBS Studio to regain X11 popup functionality under XWayland
 
+# Force VS Codium to use Breeze-Dark GTK theme for permissions prompt
+flatpak override --user --env=GTK_THEME=Breeze:dark com.vscodium.codium
+
 # Give Bottles access to specific directories
-flatpak override --user --filesystem=home:ro com.usebottles.bottles
-flatpak override --user --filesystem=xdg-data/applications:create com.usebottles.bottles
-flatpak override --user --filesystem="/home/indigo/PersonalCodeProjects/IndigoTeddyPBs" com.usebottles.bottles
+flatpak override --user --filesystem=home:ro com.usebottles.bottles \
+&& flatpak override --user --filesystem=xdg-data/applications:create com.usebottles.bottles \
+&& flatpak override --user --filesystem="/home/indigo/PersonalCodeProjects/IndigoTeddyPBs" com.usebottles.bottles
 ```
 
 ## Global Configs
