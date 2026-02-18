@@ -1,5 +1,9 @@
 [config]
 
+[templates.hyprcolors]
+input_path='~/.config/matugen/hyprcolors.conf'
+output_path='~/.config/hypr/hyprcolors.conf'
+
 [templates.hyprlock]
 input_path='~/.config/matugen/hyprlock.conf'
 output_path='~/.config/hypr/hyprlock.conf'
