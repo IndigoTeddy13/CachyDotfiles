@@ -100,9 +100,8 @@ flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
 
 # Force VS Codium to use Breeze-Dark GTK theme for permissions prompt
 flatpak override --user --env=GTK_THEME=Breeze:dark com.vscodium.codium
-# Fix DBUS-related permissions
-flatpak override --user --talk-name=org.kde.kwalletd5 --talk-name=org.freedesktop.secrets com.visualstudio.code
-
+# Edit argv.json (Preferences: Configure Runtime Arguments) to include:
+{"password-store":"gnome-libsecret"}
 
 # Give Bottles access to specific directories
 flatpak override --user --filesystem=home:ro com.usebottles.bottles \
