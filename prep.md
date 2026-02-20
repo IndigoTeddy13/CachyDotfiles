@@ -84,6 +84,30 @@ go install github.com/air-verse/air@latest \
 ```
 
 ```bash
+# For brightness management on GNOME/GDM, to increment brightness by 5 (like other DEs/WMs)
+# Disable default brightness keybinds:
+gsettings set org.gnome.shell.keybindings screen-brightness-up "['']"
+gsettings set org.gnome.shell.keybindings screen-brightness-down "['']"
+
+# Rebind targets:
+PATH_UP="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+PATH_DOWN="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+
+# Rebind Brightness Increase:
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$PATH_UP name "Brightness Up 5"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$PATH_UP command "brightnessctl set 5%+"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$PATH_UP binding "XF86MonBrightnessUp"
+
+# Rebind Brightness Decrease:
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$PATH_DOWN name "Brightness Down 5"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$PATH_DOWN command "brightnessctl set 5%-"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$PATH_DOWN binding "XF86MonBrightnessDown"
+
+# Reregister shortcuts:
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['$PATH_UP', '$PATH_DOWN']"
+```
+
+```bash
 # Prevent FlatPak from installing the deprecated Breeze-Dark theme
 sudo flatpak mask org.gtk.Gtk3theme.Breeze-Dark
 
