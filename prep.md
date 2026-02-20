@@ -57,8 +57,8 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fci
 ```
 
 ```bash
-# Install limited GTK tools
-sudo pacman -S dconf-editor gnome-tweaks xdg-desktop-portal-gtk gnome-keyring seahorse gvfs thunar thunar-archive-plugin tumbler ristretto
+# Install GNOME and other GTK tools
+sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager dconf-editor seahorse xdg-desktop-portal-gtk
 # Also install Hyprland and relevant tools
 sudo pacman -S hyprland hypridle hyprlock hyprpicker hyprland-protocols wl-clipboard xclip xsel wtype xdotool rofi rofi-emoji waybar swaync swayosd qt5ct qt6ct swww junction wlogout network-manager-applet blueman grimblast-git xdg-desktop-portal-hyprland xorg-xeyes xorg-xev
 paru -S poweralertd xwaylandvideobridge
