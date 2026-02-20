@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+sleep 1
+# Grab necessary environment variables
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+# Kill existing portal services
+systemctl --user stop xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-kde xdg-desktop-portal-gtk 2>/dev/null
+# Restart portal services
+if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
+    /usr/lib/xdg-desktop-portal-gnome
+    /usr/lib/xdg-desktop-portal-gtk    
+elif [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+    /usr/lib/xdg-desktop-portal-kde 
+elif [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+    /usr/lib/xdg-desktop-portal-hyprland
+    /usr/lib/xdg-desktop-portal-gtk 
+fi
+systemctl --user start xdg-desktop-portal

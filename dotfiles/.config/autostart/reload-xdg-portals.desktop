@@ -1,0 +1,17 @@
+[Desktop Entry]
+Comment[en_CA]=
+Comment=
+Exec=/home/indigo/.local/bin/reload-xdg-portals
+GenericName[en_CA]=
+GenericName=
+MimeType=
+Name[en_CA]=Reload XDG Portals
+Name=Reload XDG Portals
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
