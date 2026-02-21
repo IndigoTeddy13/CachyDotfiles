@@ -1,5 +1,5 @@
 configuration {
-    modi: "window,favorites:~/.config/rofi/rofi-favorites.sh,drun,run";
+    modi: "window,favorites:~/.local/bin/rofi-favorites,drun,run";
     show: "favorites";
     icon-theme: "breeze-dark";
     disable-history: true;
