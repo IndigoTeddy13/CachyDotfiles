@@ -10,7 +10,7 @@ output_path='~/.config/hypr/hyprlock.conf'
 
 [templates.rofi]
 input_path='~/.config/matugen/rofi-colors.rasi'
-output_path='~/.cache/rofi-colors.rasi'
+output_path='~/.config/rofi/rofi-colors.rasi'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/gtk-colors.css'

@@ -10,80 +10,70 @@ SEARCH_DIRS=(
 )
 
 # Retrieve list of favorites from KDE Plasma
-get_favorites() {
-    launcher_paths=$(awk -F= '/^\[Containments\]\[[0-9]+\]\[Applets\]\[[0-9]+\]\[Configuration\]\[General\]/ { in_section=1 } in_section && /^launchers=/ { print $2; exit }' "$CONFIG" | tr ',' '\n' | sed 's|^file://||')
+raw_launcher_paths=$(awk -F= '/^\[Containments\]\[[0-9]+\]\[Applets\]\[[0-9]+\]\[Configuration\]\[General\]/ { in_section=1 } in_section && /^launchers=/ { print $2; exit }' "$CONFIG")
 
-    echo "$launcher_paths" | while read -r path; do
-        if [[ "$path" == applications:* ]]; then
-            # Strip 'applications:' prefix
-            file="${path#applications:}"
-            found=""
-            for dir in "${SEARCH_DIRS[@]}"; do
-                if [[ -f "$dir/$file" ]]; then
-                    found="$dir/$file"
-                    break
-                fi
-            done
-            if [[ -n "$found" ]]; then
-                echo "$found"
-            else
-                echo "Warning: Desktop file $file not found in known directories." >&2
+# Strip out the `file://` prefix, and store paths in a Bash array
+# IFS (Internal Field Separator)
+IFS=',' read -ra paths <<< "${raw_launcher_paths//file:\/\//}"
+
+# Aggregate the proper paths of the favrote apps into a Bash array
+favorites=()
+for path in "${paths[@]}"; do
+    if [[ "$path" == applications:* ]]; then
+        file="${path#applications:}"
+        # Check through each search dir until resolution
+        for dir in "${SEARCH_DIRS[@]}"; do
+            if [[ -f "$dir/$file" ]]; then
+            # If full filepath resolves, append to proper list
+                favorites+=("$dir/$file")
+                break
             fi
-        else
-            # Already a full path
-            echo "$path"
-        fi
-    done
-}
-
-# Store as an array
-favorites=( $(get_favorites) )
+        done
+    else
+        [[ -f "$path" ]] && favorites+=("$path")
+    fi
+done
+# Total count, pad size
 total=${#favorites[@]}
 pad=${#total} # Number of digits
-i=0
 
-# Function to get index of element in array
-get_index() {
-    local item="$1"
-    local i=0
+# On app selection in Rofi
+if [ $# -eq 1 ]; then
+    # Extract the name by removing the index prefix (ie:"01/10 | ")
+    input_name="${1#* | }"
+
     for fav in "${favorites[@]}"; do
-        if [[ "$fav" == "$item" ]]; then
-            echo "$i"
-            return
+        # Extract using read and IFS
+        while IFS='=' read -r key value; do
+            [[ "$key" == "Name" ]] && name="$value"
+            [[ "$key" == "Exec" ]] && exec_cmd="$value"
+            [[ "$name" && "$exec_cmd" ]] && break
+        done < "$fav"
+
+        if [[ "$name" == "$input_name" ]]; then
+            # gtk-launch launches the desktop file directly
+            gtk-launch "$(basename "$fav")" >/dev/null 2>&1 &
+            exit 0
         fi
-        ((i++))
+        unset name exec_cmd
     done
-    echo "-1"
-}
+    exit 1
+fi
 
-# Loop over array
-printf "%s\n" "${favorites[@]}" | while read -r favorite ; do
-    # Retrieve the current favorite app
-    idx=$(get_index "$favorite")
-    ((idx++))
-    padded_idx=$(printf "%0${pad}d" "$idx")
-    padded_total=$(printf "%0${pad}d" "$total")
+# Rofi List Display Generation
+# Iterate directly over the favorites list
+i=1
+for fav in "${favorites[@]}"; do
+    # Extract Name and Icon using a fast internal while loop instead of 3x awk
+    unset name icon
+    while IFS='=' read -r key value; do
+        case "$key" in
+            Name) name="$value" ;;
+            Icon) icon="$value" ;;
+        esac
+        [[ -n "$name" && -n "$icon" ]] && break
+    done < "$fav"
 
-    # Extract relevant information from the .desktop files
-    if [ -f "$favorite" ]; then
-        name=$(awk -F "=" '/^Name=/ {print $2; exit}' "$favorite")
-        command=$(awk -F "=" '/^Exec=/ {print $2; exit}' "$favorite")
-        icon=$(awk -F "=" '/^Icon=/ {print $2; exit}' "$favorite")
-    else
-        continue
-    fi
-
-    if [ $# -eq 0 ]; then
-        echo -en "${padded_idx}/${padded_total} | ${name}\0icon\x1f${icon}\n"
-    fi
-
-    if [ $# -eq 1 ]; then
-        input="$1"
-        clean_input=$(echo "$input" | sed 's/^[0-9]\+\/[0-9]\+ | //')
-        if [ "$clean_input" == "$name" ]; then
-            # notify-send "$favorite" # for debugging
-            gtk-launch "$(basename "$favorite")" >/dev/null 2>&1 &
-            exit
-        fi
-    fi
+    printf "%0${pad}d/%0${pad}d | %s\0icon\x1f%s\n" "$i" "$total" "$name" "$icon"
+    ((i++))
 done
