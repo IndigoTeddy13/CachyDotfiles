@@ -40,7 +40,7 @@ systemctl --user enable --now arch-update-tray.service
 ```bash
 # Install programming languages (Python and make are already installed)
 # nodejs-lts-jod is NodeJS 22.x
-sudo pacman -S rust lua go jdk-openjdk jdk21-openjdk nodejs-lts-jod npm deno
+sudo pacman -S rust lua go gopls staticcheck jdk-openjdk jdk21-openjdk nodejs-lts-jod npm deno
 ```
 
 ```bash
@@ -50,7 +50,7 @@ sudo pacman -S asusctl supergfxctl
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow nerd-fonts otf-font-awesome kitty python-pygments matugen waydroid copyq firefoxpwa
+sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow nerd-fonts otf-font-awesome kitty python-pygments matugen vscodium waydroid copyq firefoxpwa
 paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n blesh
 # If installing WezTerm, use `paru -S wezterm-nightly-bin` to work with Hyprland
 # Had personal issues with sudo not working on Ghostty on my setup, but use `sudo pacman -S ghostty` to see whether you have any issues
@@ -76,8 +76,6 @@ paru -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers
 # Install LazyGit, LazyDocker, air, gup, etc
 go install github.com/air-verse/air@latest \
 && go install github.com/nao1215/gup@latest \
-&& go install honnef.co/go/tools/cmd/staticcheck@latest \
-&& go install golang.org/x/tools/gopls@latest \
 && pipx install waypaper "pywal16[colorthief,colorz,haishoku]"
 
 # Install LiveSplit.exe via Bottles (relevant tutorial: https://youtu.be/4H6MF3baAcw)
