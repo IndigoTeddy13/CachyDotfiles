@@ -2,13 +2,11 @@ be.alexandervanhee.gradia
 com.brave.Browser
 com.discordapp.Discord
 com.github.tchx84.Flatseal
-com.jetbrains.IntelliJ-IDEA-Ultimate
 com.obsproject.Studio
 com.usebottles.bottles
 io.github.kolunmi.Bazaar
 net.ankiweb.Anki
 org.audacityteam.Audacity
-org.inkscape.Inkscape
 org.kde.kdenlive
 org.kde.krita
 org.libreoffice.LibreOffice
