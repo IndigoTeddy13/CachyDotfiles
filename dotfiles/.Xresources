@@ -1,2 +1,4 @@
 Xft.dpi: 120
 Xcursor.size: 24
+Xft.autohint: 0
+Xft.hintstyle: hintslight

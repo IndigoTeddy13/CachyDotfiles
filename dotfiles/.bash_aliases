@@ -61,17 +61,17 @@ rmconda() {
 
 # Function to update relevant packages
 update() {
-	arch-update
+    arch-update
     flatpak update
-	gup update
-	cargo install-update --all
-	pipx upgrade-all
-	update_flatpak_list
+    gup update
+    cargo install-update --all
+    pipx upgrade-all
+    update_flatpak_list
 }
 # Aliases
 alias python="python3"
 alias activenv="source .venv/bin/activate"
-alias rmvenv="sudo rm -rf .venv"
+alias rmvenv="rmdir -rf .venv"
 alias condashell="source /opt/miniconda3/etc/profile.d/conda.sh && conda activate"
 alias deacticonda="conda deactivate"
 alias pip="pip3"
