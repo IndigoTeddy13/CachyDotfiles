@@ -71,7 +71,7 @@ update() {
 # Aliases
 alias python="python3"
 alias activenv="source .venv/bin/activate"
-alias rmvenv="rmdir -rf .venv"
+alias rmvenv="rm -rf .venv"
 alias condashell="source /opt/miniconda3/etc/profile.d/conda.sh && conda activate"
 alias deacticonda="conda deactivate"
 alias pip="pip3"

@@ -44,13 +44,19 @@ sudo pacman -S rust lua go gopls staticcheck jdk-openjdk jdk21-openjdk nodejs-lt
 ```
 
 ```bash
+# Install tooling for Linux KVM
+sudo pacman -S qemu-full virt-manager swtpm
+# Tutorial for setting up https://wiki.cachyos.org/virtualization/qemu_and_vmm_setup/)
+```
+
+```bash
 # Useful for ASUS laptops with NVIDIA dGPUs
 sudo pacman -S asusctl supergfxctl
 ```
 
 ```bash
 # Install other tools and Nerd Fonts
-sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow nerd-fonts otf-font-awesome kitty python-pygments matugen waydroid copyq firefoxpwa
+sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow nerd-fonts otf-font-awesome kitty python-pygments matugen waydroid copyq firefoxpwa
 paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n blesh vscodium-bin
 # If installing WezTerm, use `paru -S wezterm-nightly-bin` to work with Hyprland
 # Had personal issues with sudo not working on Ghostty on my setup, but use `sudo pacman -S ghostty` to see whether you have any issues

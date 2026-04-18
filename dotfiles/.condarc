@@ -4,8 +4,6 @@ auto_activate_base: false
 create_default_packages:
     - pip
     - ipython
-    - numpy
-    - scipy
     - libgcc-ng
     - mpich
     - rust
