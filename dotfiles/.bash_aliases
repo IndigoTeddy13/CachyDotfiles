@@ -76,6 +76,7 @@ alias condashell="source /opt/miniconda3/etc/profile.d/conda.sh && conda activat
 alias deacticonda="conda deactivate"
 alias pip="pip3"
 alias icat="kitty +kitten icat"
+alias ssh="kitty +kitten ssh"
 
 
 
