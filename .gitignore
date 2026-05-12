@@ -1,5 +1,6 @@
 # Custom ignores
 monitors.conf
+monitors.lua
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
