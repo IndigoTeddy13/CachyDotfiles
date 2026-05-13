@@ -7,7 +7,7 @@
 
 -- You can (and should!!) split this configuration into multiple files
 -- Create your files separately and then require them like this:
--- require("myColors")
+local colors = require("hyprcolors")
 require("environment")
 require("monitors")
 
@@ -99,7 +99,7 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 }, -- $on_primary_fixed_variant, $tertiary_fixed_dim
+            active_border   = { colors = {colors.on_primary_fixed_variant, colors.tertiary_fixed_dim}, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
 
