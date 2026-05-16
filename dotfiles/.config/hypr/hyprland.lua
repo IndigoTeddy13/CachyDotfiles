@@ -391,20 +391,30 @@ hl.window_rule({
 
 -- Float dialog and splash windows
 hl.window_rule({
-    name = "float-dialog-and-splash",
-    match = { class = "^(dialog)$", class = "^(splash)$" },
+    name = "float-dialog",
+    match = { class = "^(dialog)$" },
     float = true,
 })
--- hl.window_rule({
---     name = "float-splash",
---     match = { class = "^(splash)$" },
---     float = true,
--- })
+hl.window_rule({
+    name = "float-splash",
+    match = { class = "^(splash)$" },
+    float = true,
+})
+
 -- Float the junction app selector
 hl.window_rule({
     name = "junction-fixes",
-    match = { title = Junction },
+    match = { title = "Junction" },
     float = true,
+})
+
+-- Float xeyes junction app selector
+hl.window_rule({
+    name = "xeyes-fixes",
+    match = { class = "XEyes" },
+    float = true,
+    center = true,
+    pin = true,
 })
 
 -- Window rules for picture-in-picture (case insensitive to capture both Firefox and Chromium browsers)
@@ -414,7 +424,6 @@ hl.window_rule({
     float = true,
     center = true,
     pin = true,
-    size = {480, 270},
 })
 
 -- Window rules for xwaylandvideobridge

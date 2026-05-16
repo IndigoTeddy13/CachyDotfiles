@@ -5,7 +5,7 @@ GenericName=Web Browser
 Comment=Access the Internet
 StartupNotify=true
 StartupWMClass=helium-incognito
-Exec=helium-browser --incognito
+Exec=helium-browser --profile-directory="Default" --incognito
 Terminal=false
 Icon=helium-browser
 Type=Application
