@@ -55,11 +55,17 @@ sudo pacman -S asusctl supergfxctl
 ```
 
 ```bash
-# Install other tools and Nerd Fonts
-sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow nerd-fonts otf-font-awesome kitty python-pygments matugen waydroid copyq firefoxpwa
-paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n blesh vscodium-bin
+# Install other dev tools
+sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow kitty python-pygments matugen waydroid copyq firefoxpwa helium-browser-bin
+paru -S blesh vscodium-bin
 # If installing WezTerm, use `paru -S wezterm-nightly-bin` to work with Hyprland
 # Had personal issues with sudo not working on Ghostty on my setup, but use `sudo pacman -S ghostty` to see whether you have any issues
+```
+
+```bash
+# Install Nerd Fonts and fcitx5 
+sudo pacman -S nerd-fonts otf-font-awesome fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n
+paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 ```
 
 ```bash
