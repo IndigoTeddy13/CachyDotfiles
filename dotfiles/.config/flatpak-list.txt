@@ -1,5 +1,4 @@
 be.alexandervanhee.gradia
-com.brave.Browser
 com.discordapp.Discord
 com.github.tchx84.Flatseal
 com.obsproject.Studio
