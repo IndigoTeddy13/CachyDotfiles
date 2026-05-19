@@ -56,8 +56,8 @@ sudo pacman -S asusctl supergfxctl
 
 ```bash
 # Install other dev tools
-sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow kitty python-pygments matugen waydroid copyq firefoxpwa helium-browser-bin
-paru -S blesh vscodium-bin
+sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow kitty python-pygments matugen code waydroid copyq helium-browser-bin
+paru -S blesh
 # If installing WezTerm, use `paru -S wezterm-nightly-bin` to work with Hyprland
 # Had personal issues with sudo not working on Ghostty on my setup, but use `sudo pacman -S ghostty` to see whether you have any issues
 ```
@@ -134,9 +134,7 @@ flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
 # Remember to set $XDG_SESSION_TYPE=x11 for Electron-based FlatPaks that don't have proper screenshare on Wayland (Discord, Slack, etc)
 # Likewise, set $XDG_SESSION_TYPE=x11 and $QT_QPA_PLATFORM=xcb for OBS Studio to regain X11 popup functionality under XWayland
 
-# Force VS Codium to use Breeze-Dark GTK theme for permissions prompt
-flatpak override --user --env=GTK_THEME=Breeze:dark com.vscodium.codium
-# Edit argv.json (Preferences: Configure Runtime Arguments) to include:
+# Edit argv.json for VS Code/Codium (Preferences: Configure Runtime Arguments) to include:
 {"password-store":"gnome-libsecret"}
 
 # Give Bottles access to specific directories
