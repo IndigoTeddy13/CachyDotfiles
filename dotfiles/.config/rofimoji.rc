@@ -1,0 +1,5 @@
+action = type
+files = ["emojis_smileys_emotion", "emojis_people_body", "emojis_animals_nature", "emojis_food_drink", "emojis_travel_places", "emojis_activities", "emojis_objects", "emojis_symbols", "emojis_flags"]
+skin-tone = neutral
+max-recent = 0
+no-frecency = True

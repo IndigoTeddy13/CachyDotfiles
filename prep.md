@@ -73,7 +73,7 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 sudo pacman -S gnome gdm-settings gnome-tweaks gnome-firmware gnome-shell-extensions extension-manager dconf-editor gnome-screenshot seahorse xdg-desktop-portal-gtk
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprlock hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
-sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofi-emoji waybar qt5ct qt6ct awww junction network-manager-applet blueman grimblast-git
+sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji waybar qt5ct qt6ct awww junction network-manager-applet blueman grimblast-git
 paru -S poweralertd #xwaylandvideobridge
 # Also install X11/XWayland tools
 sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes

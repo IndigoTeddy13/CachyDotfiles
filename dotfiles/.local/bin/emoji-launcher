@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rofimoji --keybinding-copy "Ctrl+c" \
+     --selector-args="-theme-str 'configuration { kb-secondary-copy: \"\"; }'"

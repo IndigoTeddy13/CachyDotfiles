@@ -19,7 +19,7 @@ require("monitors")
 -- Set programs that you use
 local terminal = "kitty"
 -- local fileManager = "dolphin"
-local emojiSelector = "~/.local/bin/rofi-emojis"
+local emojiSelector = "~/.local/bin/emoji-launcher"
 local menu = "rofi -show favorites"
 
 -------------------
