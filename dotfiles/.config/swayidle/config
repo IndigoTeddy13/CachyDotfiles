@@ -1,17 +1,17 @@
 # Lock command
-lock "pidof hyprlock || hyprlock"
+lock "~/.local/bin/sys-lock"
 
 # Ensure the screen is locked before suspending
-before-sleep "loginctl lock-session"
+before-sleep "~/.local/bin/sys-lock"
 
 # Listener 1: Dim backlight
 timeout 180 "brightnessctl -s set 5" resume "brightnessctl -r"
 
 # Listener 2: Lock session
-timeout 240 "loginctl lock-session"
+timeout 240 "~/.local/bin/sys-lock"
 
 # Listener 3: Turn off displays
 timeout 300 "hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'" resume "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"
 
 # Listener 4: Suspend (360s)
-timeout 360 "/home/indigo/.local/bin/safe-suspend"
+timeout 360 "~/.local/bin/sys-suspend"

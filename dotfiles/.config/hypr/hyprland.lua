@@ -57,10 +57,10 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("~/.local/bin/call-waypaper")
     -- Settings to prevent systemd from skipping the XF86PowerOff keybind:
-    hl.exec_cmd("systemd-inhibit --who='Hyprland config' --why='wlogout keybind' --what=handle-power-key --mode=block sleep infinity & echo $! > /tmp/.hyprland-systemd-inhibit")
+    hl.exec_cmd("systemd-inhibit --who='Hyprland config' --why='wlogout keybind' --what=handle-power-key:handle-sleep-key --mode=block sleep infinity & echo $! > /tmp/.systemd-inhibit")
     hl.on(
         "hyprland.shutdown", function()
-            hl.exec_cmd("~/.config/hypr/kill-inhibitor.sh")
+            hl.exec_cmd("~/.local/bin/kill-inhibitor")
         end
     )
 end)
@@ -285,13 +285,13 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
-hl.bind("XF86Sleep", hl.dsp.exec_cmd("loginctl suspend"))
-hl.bind("XF86PowerOff", hl.dsp.exec_cmd("pidof wlogout || wlogout"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("~/.local/bin/sys-lock"))
 
--- Sleep on screen close, force lock on screen open
-hl.bind("switch:on:Lid", hl.dsp.exec_cmd("loginctl suspend"),       { locked = true })
-hl.bind("switch:off:Lid", hl.dsp.exec_cmd("loginctl lock-session"), { locked = true })
+-- Sleep on screen close or sleep button press, force lock on screen open
+hl.bind("XF86PowerOff", hl.dsp.exec_cmd("pidof wlogout || wlogout"),  { release = true })
+hl.bind("XF86Sleep", hl.dsp.exec_cmd("~/.local/bin/sys-suspend"),     { release = true, locked = true })
+hl.bind("switch:on:Lid", hl.dsp.exec_cmd("~/.local/bin/sys-suspend"), { locked = true })
+hl.bind("switch:off:Lid", hl.dsp.exec_cmd("~/.local/bin/sys-lock"),   { locked = true })
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

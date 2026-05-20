@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Lock the screen
+# (change command if changing lockscreen)
+pidof hyprlock || hyprlock

@@ -1,18 +1,18 @@
 {
     "label" : "lock",
-    "action" : "loginctl lock-session",
+    "action" : "~/.local/bin/sys-lock",
     "text" : "Lock",
     "keybind" : "l"
 }
 {
     "label" : "hibernate",
-    "action" : "loginctl hibernate",
+    "action" : "~/.local/bin/sys-hibernate",
     "text" : "Hibernate",
     "keybind" : "h"
 }
 {
     "label" : "logout",
-    "action" : "loginctl terminate-user $USER",
+    "action" : "~/.local/bin/sys-exit",
     "text" : "Logout",
     "keybind" : "e"
 }
@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "~/.local/bin/safe-suspend",
+    "action" : "~/.local/bin/sys-suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }

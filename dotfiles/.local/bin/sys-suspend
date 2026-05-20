@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Lock beforehand
+"$HOME/.local/bin/sys-lock" &
+# Delay until the screen locks
+while ! pgrep -x "hyprlock" >/dev/null; do
+    sleep 0.1
+done
+sleep 1 # Additional sleep
+# Suspend
+systemctl suspend

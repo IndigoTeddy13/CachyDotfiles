@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Exit commands for current WM
+# Depends on which WM is active
+if pgrep -x "Hyprland" >/dev/null; then
+    hyprctl dispatch 'hl.dsp.exit()'
+# elif pgrep -x "niri" >/dev/null; then
+#     niri msg action quit
+else
+    notify-send "No supported WM running"
+    echo "No supported WM running" && exit 1
+fi
