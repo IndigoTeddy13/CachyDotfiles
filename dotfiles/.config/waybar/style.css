@@ -92,6 +92,7 @@ button:hover {
 #custom-media,
 #tray,
 #mode,
+#custom-audio_idle_inhibitor,
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
@@ -224,6 +225,17 @@ label:focus {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
+}
+
+#custom-audio_idle_inhibitor {
+    background-color: @color13;
+}
+
+#custom-audio_idle_inhibitor.output,
+#custom-audio_idle_inhibitor.input,
+#custom-audio_idle_inhibitor.output-input {
+    background-color: #ecf0f1;
+    color: @color5;
 }
 
 #idle_inhibitor {

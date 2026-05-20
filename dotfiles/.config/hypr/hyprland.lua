@@ -44,7 +44,6 @@ hl.on("hyprland.start", function ()
     -- XWayland setup:
     hl.exec_cmd("xrdb -merge ~/.Xresources")
     hl.exec_cmd("xsettingsd")
-    -- hl.exec_cmd("xwaylandvideobridge")
     -- Systray applets:
     hl.exec_cmd("arch-update --tray")
     hl.exec_cmd("nm-applet")
@@ -424,18 +423,6 @@ hl.window_rule({
     float = true,
     center = true,
     pin = true,
-})
-
--- Window rules for xwaylandvideobridge
-hl.window_rule({
-    name = "xwayland-video-bridge-fixes",
-    match = { class = "xwaylandvideobridge"},
-    no_initial_focus = true,
-    no_focus = true,
-    no_anim = true,
-    no_blur = true,
-    max_size = {1, 1},
-    opacity = 0.0,
 })
 
 -- Window rules for copyq

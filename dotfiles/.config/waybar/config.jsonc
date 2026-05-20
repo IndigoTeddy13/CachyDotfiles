@@ -11,7 +11,8 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/window",
+        "custom/audio_idle_inhibitor"
     ],
     "modules-right": [
         // "mpd",
@@ -95,6 +96,17 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+    "custom/audio_idle_inhibitor": {
+		"format": "{icon}",
+		"exec": "/usr/bin/sway-audio-idle-inhibit --dry-print-both-waybar",
+		"return-type": "json",
+		"format-icons": {
+			"output": "",
+			"input": "",
+			"output-input": "  ",
+			"none": "󰟶"
+		}
+	},
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {

@@ -74,7 +74,7 @@ sudo pacman -S gnome gdm-settings gnome-tweaks gnome-firmware gnome-shell-extens
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprlock hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
 sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji waybar qt5ct qt6ct awww junction network-manager-applet blueman grimblast-git
-paru -S poweralertd #xwaylandvideobridge
+paru -S poweralertd sway-audio-idle-inhibit-git
 # Also install X11/XWayland tools
 sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes
 ```
