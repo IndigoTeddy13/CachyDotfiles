@@ -57,7 +57,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("~/.local/bin/call-waypaper")
     -- Settings to prevent systemd from skipping the XF86PowerOff keybind:
-    hl.exec_cmd("systemd-inhibit --who='Hyprland config' --why='wlogout keybind' --what=handle-power-key:handle-sleep-key --mode=block sleep infinity & echo $! > /tmp/.systemd-inhibit")
+    hl.exec_cmd("systemd-inhibit --who='WM config' --why='wlogout and keybinds' --what=handle-power-key:handle-suspend-key --mode=block sleep infinity & echo $! > /tmp/.systemd-inhibit")
     hl.on(
         "hyprland.shutdown", function()
             hl.exec_cmd("~/.local/bin/kill-inhibitor")

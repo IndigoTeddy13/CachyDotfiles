@@ -1,11 +1,20 @@
 #!/usr/bin/env bash
 
+# Path to preferred locker
+CONF="$HOME/.config/lock-command.conf"
+
+# Extract preferred locker here
+[[ -f "$CONF" ]] && source "$CONF"
+: "${LOCKER:=hyprlock}" # Fallback
+
 # Lock beforehand
 "$HOME/.local/bin/sys-lock" &
+
 # Delay until the screen locks
-while ! pgrep -x "hyprlock" >/dev/null; do
+while ! pgrep -x "$LOCKER" >/dev/null; do
     sleep 0.1
 done
 sleep 1 # Additional sleep
+
 # Suspend
 systemctl suspend

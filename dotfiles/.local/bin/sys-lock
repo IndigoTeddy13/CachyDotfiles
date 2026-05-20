@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# Path to preferred locker
+CONF="$HOME/.config/lock-command.conf"
+
+# Extract preferred locker here
+[[ -f "$CONF" ]] && source "$CONF"
+: "${LOCKER:=hyprlock}" # Fallback
+
 # Lock the screen
 # (change command if changing lockscreen)
-pidof hyprlock || hyprlock
+if ! pgrep -x "$LOCKER" >/dev/null; then
+    "$LOCKER"
+fi
