@@ -81,7 +81,7 @@ sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes
 
 ```bash
 # Cool non-developer tools (not including FlatPaks)
-sudo pacman -S ardour cava yt-dlp
+sudo pacman -S cava yt-dlp
 
 # Wallpaper pakcages
 paru -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers

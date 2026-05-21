@@ -1,5 +1,17 @@
 verbosity = "WARN"
 media_minimum_duration = 5
 idle_inhibitor = "wayland"
-sink_whitelist = [ ]
-node_blacklist = [ ]
+
+# Blacklist null
+[[node_blacklist]]
+name = ".*[Nn]ull.*"
+
+# Blacklist virtual sinks
+[[node_blacklist]]
+name = "Midi-Bridge"
+
+[[node_blacklist]]
+name = "bluez_midi.*"
+
+[[node_blacklist]]
+name = "v4l2_input.*"
