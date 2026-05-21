@@ -50,6 +50,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("blueman-applet")
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd("copyq --start-server")
+    hl.exec_cmd("~/.cargo/bin/wayland-pipewire-idle-inhibit")
     hl.exec_cmd("waybar")
     -- hl.exec_cmd("hyprpanel")
     -- Wallpaper management:

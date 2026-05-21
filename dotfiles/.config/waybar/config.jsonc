@@ -98,7 +98,8 @@
     },
     "custom/audio_idle_inhibitor": {
 		"format": "{icon}",
-		"exec": "/usr/bin/sway-audio-idle-inhibit --dry-print-both-waybar",
+        "interval": 2,
+		"exec": "/home/indigo/.local/bin/poll-idle-inhibitor",
 		"return-type": "json",
 		"format-icons": {
 			"output": "",
