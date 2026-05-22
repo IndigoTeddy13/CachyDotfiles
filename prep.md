@@ -73,8 +73,8 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 sudo pacman -S gnome gdm-settings gnome-tweaks gnome-firmware gnome-shell-extensions extension-manager dconf-editor gnome-screenshot seahorse xdg-desktop-portal-gtk
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprlock hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
-sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji waybar qt5ct qt6ct awww junction network-manager-applet blueman grimblast-git
-paru -S poweralertd
+sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji waybar qt5ct qt6ct awww network-manager-applet blueman grimblast-git
+paru -S poweralertd sway-audio-idle-inhibit-git
 # Also install X11/XWayland tools
 sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes
 ```
@@ -91,7 +91,6 @@ paru -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers
 # Install LazyGit, LazyDocker, air, gup, etc
 go install github.com/air-verse/air@latest \
 && go install github.com/nao1215/gup@latest \
-&& cargo install wayland-pipewire-idle-inhibit \
 && pipx install waypaper "pywal16[colorthief,colorz,haishoku]"
 
 # Install LiveSplit.exe via Bottles (relevant tutorial: https://youtu.be/4H6MF3baAcw)

@@ -6,6 +6,7 @@ com.slack.Slack
 com.usebottles.bottles
 io.github.kolunmi.Bazaar
 net.ankiweb.Anki
+net.pixieditor.PixiEditor
 org.audacityteam.Audacity
 org.kde.kdenlive
 org.kde.krita

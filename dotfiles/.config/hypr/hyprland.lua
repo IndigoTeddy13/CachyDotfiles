@@ -39,6 +39,7 @@ hl.on("hyprland.start", function ()
     -- Essential utilities:
     hl.exec_cmd("~/.local/bin/reload-xdg-portals")
     hl.exec_cmd("swayidle -w")
+    hl.exec_cmd("sway-audio-idle-inhibit")
     hl.exec_cmd("swayosd-server")
     hl.exec_cmd("poweralertd")
     -- XWayland setup:
@@ -50,7 +51,6 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("blueman-applet")
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd("copyq --start-server")
-    hl.exec_cmd("~/.cargo/bin/wayland-pipewire-idle-inhibit")
     hl.exec_cmd("waybar")
     -- hl.exec_cmd("hyprpanel")
     -- Wallpaper management:
@@ -401,12 +401,12 @@ hl.window_rule({
     float = true,
 })
 
--- Float the junction app selector
-hl.window_rule({
-    name = "junction-fixes",
-    match = { title = "Junction" },
-    float = true,
-})
+-- -- Float the junction app selector
+-- hl.window_rule({
+--     name = "junction-fixes",
+--     match = { title = "Junction" },
+--     float = true,
+-- })
 
 -- Float xeyes junction app selector
 hl.window_rule({
