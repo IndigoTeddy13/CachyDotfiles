@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+# When this script is terminated, kill background child jobs
+cleanup() {
+    pkill -P "$$" 2>/dev/null
+    exit 0
+}
+trap cleanup TERM INT EXIT
+
+# Main process:
+
+BATTERY_PATH="/org/freedesktop/UPower/devices/battery_BAT0"
+
+# Tracker variables to prevent duplicate stacking
+LAST_STATE=""
+LAST_PERCENT=""
+
+# Feed live upower monitor stream directly into loop
+while read -r line; do
+    
+    INFO=$(upower -i "$BATTERY_PATH")
+    PERCENT=$(echo "$INFO" | grep "percentage:" | awk '{print $2}' | tr -d '%')
+    CURRENT_STATE=$(echo "$INFO" | grep "state:" | awk '{print $2}')
+    
+    # If parsing failed or data is blank, skip this iteration
+    [ -z "$PERCENT" ] || [ -z "$CURRENT_STATE" ] && continue
+
+    # 1. Handle Plug/Unplug State Shifts
+    if [ "$CURRENT_STATE" != "$LAST_STATE" ] && [ -n "$LAST_STATE" ]; then
+        if [ "$CURRENT_STATE" = "charging" ]; then
+            notify-send "Power Connected" "Battery is charging (${PERCENT}%)" -u low -a "UPower"
+        elif [ "$CURRENT_STATE" = "fully-charged" ] && [ "$LAST_STATE" = "discharging" ]; then
+            # Catches plugging in when battery is already full
+            notify-send "Power Connected" "Running on AC power (Battery Full)" -u low -a "UPower"
+        elif [ "$CURRENT_STATE" = "discharging" ]; then
+            notify-send "Power Disconnected" "Running on battery (${PERCENT}%)" -u normal -a "UPower"
+        fi
+    fi
+    
+    # 2. Handle Capacity Thresholds (once per changed percentage)
+    if [ "$PERCENT" != "$LAST_PERCENT" ]; then
+        if [ "$CURRENT_STATE" = "discharging" ]; then
+            if [ "$PERCENT" -eq 5 ]; then
+                notify-send "BATTERY CRITICAL" "System is dangerously low at 5%!" -u critical -a "UPower"
+            elif [ "$PERCENT" -eq 15 ]; then
+                notify-send "Battery Low" "Remaining capacity: 15%" -u normal -a "UPower"
+            fi
+        elif [ "$CURRENT_STATE" = "fully-charged" ] && [ "$LAST_STATE" != "fully-charged" ]; then
+            # Only alerts once when the battery rolls over to full
+            notify-send "Battery Fully Charged" "You can safely unplug the charger." -u low -a "UPower"
+        fi
+    fi
+
+    # Update state history for next event loop
+    LAST_STATE="$CURRENT_STATE"
+    LAST_PERCENT="$PERCENT"
+
+done < <(upower --monitor)

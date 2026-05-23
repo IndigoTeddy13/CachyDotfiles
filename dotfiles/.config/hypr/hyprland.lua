@@ -41,7 +41,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("swayidle -w")
     hl.exec_cmd("sway-audio-idle-inhibit")
     hl.exec_cmd("swayosd-server")
-    hl.exec_cmd("poweralertd")
+    hl.exec_cmd("~/.local/bin/poll-upower")
     -- XWayland setup:
     hl.exec_cmd("xrdb -merge ~/.Xresources")
     hl.exec_cmd("xsettingsd")

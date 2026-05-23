@@ -29,7 +29,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak cronie sbctl brightnessctl cachy-update cuda sniffnet apparmor
+sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak sbctl brightnessctl cachy-update cuda sniffnet apparmor
 paru -S miniconda3
 # For cachy-update systray (do once)
 arch-update --tray --enable
@@ -40,7 +40,7 @@ systemctl --user enable --now arch-update-tray.service
 ```bash
 # Install programming languages (Python and make are already installed)
 # nodejs-lts-jod is NodeJS 22.x
-sudo pacman -S rust lua go gopls staticcheck jdk-openjdk jdk21-openjdk nodejs-lts-jod npm deno
+sudo pacman -S rust cargo-update lua go gopls staticcheck jdk-openjdk jdk21-openjdk nodejs-lts-jod npm deno
 ```
 
 ```bash
@@ -50,13 +50,13 @@ sudo pacman -S qemu-full virt-manager swtpm
 ```
 
 ```bash
-# Useful for ASUS laptops with NVIDIA dGPUs
-sudo pacman -S asusctl supergfxctl
+# Useful for ASUS laptops
+sudo pacman -S rog-control-center
 ```
 
 ```bash
 # Install other dev tools
-sudo pacman -S libsixel docker docker-compose podman cmake neovim putty cargo-update zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow kitty python-pygments matugen code waydroid copyq helium-browser-bin
+sudo pacman -S libsixel docker docker-compose podman cmake neovim putty zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow kitty python-pygments matugen code waydroid copyq helium-browser-bin
 paru -S blesh
 # If installing WezTerm, use `paru -S wezterm-nightly-bin` to work with Hyprland
 # Had personal issues with sudo not working on Ghostty on my setup, but use `sudo pacman -S ghostty` to see whether you have any issues
@@ -74,7 +74,7 @@ sudo pacman -S gnome gdm-settings gnome-tweaks gnome-firmware gnome-shell-extens
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprlock hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
 sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji waybar qt5ct qt6ct awww network-manager-applet blueman grimblast-git
-paru -S poweralertd sway-audio-idle-inhibit-git
+paru -S sway-audio-idle-inhibit-git
 # Also install X11/XWayland tools
 sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes
 ```
