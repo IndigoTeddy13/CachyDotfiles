@@ -10,5 +10,5 @@ CONF="$HOME/.config/lock-command.conf"
 # Lock the screen
 # (change command if changing lockscreen)
 if ! pgrep -x "$LOCKER" >/dev/null; then
-    "$LOCKER"
+    "$LOCKER" >/dev/null 2>&1 & disown
 fi

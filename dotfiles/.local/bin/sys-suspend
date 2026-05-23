@@ -8,7 +8,7 @@ CONF="$HOME/.config/lock-command.conf"
 : "${LOCKER:=hyprlock}" # Fallback
 
 # Lock beforehand
-"$HOME/.local/bin/sys-lock" &
+"$HOME/.local/bin/sys-lock"
 
 # Delay until the screen locks
 while ! pgrep -x "$LOCKER" >/dev/null; do
