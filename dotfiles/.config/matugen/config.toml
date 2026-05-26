@@ -1,4 +1,13 @@
 [config]
+mode = "dark"
+type = "scheme-vibrant"
+prefer = "saturation"
+contrast = 0.25
+base16_backend = "wal"
+
+[templates.sequences]
+input_path="~/.config/matugen/sequences.raw"
+output_path="~/.cache/sequences.raw"
 
 [templates.hyprcolors]
 input_path="~/.config/matugen/hyprcolors.lua"
@@ -11,7 +20,6 @@ output_path="~/.config/hypr/hyprlock.conf"
 [templates.wlogout]
 input_path="~/.config/matugen/colors.css"
 output_path="~/.config/wlogout/colors.css"
-post_hook = "~/.config/matugen/gen_sequences.py"
 
 [templates.waybar]
 input_path="~/.config/matugen/colors.css"

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Ensure field is not empty
+if [ -z "$1" ]; then
+    echo "Usage: change_theme /path/to/wallpaper.png"
+    exit 1
+fi
+
+# Use the first field as the wallpaper path
+WALLPAPER="$1"
+
+# Run matugen to generate colors for all template configurations
+matugen image "$WALLPAPER" -d
+
+# Compile and display terminal sequences
+python3 "$HOME/.local/bin/gen_sequences.py"
