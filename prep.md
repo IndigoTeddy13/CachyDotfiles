@@ -73,7 +73,7 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager seahorse xdg-desktop-portal-gtk
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprlock hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
-sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji ironbar qt5ct qt6ct awww network-manager-applet blueman brightnessctl playerctl grimblast-git
+sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji nwg-panel qt5ct qt6ct awww network-manager-applet blueman brightnessctl playerctl grimblast-git
 paru -S sway-audio-idle-inhibit-git
 # Also install X11/XWayland tools
 sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes
