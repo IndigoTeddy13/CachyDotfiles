@@ -29,7 +29,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak sbctl brightnessctl cachy-update cuda sniffnet apparmor
+sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak sbctl cachy-update cuda sniffnet apparmor
 paru -S miniconda3
 # For cachy-update systray (do once)
 arch-update --tray --enable
@@ -40,7 +40,7 @@ systemctl --user enable --now arch-update-tray.service
 ```bash
 # Install programming languages (Python and make are already installed)
 # nodejs-lts-jod is NodeJS 22.x
-sudo pacman -S rust cargo-update lua go gopls staticcheck jdk-openjdk jdk21-openjdk nodejs-lts-jod npm deno
+sudo pacman -S rust cargo-update cargo-binstall lua go gopls staticcheck jdk-openjdk jdk21-openjdk nodejs-lts-jod npm deno
 ```
 
 ```bash
@@ -73,7 +73,7 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager seahorse xdg-desktop-portal-gtk
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprlock hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
-sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji waybar qt5ct qt6ct awww network-manager-applet blueman grimblast-git
+sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji ironbar qt5ct qt6ct awww network-manager-applet blueman brightnessctl playerctl grimblast-git
 paru -S sway-audio-idle-inhibit-git
 # Also install X11/XWayland tools
 sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes
@@ -88,9 +88,9 @@ paru -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers
 ```
 
 ```bash
-# Install LazyGit, LazyDocker, air, gup, etc
-go install github.com/air-verse/air@latest && \
-go install github.com/nao1215/gup@latest && \
+# Install air, gup, waypaper, etc
+# go install github.com/air-verse/air@latest && \
+# go install github.com/nao1215/gup@latest && \
 pipx install waypaper "pywal16[colorthief,colorz,haishoku]"
 
 # Install LiveSplit.exe via Bottles (relevant tutorial: https://youtu.be/4H6MF3baAcw)

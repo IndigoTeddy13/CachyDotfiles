@@ -51,7 +51,8 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("blueman-applet")
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd("copyq --start-server")
-    hl.exec_cmd("waybar")
+    hl.exec_cmd("ironbar")
+    -- hl.exec_cmd("waybar")
     -- hl.exec_cmd("hyprpanel")
     -- Wallpaper management:
     hl.exec_cmd("awww-daemon")
@@ -219,6 +220,7 @@ hl.config({
     misc = {
         force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
+        disable_splash_rendering = true, -- disables splash screen entirely
     },
 })
 
@@ -242,6 +244,9 @@ hl.config({
             natural_scroll = true,
         },
     },
+    cursor = {
+        no_hardware_cursors = 0 -- 0 means hardware cursors, 1 means software cursors, 2 (default) means auto
+    }
 })
 
 hl.gesture({
