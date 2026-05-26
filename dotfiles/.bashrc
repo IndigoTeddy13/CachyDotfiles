@@ -27,7 +27,7 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export GDK_BACKEND=wayland
 fi
 
-# Pywal config
+# Custom color sequences
 cat ~/.cache/sequences &
 
 # Cargo config
