@@ -1,37 +1,38 @@
 [config]
 
 [templates.hyprcolors]
-input_path='~/.config/matugen/hyprcolors.lua'
-output_path='~/.config/hypr/hyprcolors.lua'
+input_path="~/.config/matugen/hyprcolors.lua"
+output_path="~/.config/hypr/hyprcolors.lua"
 
 [templates.hyprlock]
-input_path='~/.config/matugen/hyprlock.conf'
-output_path='~/.config/hypr/hyprlock.conf'
+input_path="~/.config/matugen/hyprlock.conf"
+output_path="~/.config/hypr/hyprlock.conf"
 
 [templates.wlogout]
-input_path='~/.config/matugen/colors.css'
-output_path='~/.config/wlogout/colors.css'
+input_path="~/.config/matugen/colors.css"
+output_path="~/.config/wlogout/colors.css"
+post_hook = "~/.config/matugen/gen_sequences.py"
 
 [templates.waybar]
-input_path='~/.config/matugen/colors.css'
-output_path='~/.config/waybar/colors.css'
+input_path="~/.config/matugen/colors.css"
+output_path="~/.config/waybar/colors.css"
 
 [templates.rofi]
-input_path='~/.config/matugen/rofi-colors.rasi'
-output_path='~/.config/rofi/matugen.rasi'
+input_path="~/.config/matugen/rofi-colors.rasi"
+output_path="~/.config/rofi/matugen.rasi"
 
 [templates.gtk3]
-input_path = '~/.config/matugen/gtk-colors.css'
-output_path = '~/.config/gtk-3.0/gtk.css'
+input_path = "~/.config/matugen/gtk-colors.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
 
 [templates.gtk4]
-input_path = '~/.config/matugen/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/gtk.css'
+input_path = "~/.config/matugen/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
 
 [templates.qt5ct]
-input_path = '~/.config/matugen/qtct-colors.conf'
-output_path = '~/.config/qt5ct/colors/matugen.conf'
+input_path = "~/.config/matugen/qtct-colors.conf"
+output_path = "~/.config/qt5ct/colors/matugen.conf"
 
 [templates.qt6ct]
-input_path = '~/.config/matugen/qtct-colors.conf'
-output_path = '~/.config/qt6ct/colors/matugen.conf'
+input_path = "~/.config/matugen/qtct-colors.conf"
+output_path = "~/.config/qt6ct/colors/matugen.conf"

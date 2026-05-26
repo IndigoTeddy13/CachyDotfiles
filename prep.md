@@ -91,7 +91,7 @@ paru -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers
 # Install air, gup, waypaper, etc
 # go install github.com/air-verse/air@latest && \
 # go install github.com/nao1215/gup@latest && \
-pipx install waypaper "pywal16[colorthief,colorz,haishoku]"
+pipx install waypaper
 
 # Install LiveSplit.exe via Bottles (relevant tutorial: https://youtu.be/4H6MF3baAcw)
 ```

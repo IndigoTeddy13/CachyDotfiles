@@ -28,7 +28,7 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 fi
 
 # Pywal config
-cat ~/.cache/wal/sequences &
+cat ~/.cache/sequences &
 
 # Cargo config
 export PATH="$HOME/.cargo/bin:$PATH"
