@@ -1,5 +1,5 @@
 /* Import pywal colors */ 
-@import '/home/indigo/.cache/wal/colors-wlogout.css';
+@import "/home/indigo/.config/gtk-4.0/gtk.css";
 
 /* General */
 * {
@@ -26,7 +26,9 @@ button {
 }
 
 button:focus, button:active, button:hover {
-	background-color: alpha(@color13, 0.5);
+	background-color: rgba(255, 255, 255, 0.1); 
+    border-color: @accent_color;
+    color: @accent_color;
 	outline-style: none;
 }
 

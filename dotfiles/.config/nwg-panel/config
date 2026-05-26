@@ -2,11 +2,11 @@
   {
     "name": "panel-top",
     "output": "",
-    "layer": "bottom",
+    "layer": "top",
     "position": "top",
     "controls": "right",
     "width": "auto",
-    "height": 30,
+    "height": 28,
     "homogeneous": true,
     "margin-top": 0,
     "margin-bottom": 0,
@@ -17,8 +17,8 @@
     "icons": "light",
     "css-name": "panel-top",
     "modules-left": [
-      "playerctl",
-      "hyprland-workspaces"
+      "hyprland-workspaces",
+      "playerctl"
     ],
     "modules-center": [
       "clock"
@@ -113,7 +113,7 @@
       ]
     },
     "clock": {
-      "format": "%a, %d. %b  %H:%M:%S",
+      "format": "%a - %Y/%m/%d - %H:%M:%S",
       "tooltip-text": "",
       "on-left-click": "",
       "on-middle-click": "",
@@ -121,7 +121,18 @@
       "on-scroll-up": "",
       "on-scroll-down": "",
       "css-name": "clock",
-      "interval": 1
+      "interval": 1,
+      "tooltip-date-format": false,
+      "root-css-name": "root-clock",
+      "angle": 0.0,
+      "calendar-path": "",
+      "calendar-css-name": "calendar-window",
+      "calendar-placement": "top",
+      "calendar-margin-horizontal": 0,
+      "calendar-margin-vertical": 0,
+      "calendar-icon-size": 24,
+      "calendar-interval": 60,
+      "calendar-on": true
     },
     "playerctl": {
       "buttons-position": "left",

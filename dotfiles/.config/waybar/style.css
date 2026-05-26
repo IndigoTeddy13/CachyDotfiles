@@ -1,4 +1,4 @@
-@import url("/home/indigo/.cache/wal/colors-waybar.css");
+/* @import url("/home/indigo/.config/gtk-4.0/gtk.css"); */
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -52,7 +52,7 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: @color6;
+    background-color: #a37800;
 }
 
 #workspaces button {
@@ -117,17 +117,17 @@ button:hover {
 }
 
 #clock {
-    background-color: @color7;
+    background-color: #64727D;
 }
 
 #battery {
-    background-color: @cursor;
+    background-color: #ffffff;
     color: #000000;
 }
 
 #battery.charging, #battery.plugged {
     color: #ffffff;
-    background-color: @color11;
+    background-color: #26A65B;
 }
 
 @keyframes blink {
@@ -158,12 +158,12 @@ button:hover {
 }
 
 #power-profiles-daemon.balanced {
-    background-color: @color14;
+    background-color: #2980b9;
     color: #ffffff;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: @color12;
+    background-color: #2ecc71;
     color: #000000;
 }
 
@@ -172,12 +172,12 @@ label:focus {
 }
 
 #cpu {
-    background-color: @color12;
+    background-color: #2ecc71;
     color: #000000;
 }
 
 #memory {
-    background-color: @color14;
+    background-color: #9b59b6;
 }
 
 #disk {
@@ -185,11 +185,11 @@ label:focus {
 }
 
 #backlight {
-    background-color: @color15;
+    background-color: #90b1b1;
 }
 
 #network {
-    background-color: @color14;
+    background-color: #2980b9;
 }
 
 #network.disconnected {
@@ -197,7 +197,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: @color14;
+    background-color: #f1c40f;
     color: #000000;
 }
 
@@ -207,7 +207,7 @@ label:focus {
 }
 
 #temperature {
-    background-color: @color12;
+    background-color: #f0932b;
 }
 
 #temperature.critical {
@@ -215,7 +215,7 @@ label:focus {
 }
 
 #tray {
-    background-color: @color14;
+    background-color: #2980b9;
 }
 
 #tray > .passive {
@@ -228,18 +228,18 @@ label:focus {
 }
 
 #custom-audio_idle_inhibitor {
-    background-color: @color13;
+    background-color: #2d3436;
 }
 
 #custom-audio_idle_inhibitor.output,
 #custom-audio_idle_inhibitor.input,
 #custom-audio_idle_inhibitor.output-input {
     background-color: #ecf0f1;
-    color: @color5;
+    color: #2d3436;
 }
 
 #idle_inhibitor {
-    background-color: @color8;
+    background-color: #2d3436;
 }
 
 #idle_inhibitor.activated {

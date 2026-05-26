@@ -29,13 +29,13 @@ button {
 
 /* Top panel in sample config uses this name */
 #panel-top {
-    background: rgba(16, 16, 16, 0.75);
+    background: rgba(16, 16, 16, 0.7);
     color: #eeeeee
 }
 
 /* Bottom panel in sample config uses this name */
 #panel-bottom {
-    background: rgba(16, 16, 16, 0.75);
+    background: rgba(16, 16, 16, 0.7);
     color: #eeeeee
 }
 

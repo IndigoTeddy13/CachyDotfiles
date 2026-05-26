@@ -52,8 +52,6 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd("copyq --start-server")
     hl.exec_cmd("nwg-panel")
-    -- hl.exec_cmd("waybar")
-    -- hl.exec_cmd("hyprpanel")
     -- Wallpaper management:
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("~/.local/bin/call-waypaper")
@@ -438,4 +436,12 @@ hl.window_rule({
     float = true,
     center = true,
     size = {720, 450},
+})
+
+-- Layer rules for nwg-panel
+hl.layer_rule({
+    name  = "nwg-panel-fixes",
+    match = { namespace = "^nwg-panel$" },
+    -- no_anim = true,
+    blur = true,
 })
