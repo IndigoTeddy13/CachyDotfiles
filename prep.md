@@ -201,3 +201,8 @@ WantedBy=multi-user.target
 # Add to KERNEL_CMDLINE for your bootloader, along with enabling the apparmor service
 lsm=landlock,lockdown,yama,integrity,apparmor,bpf
 ```
+
+```bash
+# Add to `/etc/modprobe.d/audio-powersave.conf` to force hardware to a low-power state after pipewire/wireplumber demands it
+options snd_hda_intel power_save=1
+```

@@ -1,5 +1,5 @@
 /* Import pywal colors */ 
-@import "/home/indigo/.config/gtk-4.0/gtk.css";
+@import "colors.css";
 
 /* General */
 * {
@@ -27,8 +27,8 @@ button {
 
 button:focus, button:active, button:hover {
 	background-color: rgba(255, 255, 255, 0.1); 
-    border-color: @accent_color;
-    color: @accent_color;
+    border-color: @tertiary;
+    color: @tertiary;
 	outline-style: none;
 }
 
