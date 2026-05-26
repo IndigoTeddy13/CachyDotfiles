@@ -70,7 +70,7 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 
 ```bash
 # Install GNOME and other GTK tools
-sudo pacman -S gnome gdm-settings gnome-tweaks gnome-firmware gnome-shell-extensions extension-manager dconf-editor gnome-screenshot seahorse xdg-desktop-portal-gtk
+sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager seahorse xdg-desktop-portal-gtk
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprlock hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
 sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji waybar qt5ct qt6ct awww network-manager-applet blueman grimblast-git
@@ -89,9 +89,9 @@ paru -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers
 
 ```bash
 # Install LazyGit, LazyDocker, air, gup, etc
-go install github.com/air-verse/air@latest \
-&& go install github.com/nao1215/gup@latest \
-&& pipx install waypaper "pywal16[colorthief,colorz,haishoku]"
+go install github.com/air-verse/air@latest && \
+go install github.com/nao1215/gup@latest && \
+pipx install waypaper "pywal16[colorthief,colorz,haishoku]"
 
 # Install LiveSplit.exe via Bottles (relevant tutorial: https://youtu.be/4H6MF3baAcw)
 ```
@@ -125,12 +125,12 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
 sudo flatpak mask org.gtk.Gtk3theme.Breeze-Dark
 
 # Use system themes
-flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
-&& flatpak override --user --filesystem=xdg-config/gtk-4.0:ro \
-&& flatpak override --user --filesystem=/home/$USER/.icons:ro \
-&& flatpak override --user --filesystem=/home/$USER/.themes:ro \
-&& flatpak override --user --filesystem=/usr/share/icons:ro \
-&& flatpak override --user --filesystem=/usr/share/themes:ro
+flatpak override --user --filesystem=xdg-config/gtk-3.0:ro && \
+flatpak override --user --filesystem=xdg-config/gtk-4.0:ro && \
+flatpak override --user --filesystem=/home/$USER/.icons:ro && \
+flatpak override --user --filesystem=/home/$USER/.themes:ro && \
+flatpak override --user --filesystem=/usr/share/icons:ro && \
+flatpak override --user --filesystem=/usr/share/themes:ro
 
 # Remember to set $XDG_SESSION_TYPE=x11 for Electron-based FlatPaks that don't have proper screenshare on Wayland (Discord, Slack, etc)
 # Likewise, set $XDG_SESSION_TYPE=x11 and $QT_QPA_PLATFORM=xcb for OBS Studio to regain X11 popup functionality under XWayland
@@ -139,9 +139,9 @@ flatpak override --user --filesystem=xdg-config/gtk-3.0:ro \
 {"password-store":"gnome-libsecret"}
 
 # Give Bottles access to specific directories
-flatpak override --user --filesystem=home:ro com.usebottles.bottles \
-&& flatpak override --user --filesystem=xdg-data/applications:create com.usebottles.bottles \
-&& flatpak override --user --filesystem="/home/indigo/PersonalCodeProjects/IndigoTeddyPBs" com.usebottles.bottles
+flatpak override --user --filesystem=home:ro com.usebottles.bottles && \
+flatpak override --user --filesystem=xdg-data/applications:create com.usebottles.bottles && \
+flatpak override --user --filesystem="/home/indigo/PersonalCodeProjects/IndigoTeddyPBs" com.usebottles.bottles
 ```
 
 ## Global Configs
