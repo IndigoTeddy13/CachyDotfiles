@@ -1,7 +1,7 @@
 [config]
 mode = "dark"
-type = "scheme-vibrant"
-prefer = "saturation"
+type = "scheme-tonal-spot"
+prefer = "less-saturation"
 contrast = 0.25
 base16_backend = "wal"
 

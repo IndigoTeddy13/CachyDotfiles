@@ -19,5 +19,5 @@ configuration {
 //        command: "junction";
 //    }
 }
-@theme "/usr/share/rofi/themes/material.rasi"
-@import "~/.cache/wal/colors-rofi-dark.rasi"
+@theme "~/.config/rofi/theme.rasi"
+@import "~/.config/rofi/matugen.rasi"

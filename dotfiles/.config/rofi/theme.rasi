@@ -1,0 +1,111 @@
+/*
+ * ROFI Material Theme Layout
+ * Powered dynamically by Matugen
+ */
+
+* {
+    spacing: 0;
+    background-color: transparent;
+}
+
+window {
+    transparency: "real";
+    background-color: @mat-bg-transparent;
+}
+
+mainbox {
+    children: [inputbar, message, mode-switcher, listview];
+    spacing: 30px;
+    padding: 30px 0;
+    border: 1px;
+    border-color: @mat-accent;
+}
+
+inputbar {
+    padding: 0 30px;
+    children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+    text-color: @mat-accent;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+    margin: 0 1ch 0 0;
+    text-color: @mat-accent;
+}
+
+entry {
+    text-color: @mat-fg-primary;
+}
+
+case-indicator {
+    text-color: @mat-urgent;
+}
+
+mode-switcher, message {
+    border: 1px 0;
+    border-color: @mat-accent;
+}
+
+button, textbox {
+    background-color: @mat-block-bg;
+    text-color: @mat-fg-primary;
+    padding: 5px;
+}
+
+button selected {
+    background-color: @mat-selected-bg;
+}
+
+listview {
+    scrollbar: true;
+    margin: 0 10px 0 30px;
+}
+
+scrollbar {
+    background-color: @mat-block-bg;
+    handle-color: @mat-selected-bg;
+    handle-width: 10px;
+    border: 0 1px;
+    border-color: @mat-accent;
+    margin: 0 0 0 20px;
+}
+
+element {
+    padding: 5px;
+    spacing: 5px;
+    highlight: bold underline;
+    children: [element-icon, element-text];
+}
+
+element-text, element-icon {
+    background-color: transparent;
+    text-color:       inherit;
+}
+
+element normal {
+    background-color: transparent;
+}
+
+element selected {
+    background-color: @mat-selected-bg;
+}
+
+element alternate {
+    /* Kept transparent/empty to mirror original behavior */
+}
+
+element normal normal, element selected normal, element alternate normal {
+    text-color: @mat-fg-primary;
+}
+
+element normal urgent, element selected urgent, element alternate urgent {
+    text-color: @mat-urgent;
+}
+
+element normal active, element selected active, element alternate active {
+    text-color: @mat-active;
+}

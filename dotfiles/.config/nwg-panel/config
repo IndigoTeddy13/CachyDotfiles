@@ -17,8 +17,7 @@
     "icons": "light",
     "css-name": "panel-top",
     "modules-left": [
-      "hyprland-workspaces",
-      "playerctl"
+      "hyprland-workspaces"
     ],
     "modules-center": [
       "clock"
@@ -141,7 +140,10 @@
       "scroll": false,
       "button-css-name": "",
       "label-css-name": "",
-      "interval": 1
+      "interval": 5,
+      "show-cover": true,
+      "cover-size": 24,
+      "angle": 0.0
     },
     "button-sample": {
       "command": "notify-send 'sample button'",
