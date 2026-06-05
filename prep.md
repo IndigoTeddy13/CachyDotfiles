@@ -29,7 +29,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, crontab, etc)
-sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak sbctl cachy-update cuda sniffnet apparmor
+sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak sbctl cachy-update cuda sniffnet apparmor dnscrypt-proxy
 paru -S miniconda3
 # For cachy-update systray (do once)
 arch-update --tray --enable
@@ -205,4 +205,31 @@ lsm=landlock,lockdown,yama,integrity,apparmor,bpf
 ```bash
 # Add to `/etc/modprobe.d/audio-powersave.conf` to force hardware to a low-power state after pipewire/wireplumber demands it
 options snd_hda_intel power_save=1
+```
+
+```bash
+# Add/edit the following lines in the appropriate sections of `/etc/dnscrypt-proxy/dnscrypt-proxy.toml`
+
+### Anonymized DNS ###
+[anonymized_dns]
+skip_incompatible = true
+
+routes = [
+    { server_name='*', via=['*'] }
+]
+
+### Connection Settings ###
+http3 = true
+```
+
+```bash
+# Add this to `/etc/NetworkManager/conf.d/00-use-local-dns.conf`
+[main]
+dns=none
+systemd-resolved=false
+
+# And delete and replace `/etc/resolv.conf` with this
+nameserver 127.0.0.1
+nameserver ::1
+options edns0
 ```

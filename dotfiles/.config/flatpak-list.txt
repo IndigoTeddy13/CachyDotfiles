@@ -7,6 +7,7 @@ io.github.kolunmi.Bazaar
 net.ankiweb.Anki
 net.pixieditor.PixiEditor
 org.audacityteam.Audacity
+org.famistudio.FamiStudio
 org.kde.kdenlive
 org.kde.krita
 org.libreoffice.LibreOffice
