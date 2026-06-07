@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-systemd-run --user --no-ask-password \
-  dbus-send --system --print-reply \
-  --dest=org.freedesktop.login1 \
-  /org/freedesktop/login1 \
-  org.freedesktop.login1.Manager.Suspend boolean:true

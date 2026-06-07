@@ -73,8 +73,10 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager seahorse xdg-desktop-portal-gtk
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprlock hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
-sudo pacman -S swayidle swaync swayosd swaybg wlogout wl-clipboard wtype rofi rofimoji nwg-panel qt5ct qt6ct awww network-manager-applet blueman brightnessctl playerctl grimblast-git
+sudo pacman -S swayidle swaybg wl-clipboard wtype rofi rofimoji qt5ct qt6ct brightnessctl playerctl grimblast-git
 paru -S sway-audio-idle-inhibit-git
+# Also install topbar/panel tools
+sudo pacman -S noctalia-shell
 # Also install X11/XWayland tools
 sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes
 ```
@@ -88,10 +90,10 @@ paru -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers
 ```
 
 ```bash
-# Install air, gup, waypaper, etc
+# Install air, gup, etc
 # go install github.com/air-verse/air@latest && \
 # go install github.com/nao1215/gup@latest && \
-pipx install waypaper
+# pipx install waypaper
 
 # Install LiveSplit.exe via Bottles (relevant tutorial: https://youtu.be/4H6MF3baAcw)
 ```

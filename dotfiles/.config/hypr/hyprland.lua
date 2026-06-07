@@ -40,21 +40,15 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("~/.local/bin/reload-xdg-portals")
     hl.exec_cmd("swayidle -w")
     hl.exec_cmd("sway-audio-idle-inhibit")
-    hl.exec_cmd("swayosd-server")
     hl.exec_cmd("~/.local/bin/poll-upower")
     -- XWayland setup:
     hl.exec_cmd("xrdb -merge ~/.Xresources")
     hl.exec_cmd("xsettingsd")
     -- Systray applets:
     hl.exec_cmd("arch-update --tray")
-    hl.exec_cmd("nm-applet")
-    hl.exec_cmd("blueman-applet")
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd("copyq --start-server")
-    hl.exec_cmd("nwg-panel")
-    -- Wallpaper management:
-    hl.exec_cmd("awww-daemon")
-    hl.exec_cmd("~/.local/bin/call-waypaper")
+    hl.exec_cmd("qs -c noctalia-shell")
     -- Settings to prevent systemd from skipping the XF86PowerOff keybind:
     hl.exec_cmd("systemd-inhibit --who='WM config' --why='wlogout and keybinds' --what=handle-power-key:handle-suspend-key --mode=block sleep infinity & echo $! > /tmp/.systemd-inhibit")
     hl.on(
@@ -272,7 +266,7 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("copyq show"))
 
 -- Toggle for Notification Center
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
+-- hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 
 -- Screenshot region and save to clipboard via Gradia
 hl.bind(mainMod .. "  + SHIFT + S", hl.dsp.exec_cmd("grimblast --notify copy area"))
@@ -323,27 +317,24 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("swayosd-client --output-volume raise"),       { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("swayosd-client --output-volume lower"),       { locked = true, repeating = true })
-hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute",
-    hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED && swayosd-client --custom-message 'Microphone' --custom-icon 'source-volume-muted-symbolic' || swayosd-client --custom-message 'Microphone' --custom-icon 'source-volume-high-symbolic')"),
-    { locked = true, repeating = true }
-) -- `swayosd-client --input-volume mute-toggle` is currently broken
-hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("swayosd-client --brightness raise"),          { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("swayosd-client --brightness lower"),          { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"),       { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),       { locked = true, repeating = true })
+hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
+hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),  { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl s 5%+"),          { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 5%-"),          { locked = true, repeating = true })
 
 -- Requires playerctl
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("swayosd-client --playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("swayosd-client --playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("swayosd-client --playerctl stop"),       { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("swayosd-client --playerctl previous"),   { locked = true })
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("swayosd-client --playerctl next"),       { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("playerctl stop"),       { locked = true })
+hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
 
 -- Caps-Lock, Num-Lock, Scroll-Lock, etc
-hl.bind("Caps_Lock", hl.dsp.exec_cmd("swayosd-client --caps-lock"),      { locked = true })
-hl.bind("Num_Lock",  hl.dsp.exec_cmd("swayosd-client --num-lock"),       { locked = true })
-hl.bind("Scroll_Lock",  hl.dsp.exec_cmd("swayosd-client --scroll-lock"), { locked = true })
+-- hl.bind("Caps_Lock", hl.dsp.exec_cmd("swayosd-client --caps-lock"),      { locked = true })
+-- hl.bind("Num_Lock",  hl.dsp.exec_cmd("swayosd-client --num-lock"),       { locked = true })
+-- hl.bind("Scroll_Lock",  hl.dsp.exec_cmd("swayosd-client --scroll-lock"), { locked = true })
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----

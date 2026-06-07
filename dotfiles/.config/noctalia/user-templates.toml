@@ -1,0 +1,31 @@
+[config]
+mode = "dark"
+type = "scheme-tonal-spot"
+prefer = "less-saturation"
+contrast = 0.25
+base16_backend = "wal"
+
+[templates.sequences]
+input_path="~/.config/noctalia/templates/sequences.raw"
+output_path="~/.cache/sequences.raw"
+post_hook = "python3 '$HOME/.local/bin/gen_sequences.py'"
+
+[templates.hyprcolors]
+input_path="~/.config/noctalia/templates/hyprcolors.lua"
+output_path="~/.config/hypr/hyprcolors.lua"
+
+[templates.hyprlock]
+input_path="~/.config/noctalia/templates/hyprlock.conf"
+output_path="~/.config/hypr/hyprlock.conf"
+
+[templates.rofi]
+input_path="~/.config/noctalia/templates/rofi-colors.rasi"
+output_path="~/.config/rofi/noctalia.rasi"
+
+[templates.kvantum1]
+input_path = "~/.config/noctalia/templates/kvantum-colors.kvconfig"
+output_path = "~/.config/Kvantum/noctalia/noctalia.kvconfig"
+
+[templates.kvantum2]
+input_path = "~/.config/noctalia/templates/kvantum-colors.svg"
+output_path = "~/.config/Kvantum/noctalia/noctalia.svg"

@@ -1,3 +1,5 @@
 [output]
 method = noncurses
 orientation = horizontal
+[color]
+theme = "noctalia"
