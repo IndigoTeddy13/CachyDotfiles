@@ -1,17 +1,17 @@
 # Lock command
-lock "/home/indigo/.local/bin/sys-lock"
+lock "qs -c noctalia-shell ipc call lockScreen lock"
 
 # Ensure the screen is locked before suspending
-before-sleep "/home/indigo/.local/bin/sys-lock"
+before-sleep "loginctl lock-session"
 
 # Listener 1: Dim backlight
 timeout 180 "brightnessctl -s set 5" resume "brightnessctl -r"
 
 # Listener 2: Lock session
-timeout 240 "/home/indigo/.local/bin/sys-lock"
+timeout 240 "loginctl lock-session"
 
 # Listener 3: Turn off displays
 timeout 300 "hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'" resume "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"
 
 # Listener 4: Suspend
-timeout 360 "/home/indigo/.local/bin/sys-suspend"
+timeout 360 "systemctl suspend"

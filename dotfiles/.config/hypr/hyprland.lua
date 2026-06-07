@@ -282,13 +282,13 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("~/.local/bin/sys-lock"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
 
 -- Sleep on screen close or sleep button press, force lock on screen open
-hl.bind("XF86PowerOff", hl.dsp.exec_cmd("pidof wlogout || wlogout"),  { release = true })
-hl.bind("XF86Sleep", hl.dsp.exec_cmd("~/.local/bin/sys-suspend"),     { release = true, locked = true })
-hl.bind("switch:on:Lid", hl.dsp.exec_cmd("~/.local/bin/sys-suspend"), { locked = true })
-hl.bind("switch:off:Lid", hl.dsp.exec_cmd("~/.local/bin/sys-lock"),   { locked = true })
+hl.bind("XF86PowerOff", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call sessionMenu toggle"),  { release = true })
+hl.bind("XF86Sleep", hl.dsp.exec_cmd("systemctl suspend"),     { release = true, locked = true })
+hl.bind("switch:on:Lid", hl.dsp.exec_cmd("systemctl suspend"), { locked = true })
+hl.bind("switch:off:Lid", hl.dsp.exec_cmd("loginctl lock-session"),   { locked = true })
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
