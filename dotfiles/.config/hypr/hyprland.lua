@@ -314,19 +314,19 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"),       { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),       { locked = true, repeating = true })
-hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),  { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl s 5%+"),          { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 5%-"),          { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume increase"),     { locked = true, repeating = true }) -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume decrease"),     { locked = true, repeating = true }) -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume muteOutput"),   { locked = true, repeating = true }) -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume muteInput"),    { locked = true, repeating = true }) -- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness increase"), { locked = true, repeating = true }) -- brightnessctl s 5%+
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness decrease"), { locked = true, repeating = true }) -- brightnessctl s 5%-
 
 -- Requires playerctl
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("playerctl stop"),       { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media playPause"), { locked = true }) -- playerctl play-pause
+hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media playPause"), { locked = true }) -- playerctl play-pause
+hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("playerctl stop"),                                { locked = true }) -- playerctl stop (no equivalent command in noctalia-shell)
+hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media previous"),  { locked = true }) -- playerctl previous
+hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media next"),      { locked = true }) -- playerctl next
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
