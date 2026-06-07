@@ -72,7 +72,7 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 # Install GNOME and other GTK tools
 sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager seahorse xdg-desktop-portal-gtk
 # Install Hyprland and relevant tools
-sudo pacman -S hyprland hyprlock hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
+sudo pacman -S hyprland hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
 sudo pacman -S swayidle swaybg wl-clipboard wtype rofi rofimoji qt5ct qt6ct brightnessctl playerctl grimblast-git
 paru -S sway-audio-idle-inhibit-git
 # Also install topbar/panel tools

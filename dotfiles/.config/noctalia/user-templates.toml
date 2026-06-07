@@ -8,7 +8,7 @@ base16_backend = "wal"
 [templates.sequences]
 input_path="~/.config/noctalia/templates/sequences.raw"
 output_path="~/.cache/sequences.raw"
-post_hook = "python3 '$HOME/.local/bin/gen_sequences.py'"
+post_hook = "~/.local/bin/gen_sequences.py"
 
 [templates.hyprcolors]
 input_path="~/.config/noctalia/templates/hyprcolors.lua"

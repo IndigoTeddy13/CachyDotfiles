@@ -265,9 +265,6 @@ local mainMod = "SUPER"
 -- Clipboard via CopyQ
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("copyq show"))
 
--- Toggle for Notification Center
--- hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
-
 -- Screenshot region and save to clipboard via Gradia
 hl.bind(mainMod .. "  + SHIFT + S", hl.dsp.exec_cmd("grimblast --notify copy area"))
 hl.bind("Print", hl.dsp.exec_cmd("grimblast --notify copy screen"))
@@ -330,11 +327,6 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("playerctl stop"),       { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-
--- Caps-Lock, Num-Lock, Scroll-Lock, etc
--- hl.bind("Caps_Lock", hl.dsp.exec_cmd("swayosd-client --caps-lock"),      { locked = true })
--- hl.bind("Num_Lock",  hl.dsp.exec_cmd("swayosd-client --num-lock"),       { locked = true })
--- hl.bind("Scroll_Lock",  hl.dsp.exec_cmd("swayosd-client --scroll-lock"), { locked = true })
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
