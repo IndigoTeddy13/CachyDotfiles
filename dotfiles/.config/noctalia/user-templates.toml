@@ -14,9 +14,9 @@ post_hook = "~/.local/bin/gen_sequences.py"
 input_path="~/.config/noctalia/templates/hyprcolors.lua"
 output_path="~/.config/hypr/hyprcolors.lua"
 
-[templates.hyprlock]
-input_path="~/.config/noctalia/templates/hyprlock.conf"
-output_path="~/.config/hypr/hyprlock.conf"
+[templates.mangocolors]
+input_path="~/.config/noctalia/templates/mangocolors.conf"
+output_path="~/.config/mango/mangocolors.conf"
 
 [templates.rofi]
 input_path="~/.config/noctalia/templates/rofi-colors.rasi"

@@ -73,6 +73,9 @@ paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager seahorse xdg-desktop-portal-gtk
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
+# Install MangoWM
+sudo pacman -S mangowm xdg-desktop-portal-wlr
+# Install relevant underlying tools
 sudo pacman -S swayidle swaybg wl-clipboard wtype rofi rofimoji qt5ct qt6ct brightnessctl playerctl grimblast-git
 paru -S sway-audio-idle-inhibit-git
 # Also install topbar/panel tools

@@ -196,6 +196,14 @@
                     ]
                 },
                 {
+                    "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
+                    "iconColor": "none",
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "primary"
+                },
+                {
                     "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Microphone",
@@ -213,14 +221,6 @@
                     "iconColor": "none",
                     "id": "Bluetooth",
                     "textColor": "none"
-                },
-                {
-                    "hideWhenZero": false,
-                    "hideWhenZeroUnread": false,
-                    "iconColor": "none",
-                    "id": "NotificationHistory",
-                    "showUnreadBadge": true,
-                    "unreadBadgeColor": "primary"
                 },
                 {
                     "deviceNativePath": "__default__",
@@ -522,8 +522,8 @@
         "clearDismissed": true,
         "criticalUrgencyDuration": 15,
         "density": "default",
-        "enableBatteryToast": true,
-        "enableKeyboardLayoutToast": true,
+        "enableBatteryToast": false,
+        "enableKeyboardLayoutToast": false,
         "enableMarkdown": false,
         "enableMediaToast": false,
         "enabled": true,
@@ -571,7 +571,7 @@
     "sessionMenu": {
         "countdownDuration": 10000,
         "enableCountdown": true,
-        "largeButtonsLayout": "single-row",
+        "largeButtonsLayout": "grid",
         "largeButtonsStyle": true,
         "position": "center",
         "powerOptions": [
@@ -593,6 +593,13 @@
                 "action": "hibernate",
                 "command": "",
                 "countdownEnabled": true,
+                "enabled": false,
+                "keybind": ""
+            },
+            {
+                "action": "logout",
+                "command": "",
+                "countdownEnabled": true,
                 "enabled": true,
                 "keybind": "3"
             },
@@ -604,32 +611,25 @@
                 "keybind": "4"
             },
             {
-                "action": "logout",
+                "action": "userspaceReboot",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true,
-                "keybind": "5"
+                "enabled": false,
+                "keybind": ""
             },
             {
                 "action": "shutdown",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": "6"
+                "keybind": "5"
             },
             {
                 "action": "rebootToUefi",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": "7"
-            },
-            {
-                "action": "userspaceReboot",
-                "command": "",
-                "countdownEnabled": true,
-                "enabled": false,
-                "keybind": ""
+                "keybind": "6"
             }
         ],
         "showHeader": true,
@@ -680,6 +680,10 @@
             {
                 "enabled": true,
                 "id": "cava"
+            },
+            {
+                "enabled": true,
+                "id": "btop"
             }
         ],
         "enableUserTheming": true

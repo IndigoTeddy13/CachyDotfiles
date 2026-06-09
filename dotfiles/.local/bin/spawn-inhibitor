@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+systemd-inhibit --who='WM config' --why='wlogout and keybinds' --what=handle-power-key:handle-suspend-key --mode=block sleep infinity & echo $! > /tmp/.inhibitor

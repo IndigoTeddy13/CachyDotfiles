@@ -50,7 +50,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("copyq --start-server")
     hl.exec_cmd("qs -c noctalia-shell")
     -- Settings to prevent systemd from skipping the XF86PowerOff keybind:
-    hl.exec_cmd("systemd-inhibit --who='WM config' --why='wlogout and keybinds' --what=handle-power-key:handle-suspend-key --mode=block sleep infinity & echo $! > /tmp/.systemd-inhibit")
+    hl.exec_cmd("~/.local/bin/spawn-inhibitor")
     hl.on(
         "hyprland.shutdown", function()
             hl.exec_cmd("~/.local/bin/kill-inhibitor")
@@ -265,7 +265,7 @@ local mainMod = "SUPER"
 -- Clipboard via CopyQ
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("copyq show"))
 
--- Screenshot region and save to clipboard via Gradia
+-- Screenshot region and save to clipboard
 hl.bind(mainMod .. "  + SHIFT + S", hl.dsp.exec_cmd("grimblast --notify copy area"))
 hl.bind("Print", hl.dsp.exec_cmd("grimblast --notify copy screen"))
 
@@ -361,23 +361,6 @@ hl.window_rule({
     no_focus = true,
 })
 
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
--- -- Hyprland-run windowrule
--- hl.window_rule({
---     name  = "move-hyprland-run",
---     match = { class = "hyprland-run" },
-
---     move  = "20 monitor_h-120",
---     float = true,
--- })
-
 -- Float dialog and splash windows
 hl.window_rule({
     name = "float-dialog",
@@ -390,14 +373,7 @@ hl.window_rule({
     float = true,
 })
 
--- -- Float the junction app selector
--- hl.window_rule({
---     name = "junction-fixes",
---     match = { title = "Junction" },
---     float = true,
--- })
-
--- Float xeyes junction app selector
+-- Float xeyes
 hl.window_rule({
     name = "xeyes-fixes",
     match = { class = "XEyes" },
@@ -425,7 +401,7 @@ hl.window_rule({
     workspace = "unset",
 })
 
--- Window rules for other tray apps/utilities
+-- Window rules for other apps/utilities
 hl.window_rule({
     name = "pavucontrol-fix",
     match = { class = "org.pulseaudio.pavucontrol" },
@@ -435,22 +411,4 @@ hl.window_rule({
     name = "fcitx5-config-fix",
     match = { class = "org.fcitx.fcitx5-config-qt" },
     workspace = "unset",
-})
-hl.window_rule({ -- nm-applet is exceptionally stubborn about opening in workspace 1
-    name = "nm-cnxn-edtr-fix",
-    match = { class = "nm-connection-editor" },
-    workspace = "unset",
-})
-hl.window_rule({
-    name = "blueman-fix",
-    match = { class = "blueman-manager" },
-    workspace = "unset",
-})
-
--- Layer rules for nwg-panel
-hl.layer_rule({
-    name  = "nwg-panel-fixes",
-    match = { namespace = "^nwg-panel$" },
-    -- no_anim = true,
-    blur = true,
 })

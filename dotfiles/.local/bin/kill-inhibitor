@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-kill -9 "$(cat /tmp/.systemd-inhibit)"
+kill -9 "$(cat /tmp/.inhibitor)"
