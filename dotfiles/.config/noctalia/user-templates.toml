@@ -22,6 +22,14 @@ output_path="~/.config/mango/mangocolors.conf"
 input_path="~/.config/noctalia/templates/rofi-colors.rasi"
 output_path="~/.config/rofi/noctalia.rasi"
 
+[templates.gtk3]
+input_path = "~/.config/noctalia/templates/gtk3-colors.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[templates.gtk4]
+input_path = "~/.config/noctalia/templates/gtk4-colors.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
 [templates.kvantum1]
 input_path = "~/.config/noctalia/templates/kvantum-colors.kvconfig"
 output_path = "~/.config/Kvantum/noctalia/noctalia.kvconfig"
