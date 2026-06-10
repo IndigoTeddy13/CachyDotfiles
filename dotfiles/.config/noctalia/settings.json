@@ -704,7 +704,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/usr/share/hypr",
+        "directory": "/usr/share/backgrounds/archlinux",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
@@ -738,7 +738,7 @@
         "useOriginalImages": false,
         "useSolidColor": false,
         "useWallhaven": false,
-        "viewMode": "single",
+        "viewMode": "browse",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",

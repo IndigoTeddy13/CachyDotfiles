@@ -1,2 +1,4 @@
 # Example monitors config
+env=DISPLAY,:11
+exec-once=xwayland-satellite :11
 monitorrule=name:,width:,height:,refresh:,x:0,y:0,scale:1,vrr:0,rr:0

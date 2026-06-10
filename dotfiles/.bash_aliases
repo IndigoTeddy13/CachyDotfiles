@@ -64,8 +64,8 @@ update() {
     arch-update
     flatpak update
     # gup update
-    cargo install-update --all
-    pipx upgrade-all
+    # cargo install-update --all
+    # pipx upgrade-all
     update_flatpak_list
 }
 # Aliases

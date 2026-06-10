@@ -74,7 +74,7 @@ sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
 # Install MangoWM
-sudo pacman -S mangowm xdg-desktop-portal-wlr
+sudo pacman -S mangowm xwayland-satellite xdg-desktop-portal-wlr
 # Install relevant underlying tools
 sudo pacman -S swayidle swaybg wl-clipboard wtype rofi rofimoji qt5ct qt6ct brightnessctl playerctl grimblast-git
 paru -S sway-audio-idle-inhibit-git
