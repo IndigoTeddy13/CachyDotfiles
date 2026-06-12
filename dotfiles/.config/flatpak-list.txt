@@ -1,8 +1,8 @@
 be.alexandervanhee.gradia
-com.discordapp.Discord
 com.github.tchx84.Flatseal
 com.obsproject.Studio
 com.usebottles.bottles
+dev.vencord.Vesktop
 io.github.kolunmi.Bazaar
 net.ankiweb.Anki
 net.pixieditor.PixiEditor

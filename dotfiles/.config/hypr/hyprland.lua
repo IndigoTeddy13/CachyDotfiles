@@ -33,7 +33,7 @@ local menu = "rofi -show favorites"
 --
 hl.on("hyprland.start", function () 
     -- Critical environment:
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR DISPLAY XAUTHORITY")
+    -- hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR DISPLAY XAUTHORITY")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,ssh,pkcs11")
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
     -- Essential utilities:
