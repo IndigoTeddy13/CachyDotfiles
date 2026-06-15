@@ -38,8 +38,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
     -- Essential utilities:
     hl.exec_cmd("~/.local/bin/reload-xdg-portals")
-    hl.exec_cmd("swayidle -w")
-    hl.exec_cmd("sway-audio-idle-inhibit")
+    hl.exec_cmd("hypridle")
     hl.exec_cmd("~/.local/bin/poll-upower")
     -- XWayland setup:
     hl.exec_cmd("xrdb -merge ~/.Xresources")

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Vesktop
+Exec=/usr/bin/flatpak run dev.vencord.Vesktop --disable-features=WebRtcAllowInputVolumeAdjustment %U
+Terminal=false
+Type=Application
+Icon=dev.vencord.Vesktop
+StartupWMClass=vesktop
+X-AppImage-Version=1.6.5
+GenericName=Internet Messenger
+Categories=Network;
+Keywords=discord;vencord;electron;chat;
+MimeType=x-scheme-handler/discord;
+Comment=Vesktop is a custom Discord desktop app
+X-Desktop-File-Install-Version=0.28
