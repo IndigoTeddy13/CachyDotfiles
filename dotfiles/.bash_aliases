@@ -68,6 +68,7 @@ update() {
     # pipx upgrade-all
     update_flatpak_list
 }
+
 # Aliases
 alias python="python3"
 alias activenv="source .venv/bin/activate"

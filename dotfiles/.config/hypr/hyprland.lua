@@ -33,7 +33,7 @@ local menu = "rofi -show favorites"
 --
 hl.on("hyprland.start", function () 
     -- Critical environment:
-    -- hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR DISPLAY XAUTHORITY")
+    -- hl.exec_cmd("sleep 3 && keepassxc") -- "gnome-keyring-daemon --start --components=secrets,ssh,pkcs11"
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,ssh,pkcs11")
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
     -- Essential utilities:
@@ -48,6 +48,8 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd("copyq --start-server")
     hl.exec_cmd("qs -c noctalia-shell")
+    -- Other utilities
+    hl.exec_cmd("ollama serve")
     -- Settings to prevent systemd from skipping the XF86PowerOff keybind:
     hl.exec_cmd("~/.local/bin/spawn-inhibitor")
     hl.on(
@@ -390,13 +392,23 @@ hl.window_rule({
     pin = true,
 })
 
--- Window rules for copyq
+-- Window rules for CopyQ
 hl.window_rule({
     name = "copyq-fixes",
     match = { class = "(com.github.hluk.copyq)"},
     float = true,
     center = true,
     size = {720, 450},
+    workspace = "unset",
+})
+
+-- Window rules for KeePassXC
+hl.window_rule({
+    name = "keepassxc-fix",
+    match = { class = "(org.keepassxc.KeePassXC)" },
+    float = true,
+    center = true,
+    size = {1080, 750},
     workspace = "unset",
 })
 
@@ -410,4 +422,9 @@ hl.window_rule({
     name = "fcitx5-config-fix",
     match = { class = "org.fcitx.fcitx5-config-qt" },
     workspace = "unset",
+})
+hl.window_rule({
+    name = "xdg-desktop-portal-gtk-fix",
+    match = { class = "xdg-desktop-portal-gtk" },
+    workspace = "unset"
 })

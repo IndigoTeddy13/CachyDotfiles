@@ -27,20 +27,17 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export GDK_BACKEND=wayland
 fi
 
-# Custom color sequences
-cat ~/.cache/sequences &
+# Local binaries
+export PATH="$HOME/.local/bin:$PATH"
 
 # Cargo config
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Local binaries
-export PATH="$HOME/.local/bin:$PATH"
-
 # Config for installed Go binaries
 export PATH="$(go env GOPATH)/bin:$PATH"
 
-# Initialize ble.sh
-[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
+# Initialize NVM (Node Version Manager)
+source /usr/share/nvm/init-nvm.sh
 
 # Intialize zoxide
 eval "$(zoxide init bash)"
@@ -48,5 +45,5 @@ eval "$(zoxide init bash)"
 # Initialize Starship.rs
 eval $(starship init bash)
 
-# End later
-[[ ! ${BLE_VERSION-} ]] || ble-attach
+# Custom color sequences
+(cat ~/.cache/sequences &) 2>/dev/null

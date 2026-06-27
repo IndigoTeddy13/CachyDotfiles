@@ -29,21 +29,24 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, etc)
-sudo pacman -S git fastfetch git-filter-repo python-pip python-pipx flatpak sbctl cachy-update sniffnet apparmor dnscrypt-proxy
+sudo pacman -S git git-filter-repo fastfetch python-pip python-pipx python-pygments flatpak sbctl cachy-update sniffnet apparmor dnscrypt-proxy keepassxc
 paru -S miniconda3
 # For cachy-update systray (do once)
 arch-update --tray --enable
 systemctl --user enable --now arch-update-tray.service
-# Tutorial for creating virtual environments: https://github.com/pyenv/pyenv-virtualenv/issues/408#issuecomment-1644298267
+```
+
+```bash
+# Add ZShell tooling
+paru -S zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
+# Change shells
+chsh -s $(which zsh)
 ```
 
 ```bash
 # Install programming languages (Python and make are already installed)
 # nodejs-lts-jod is NodeJS 22.x
-sudo pacman -S rust cargo-update cargo-binstall lua go gopls staticcheck jdk-openjdk jdk21-openjdk nodejs-lts-jod npm deno
-```
-
-```bash
+sudo pacman -S rust cargo-update cargo-binstall lua go gopls staticcheck jdk-openjdk jdk25-openjdk nvm
 # Install tooling for Linux KVM
 sudo pacman -S qemu-full virt-manager swtpm
 # Tutorial for setting up https://wiki.cachyos.org/virtualization/qemu_and_vmm_setup/)
@@ -56,28 +59,41 @@ sudo pacman -S rog-control-center
 
 ```bash
 # Install other dev tools
-sudo pacman -S libsixel docker docker-compose podman cmake neovim putty zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow kitty python-pygments matugen code waydroid copyq helium-browser-bin
-paru -S blesh
+sudo pacman -S docker docker-compose podman podman-compose cmake neovim putty zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow kitty matugen code waydroid copyq helium-browser-bin
 # If installing WezTerm, use `paru -S wezterm-nightly-bin` to work with Hyprland
 # Had personal issues with sudo not working on Ghostty on my setup, but use `sudo pacman -S ghostty` to see whether you have any issues
 ```
 
 ```bash
+# Install local LLM tooling (make sure to install for your respective hardware, ie: ollama-vulkan, ollama-rocm, etc)
+# ollama-cuda pulls CUDA as a dependency
+sudo pacman -S ollama-cuda
+# Make sure to enable the ollama.service, or run `ollama.serve` in autostart
+# Accompanying model
+ollama pull qwen3-vl:4b-instruct 
+# Podman-compatible installation instructions for Open WebUI on port 13579 (might switch to another UI in the future)
+# podman run -d --name openwebui -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://localhost:11434 -e PORT=13579 --network=host ghcr.io/open-webui/open-webui:main
+```
+
+```bash
 # Install Nerd Fonts and fcitx5 
 sudo pacman -S nerd-fonts otf-font-awesome fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n
-paru -S ttf-ms-fonts ttf-aptos ttf-vista-fonts ttf-tahoma ttf-sil-abyssinica
 ```
 
 ```bash
 # Install GNOME and other GTK tools
 sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager seahorse xdg-desktop-portal-gtk
+# GVfs-specific tools
+sudo pacman -S gvfs gvfs-afc gvfs-dnssd gvfs-goa gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb gvfs-wsdd
+# Install KDE tools
+sudo pacman -S breeze breeze-gtk breeze-cursors ocean-sound-theme qt5-wayland qt6-wayland polkit-kde-agent 
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hypridle hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
 # Install MangoWM
 sudo pacman -S mangowm xwayland-satellite xdg-desktop-portal-wlr
 # Install relevant underlying tools
 sudo pacman -S swaybg wl-clipboard wtype rofi rofimoji qt5ct qt6ct brightnessctl playerctl grimblast-git
-paru -S swayidle sway-audio-idle-inhibit-git
+# paru -S swayidle sway-audio-idle-inhibit-git
 # Also install topbar/panel tools
 sudo pacman -S noctalia-shell
 # Also install X11/XWayland tools
@@ -86,10 +102,11 @@ sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes
 
 ```bash
 # Cool non-developer tools (not including FlatPaks)
-sudo pacman -S cava yt-dlp
+# yt-dlp installs deno as a dependency
+sudo pacman -S cava mpv yt-dlp
 
 # Wallpaper pakcages
-paru -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers
+sudo pacman -S plasma-workspace-wallpapers archlinux-wallpaper cachyos-wallpapers
 ```
 
 ```bash
