@@ -1,0 +1,13 @@
+services:
+    searxng:
+        image: docker.io/searxng/searxng:latest
+        container_name: searxng
+        restart: unless-stopped
+        ports:
+            - "24680:8080"
+        volumes:
+            - ~/.config/searxng/settings.yml:/etc/searxng/settings.yml:Z
+        environment:
+            - SEARXNG_SECRET=${SEARXNG_SECRET} # Pulls from your active host environment
+            - FORCE_OWNERSHIP=false
+    

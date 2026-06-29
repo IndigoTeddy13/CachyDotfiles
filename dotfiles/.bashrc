@@ -16,25 +16,15 @@ HISTFILESIZE=2000
 # Check the window size after each command and update "LINES" and "COLUMNS", as needed    
 shopt -s checkwinsize
 
+# Add paths
+if [ -f ~/.profile ]; then
+    source ~/.profile
+fi
+
 # Apply aliases
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
-
-# Set Firefox to detect Wayland
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    export MOZ_ENABLE_WAYLAND=1
-    export GDK_BACKEND=wayland
-fi
-
-# Local binaries
-export PATH="$HOME/.local/bin:$PATH"
-
-# Cargo config
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Config for installed Go binaries
-export PATH="$(go env GOPATH)/bin:$PATH"
 
 # Initialize NVM (Node Version Manager)
 source /usr/share/nvm/init-nvm.sh

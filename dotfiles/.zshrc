@@ -12,22 +12,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Set Firefox to detect Wayland
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    export MOZ_ENABLE_WAYLAND=1
-    export GDK_BACKEND=wayland
+# Add paths
+if [ -f ~/.profile ]; then
+    source ~/.profile
 fi
 
-# Local binaries
-export PATH="$HOME/.local/bin:$PATH"
-
-# Cargo config
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Config for installed Go binaries
-export PATH="$(go env GOPATH)/bin:$PATH"
-
-# Apply aliases (Bash aliases are compatible with zsh)
+# Apply aliases
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi

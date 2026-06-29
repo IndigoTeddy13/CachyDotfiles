@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Ensure the parent directory of the socket exists
+export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
+mkdir -p "$(dirname "$SSH_AUTH_SOCK")" 2>/dev/null
+
+# Check if an agent process is running for this user
+if ! pgrep -u "$USER" -x "ssh-agent" >/dev/null 2>&1; then
+    
+    # Clean up stale socket files if no agent is running
+    rm -f "$SSH_AUTH_SOCK"
+    
+    # Launch the agent, bound to static path
+    eval $(ssh-agent -a "$SSH_AUTH_SOCK") >/dev/null
+
+# Check if the process is running, but the socket file is broken/missing
+elif [ ! -S "$SSH_AUTH_SOCK" ]; then
+    # Kill the orphaned process and restart
+    pkill -u "$USER" -x "ssh-agent" 2>/dev/null
+    rm -f "$SSH_AUTH_SOCK"
+    eval $(ssh-agent -a "$SSH_AUTH_SOCK") >/dev/null
+fi
