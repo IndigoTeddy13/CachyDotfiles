@@ -5,10 +5,10 @@ prefer = "less-saturation"
 contrast = 0.25
 base16_backend = "wal"
 
-[templates.sequences]
-input_path="~/.config/noctalia/templates/sequences.raw"
-output_path="~/.cache/sequences.raw"
-post_hook = "~/.local/bin/gen_sequences.py"
+# [templates.sequences]
+# input_path="~/.config/noctalia/templates/wallpaper-path.txt"
+# output_path="/tmp/wallpaper-path.txt"
+# post_hook = "WALLPATH=$(cat /tmp/wallpaper-path.txt) && $HOME/.local/bin/wal --cols16 darken --backend haishoku -n -i \"$WALLPATH\""
 
 [templates.hyprcolors]
 input_path="~/.config/noctalia/templates/hyprcolors.lua"

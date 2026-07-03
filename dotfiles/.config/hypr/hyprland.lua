@@ -268,6 +268,9 @@ local mainMod = "SUPER"
 -- Clipboard via CopyQ
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("copyq show"))
 
+-- KeePassXC
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("keepassxc"))
+
 -- Screenshot region and save to clipboard
 hl.bind(mainMod .. "  + SHIFT + S", hl.dsp.exec_cmd("grimblast --notify copy area"))
 hl.bind("Print", hl.dsp.exec_cmd("grimblast --notify copy screen"))
@@ -280,7 +283,7 @@ hl.bind(mainMod .. " + Backspace", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(emojiSelector))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+-- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
 

@@ -10,6 +10,8 @@
 # Remove original dotfiles and symlink this repo's dotfiles
 # (requires GNU Stow installed)
 # Make the directories if they don't exist yet
+stow dotfiles -t ~
+# If you want to use your existing configurations, adopt them instead
 stow --adopt dotfiles -t ~
 # Command to reinstall FlatPaks from a list (requires flatpak installed)
 # (Also requires a backup list from "flatpak list --columns=application --app")
@@ -36,12 +38,6 @@ arch-update --tray --enable
 systemctl --user enable --now arch-update-tray.service
 ```
 
-```bash
-# Add ZShell tooling
-paru -S zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
-# Change shells
-chsh -s $(which zsh)
-```
 
 ```bash
 # Install programming languages (Python and make are already installed)

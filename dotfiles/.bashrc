@@ -36,4 +36,4 @@ eval "$(zoxide init bash)"
 eval $(starship init bash)
 
 # Custom color sequences
-(cat ~/.cache/sequences &) 2>/dev/null
+# (cat ~/.cache/wal/sequences &) 2>/dev/null
