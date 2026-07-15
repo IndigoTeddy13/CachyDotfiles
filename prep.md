@@ -31,7 +31,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, etc)
-sudo pacman -S git git-filter-repo fastfetch python-pip python-pipx python-pygments flatpak sbctl cachy-update sniffnet apparmor dnscrypt-proxy keepassxc
+sudo pacman -S git git-filter-repo fastfetch python-pip python-pipx python-pygments flatpak sbctl cachy-update sniffnet apparmor dnscrypt-proxy keepassxc hashcat
 paru -S miniconda3
 # For cachy-update systray (do once)
 arch-update --tray --enable
@@ -42,7 +42,7 @@ systemctl --user enable --now arch-update-tray.service
 ```bash
 # Install programming languages (Python and make are already installed)
 # nodejs-lts-jod is NodeJS 22.x
-sudo pacman -S rust cargo-update cargo-binstall lua go gopls staticcheck jdk-openjdk jdk25-openjdk nvm
+sudo pacman -S rust cargo-update cargo-binstall lua go gopls staticcheck jdk-openjdk jdk25-openjdk nvm texlive
 # Install tooling for Linux KVM
 sudo pacman -S qemu-full virt-manager swtpm
 # Tutorial for setting up https://wiki.cachyos.org/virtualization/qemu_and_vmm_setup/)
@@ -72,17 +72,17 @@ ollama pull qwen3-vl:4b-instruct
 ```
 
 ```bash
-# Install Nerd Fonts and fcitx5 
-sudo pacman -S nerd-fonts otf-font-awesome fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n
+# Install open-source fonts (including metric-compatible fonts) and fcitx5 
+sudo pacman -S nerd-fonts otf-font-awesome ttf-croscore ttf-liberation ttf-carlito ttf-caladea fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n
 ```
 
 ```bash
 # Install GNOME and other GTK tools
-sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager seahorse xdg-desktop-portal-gtk
+sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-manager xdg-desktop-portal-gtk
 # GVfs-specific tools
 sudo pacman -S gvfs gvfs-afc gvfs-dnssd gvfs-goa gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb gvfs-wsdd
 # Install KDE tools
-sudo pacman -S breeze breeze-gtk breeze-cursors ocean-sound-theme qt5-wayland qt6-wayland polkit-kde-agent 
+sudo pacman -S breeze breeze5 breeze-gtk breeze-cursors ocean-sound-theme qt5-wayland qt6-wayland polkit-kde-agent
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hypridle hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
 # Install MangoWM
@@ -174,24 +174,16 @@ SDL_IM_MODULE=fcitx
 ```
 
 ```bash
-# Add to /etc/NetworkManager/NetworkManager.conf for MAC randomization 
+# Add to `/etc/NetworkManager/NetworkManager.conf` for MAC randomization 
 [device]
 wifi.scan-rand-mac-address=yes
 
 [connection]
 wifi.cloned-mac-address=random
 ethernet.cloned-mac-address=random
-```
-
-```bash
-# Add these lines to /etc/pam.d/login and /etc/pam.d/sddm (or equivalent) to get kwallet6 working on any DE/WM
-# Also for independent WMs, might need to exec-once "/usr/lib/pam_kwallet_init" and "kwalletd6"
-auth       optional    pam_kwallet5.so
-session    optional    pam_kwallet5.so auto_start
-# Likewise for GNOME Keyring
-# For independent WMs, might need to exec-once "gnome-keyring-daemon --start --components=secrets,ssh,pkcs11"
-auth       optional     pam_gnome_keyring.so
-session    optional     pam_gnome_keyring.so auto_start
+# Add to `/etc/sysctl.d/99-ipv6-privacy.conf` for IPv6 extensions
+net.ipv6.conf.all.use_tempaddr=2
+net.ipv6.conf.default.use_tempaddr=2
 ```
 
 ```bash
