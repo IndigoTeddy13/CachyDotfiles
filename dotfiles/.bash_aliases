@@ -76,7 +76,7 @@ alias rmvenv="rm -rf .venv"
 alias condashell="source /opt/miniconda3/etc/profile.d/conda.sh && conda activate"
 alias deacticonda="conda deactivate"
 alias pip="pip3"
-alias fetch="fastfetch -c neofetch"
+alias neofetch="fastfetch -c neofetch"
 alias icat="kitty +kitten icat"
 alias ssh="kitty +kitten ssh"
 

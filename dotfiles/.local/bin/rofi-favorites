@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Source: https://github.com/luiscrjunior/rofi-favorites
-CONFIG="$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
+CONFIG="$HOME/.config/rofi/favorites.txt"
 SEARCH_DIRS=(
     "/usr/share/applications"
     "$HOME/.local/share/applications"
@@ -9,30 +9,34 @@ SEARCH_DIRS=(
     "$HOME/Desktop"
 )
 
-# Retrieve list of favorites from KDE Plasma
-raw_launcher_paths=$(awk -F= '/^\[Containments\]\[[0-9]+\]\[Applets\]\[[0-9]+\]\[Configuration\]\[General\]/ { in_section=1 } in_section && /^launchers=/ { print $2; exit }' "$CONFIG")
+# Read lines from the flat text file into the paths array, ignoring empty lines
+paths=()
+if [[ -f "$CONFIG" ]]; then
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        # Skip empty lines or lines starting with '#'
+        [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+        paths+=("$line")
+    done < "$CONFIG"
+fi
 
-# Strip out the `file://` prefix, and store paths in a Bash array
-# IFS (Internal Field Separator)
-IFS=',' read -ra paths <<< "${raw_launcher_paths//file:\/\//}"
-
-# Aggregate the proper paths of the favrote apps into a Bash array
+# Aggregate the proper paths of the favorite apps into a Bash array
 favorites=()
 for path in "${paths[@]}"; do
-    if [[ "$path" == applications:* ]]; then
-        file="${path#applications:}"
+    # Handle short names (like firefox.desktop) by checking search directories
+    if [[ "$path" != /* ]]; then
         # Check through each search dir until resolution
         for dir in "${SEARCH_DIRS[@]}"; do
-            if [[ -f "$dir/$file" ]]; then
-            # If full filepath resolves, append to proper list
-                favorites+=("$dir/$file")
+            if [[ -f "$dir/$path" ]]; then
+                favorites+=("$dir/$path")
                 break
             fi
         done
     else
+        # If it's already an absolute path, verify and append
         [[ -f "$path" ]] && favorites+=("$path")
     fi
 done
+
 # Total count, pad size
 total=${#favorites[@]}
 pad=${#total} # Number of digits

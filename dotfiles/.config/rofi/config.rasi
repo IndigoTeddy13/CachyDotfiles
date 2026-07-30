@@ -4,6 +4,8 @@ configuration {
     icon-theme: "breeze-dark";
     disable-history: true;
     font: "FiraCode Nerd Font Mono 12";
+    // change following to current terminal emulator
+    terminal: "kitty";
 
     timeout {
         action: "kb-cancel";

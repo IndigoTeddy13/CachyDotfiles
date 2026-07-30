@@ -1,0 +1,13 @@
+firefox.desktop
+org.gnome.Nautilus.desktop
+org.libreoffice.LibreOffice.writer.desktop
+dev.vencord.Vesktop.desktop
+chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop
+chrome-fdbibeljcgcjkpedilpdafnjdmbjjjep-Profile_3.desktop
+kitty.desktop
+code-oss.desktop
+com.obsproject.Studio.desktop
+LiveSplit.desktop
+io.github.kolunmi.Bazaar.desktop
+chrome-kphehcipigeelmflbnfbpejiahgcchce-Profile_4.desktop
+chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Profile_2.desktop
