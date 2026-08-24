@@ -85,7 +85,7 @@
                 },
                 {
                     "clockColor": "none",
-                    "customFont": "FiraCode Nerd Font Mono",
+                    "customFont": "JetBrainsMono Nerd Font Mono",
                     "formatHorizontal": "yyyy-MM-dd - HH:mm",
                     "formatVertical": "MM dd - HH mm",
                     "id": "Clock",
@@ -664,10 +664,6 @@
             },
             {
                 "enabled": true,
-                "id": "ghostty"
-            },
-            {
-                "enabled": true,
                 "id": "cava"
             },
             {
@@ -681,7 +677,7 @@
         "boxBorderEnabled": false,
         "fontDefault": "Noto Sans Georgian Bold",
         "fontDefaultScale": 1,
-        "fontFixed": "FiraCode Nerd Font Mono",
+        "fontFixed": "JetBrainsMono Nerd Font Mono",
         "fontFixedScale": 1.16,
         "panelBackgroundOpacity": 0.93,
         "panelsAttachedToBar": true,
@@ -693,7 +689,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/usr/share/backgrounds/archlinux",
+        "directory": "/home/indigo/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [

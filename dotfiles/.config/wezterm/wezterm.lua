@@ -6,9 +6,9 @@ local config = {}
 -- config.enable_wayland = false
 
 -- Set font and color scheme
-config.font = wezterm.font "Firacode Nerd Font Mono"
+config.font = wezterm.font "JetBrainsMono Nerd Font Mono"
 -- config.font_size = 15
-config.color_scheme = "Noctalia"
+-- config.color_scheme = "Noctalia"
 
 -- Background
 config.background = {
@@ -36,9 +36,9 @@ config.visual_bell = {
     fade_out_function = "EaseOut",
     fade_out_duration_ms = 150,
 }
--- config.colors = {
---     visual_bell = "#200000",
--- }
+config.colors = {
+    visual_bell = "#200000",
+}
 
 -- Return the configuration back for WezTerm to use
 return config
