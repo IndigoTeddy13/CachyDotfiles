@@ -239,3 +239,23 @@ nameserver 127.0.0.1
 nameserver ::1
 options edns0
 ```
+
+```bash
+# How to install Microsoft Fonts (requires a recent ISO):
+# Step 0: Move to a workspace in a tmpfs
+mkdir /tmp/msfonts
+cd /tmp/msfonts
+# Step 1: Extract `install.wim` or `install.esd` 
+7z e /full/path/to/your/Win11.iso sources/install.wim
+# Step 2: Yank fonts from the install file
+7z e install.wim 1/Windows/Fonts/'*.*' -o./win11_fonts
+# Step 3: Copy to the correct fonts directory (`/usr/share` for global, `~/.local/share` for per-user)
+mkdir -p ~/.local/share/fonts/win11
+cp ./win11_fonts/* ~/.local/share/fonts/win11/
+# Step 4: Set perms and reload font cache
+chmod 644 ~/.local/share/fonts/win11/*
+fc-cache -f -v
+# Step 5: Cleanup
+cd ~
+rm -rf /tmp/msfonts
+```
