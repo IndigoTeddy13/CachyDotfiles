@@ -69,6 +69,15 @@ update() {
     update_flatpak_list
 }
 
+# SSH wrapper function
+ssh() {
+    if [[ -n "$KITTY_WINDOW_ID" ]]; then
+        command kitty +kitten ssh "$@"
+    else
+        command ssh "$@"
+    fi
+}
+
 # Aliases
 alias python="python3"
 alias activenv="source .venv/bin/activate"
@@ -78,7 +87,3 @@ alias deacticonda="conda deactivate"
 alias pip="pip3"
 alias neofetch="fastfetch -c neofetch"
 alias icat="kitty +kitten icat"
-alias ssh="kitty +kitten ssh"
-
-
-

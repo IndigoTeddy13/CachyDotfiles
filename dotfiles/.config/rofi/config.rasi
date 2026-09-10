@@ -5,7 +5,7 @@ configuration {
     disable-history: true;
     font: "JetBrainsMono Nerd Font Mono 12";
     // change following to current terminal emulator
-    terminal: "kitty";
+    terminal: "ghostty";
 
     timeout {
         action: "kb-cancel";
