@@ -31,7 +31,7 @@ paru
 ```bash
 # Add essential tools
 # (git, fastfetch, python tools, etc)
-sudo pacman -S git git-filter-repo fastfetch python-pip python-pipx python-pygments flatpak sbctl cachy-update wireshark-qt apparmor dnscrypt-proxy keepassxc hashcat
+sudo pacman -S git git-filter-repo fastfetch python-pip python-pipx python-pygments flatpak sbctl cachy-update wireshark-qt rclone apparmor dnscrypt-proxy keepassxc hashcat
 paru -S miniconda3
 # For cachy-update systray (do once)
 arch-update --tray --enable

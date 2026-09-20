@@ -689,7 +689,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/indigo/Pictures/Wallpapers",
+        "directory": "/usr/share/backgrounds/archlinux",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [

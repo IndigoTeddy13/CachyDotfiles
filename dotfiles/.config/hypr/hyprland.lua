@@ -38,6 +38,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("sleep 3 && keepassxc") -- "gnome-keyring-daemon --start --components=secrets,ssh,pkcs11"
     -- hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,ssh,pkcs11")
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
+    hl.exec_cmd("sleep 3 && /usr/lib/goa-daemon --replace")
     -- Essential utilities:
     hl.exec_cmd("~/.local/bin/reload-xdg-portals")
     hl.exec_cmd("hypridle")

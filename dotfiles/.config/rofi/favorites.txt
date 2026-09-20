@@ -4,7 +4,7 @@ org.libreoffice.LibreOffice.writer.desktop
 dev.vencord.Vesktop.desktop
 chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop
 chrome-fdbibeljcgcjkpedilpdafnjdmbjjjep-Profile_3.desktop
-kitty.desktop
+com.mitchellh.ghostty.desktop
 code-oss.desktop
 com.obsproject.Studio.desktop
 LiveSplit.desktop

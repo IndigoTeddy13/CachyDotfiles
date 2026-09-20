@@ -4,6 +4,8 @@ font-family = "JetBrainsMono Nerd Font Mono"
 # Colors
 background = #000000
 background-opacity = 0.85
+# Bell configuration
+bell-features=audio,system
 # Ghostty sudo fix
 shell-integration-features = sudo
 # Theme
