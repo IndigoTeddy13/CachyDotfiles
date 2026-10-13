@@ -38,7 +38,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("sleep 3 && keepassxc") -- "gnome-keyring-daemon --start --components=secrets,ssh,pkcs11"
     -- hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,ssh,pkcs11")
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
-    hl.exec_cmd("sleep 3 && /usr/lib/goa-daemon --replace")
+    -- hl.exec_cmd("sleep 3 && /usr/lib/goa-daemon --replace")
     -- Essential utilities:
     hl.exec_cmd("~/.local/bin/reload-xdg-portals")
     hl.exec_cmd("hypridle")
@@ -52,7 +52,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("copyq --start-server")
     hl.exec_cmd("qs -c noctalia-shell")
     -- Other utilities
-    hl.exec_cmd("ollama serve")
+    -- hl.exec_cmd("ollama serve")
     -- Settings to prevent systemd from skipping the XF86PowerOff keybind:
     hl.exec_cmd("~/.local/bin/spawn-inhibitor")
     hl.on(
@@ -329,7 +329,7 @@ hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("qs -c noctalia-shell ipc call 
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness decrease"), { locked = true, repeating = true }) -- brightnessctl s 5%-
 
 -- Requires playerctl
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media playPause"), { locked = true }) -- playerctl play-pause
+-- hl.bind("XF86AudioPause", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media playPause"), { locked = true }) -- playerctl play-pause
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media playPause"), { locked = true }) -- playerctl play-pause
 hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("playerctl stop"),                                { locked = true }) -- playerctl stop (no equivalent command in noctalia-shell)
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media previous"),  { locked = true }) -- playerctl previous

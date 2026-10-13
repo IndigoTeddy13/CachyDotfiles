@@ -55,7 +55,8 @@ sudo pacman -S rog-control-center
 
 ```bash
 # Install other dev tools
-sudo pacman -S docker docker-compose podman podman-compose cmake neovim putty zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow kitty matugen code waydroid copyq helium-browser-bin
+sudo pacman -S docker docker-compose podman podman-compose cmake neovim putty zellij tree fzf eza bat ripgrep fd zoxide starship lazygit lazydocker stow kitty matugen waydroid copyq helium-browser-bin
+paru -S visual-studio-code-bin
 # If installing WezTerm, use `sudo pacman -S wezterm`
 # If installing Ghostty, use `sudo pacman -S ghostty ghostty-nautilus chafa`
 ```
