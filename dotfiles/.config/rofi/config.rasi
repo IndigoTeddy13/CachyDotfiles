@@ -22,4 +22,4 @@ configuration {
 //    }
 }
 @theme "~/.config/rofi/theme.rasi"
-@import "~/.config/rofi/noctalia.rasi"
+@import "~/.config/rofi/matugen.rasi"

@@ -92,7 +92,7 @@ sudo pacman -S mangowm xwayland-satellite xdg-desktop-portal-wlr
 sudo pacman -S swaybg wl-clipboard wtype rofi rofimoji qt5ct qt6ct brightnessctl playerctl grimblast-git
 # paru -S swayidle sway-audio-idle-inhibit-git
 # Also install topbar/panel tools
-sudo pacman -S noctalia-shell
+sudo pacman -S noctalia
 # Also install X11/XWayland tools
 sudo pacman -S xclip xsel xdotool xorg-xev xorg-xeyes
 ```

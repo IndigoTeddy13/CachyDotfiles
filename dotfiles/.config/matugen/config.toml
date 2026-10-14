@@ -1,0 +1,34 @@
+[config]
+mode = "dark"
+type = "scheme-tonal-spot"
+prefer = "less-saturation"
+contrast = 0.25
+base16_backend = "wal"
+
+[templates.hyprcolors]
+input_path="~/.config/matugen/templates/hyprcolors.lua"
+output_path="~/.config/hypr/hyprcolors.lua"
+
+[templates.mangocolors]
+input_path="~/.config/matugen/templates/mangocolors.conf"
+output_path="~/.config/mango/mangocolors.conf"
+
+[templates.rofi]
+input_path="~/.config/matugen/templates/rofi-colors.rasi"
+output_path="~/.config/rofi/matugen.rasi"
+
+[templates.gtk3]
+input_path = "~/.config/matugen/templates/gtk3-colors.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[templates.gtk4]
+input_path = "~/.config/matugen/templates/gtk4-colors.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
+[templates.kvantum1]
+input_path = "~/.config/matugen/templates/kvantum-colors.kvconfig"
+output_path = "~/.config/Kvantum/matugen/matugen.kvconfig"
+
+[templates.kvantum2]
+input_path = "~/.config/matugen/templates/kvantum-colors.svg"
+output_path = "~/.config/Kvantum/matugen/matugen.svg"

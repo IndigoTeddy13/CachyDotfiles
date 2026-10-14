@@ -1,5 +1,5 @@
 # Lock command
-lock "qs -c noctalia-shell ipc call lockScreen lock"
+lock "noctalia msg session lock"
 
 # Ensure the screen is locked before suspending
 before-sleep "loginctl lock-session"
@@ -11,7 +11,7 @@ timeout 180 "brightnessctl -s set 5" resume "brightnessctl -r"
 timeout 240 "loginctl lock-session"
 
 # Listener 3: Turn off displays
-timeout 300 "hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'" resume "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"
+timeout 300 "noctalia msg dpms-off" resume "noctalia msg dpms-on"
 
 # Listener 4: Suspend
 timeout 360 "systemctl suspend"

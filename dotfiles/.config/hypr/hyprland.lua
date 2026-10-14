@@ -50,7 +50,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("arch-update --tray")
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd("copyq --start-server")
-    hl.exec_cmd("qs -c noctalia-shell")
+    hl.exec_cmd("noctalia")
     -- Other utilities
     -- hl.exec_cmd("ollama serve")
     -- Settings to prevent systemd from skipping the XF86PowerOff keybind:
@@ -273,8 +273,8 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("copyq show"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("keepassxc"))
 
 -- Screenshot region and save to clipboard
-hl.bind(mainMod .. "  + SHIFT + S", hl.dsp.exec_cmd("grimblast --notify copy area"))
-hl.bind("Print", hl.dsp.exec_cmd("grimblast --notify copy screen"))
+hl.bind(mainMod .. "  + SHIFT + S", hl.dsp.exec_cmd("noctalia msg screenshot-region")) -- grimblast --notify copy area
+hl.bind("Print", hl.dsp.exec_cmd("noctalia msg screenshot-fullscreen pick")) -- grimblast --notify copy screen
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
@@ -289,7 +289,7 @@ hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
 
 -- Sleep on screen close or sleep button press, force lock on screen open
-hl.bind("XF86PowerOff", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call sessionMenu toggle"),  { release = true })
+hl.bind("XF86PowerOff", hl.dsp.exec_cmd("noctalia msg panel-toggle session"),  { release = true })
 hl.bind("XF86Sleep", hl.dsp.exec_cmd("systemctl suspend"),     { release = true, locked = true })
 hl.bind("switch:on:Lid", hl.dsp.exec_cmd("systemctl suspend"), { locked = true })
 hl.bind("switch:off:Lid", hl.dsp.exec_cmd("loginctl lock-session"),   { locked = true })
@@ -321,19 +321,18 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume increase"),     { locked = true, repeating = true }) -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume decrease"),     { locked = true, repeating = true }) -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume muteOutput"),   { locked = true, repeating = true }) -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume muteInput"),    { locked = true, repeating = true }) -- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness increase"), { locked = true, repeating = true }) -- brightnessctl s 5%+
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness decrease"), { locked = true, repeating = true }) -- brightnessctl s 5%-
+hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("noctalia msg volume-up"),     { locked = true, repeating = true }) -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("noctalia msg volume-down"),     { locked = true, repeating = true }) -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("noctalia msg volume-mute"),   { locked = true, repeating = true }) -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("noctalia msg mic-mute"),    { locked = true, repeating = true }) -- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("noctalia msg brightness-up"), { locked = true, repeating = true }) -- brightnessctl s 5%+
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("noctalia msg brightness-down"), { locked = true, repeating = true }) -- brightnessctl s 5%-
 
 -- Requires playerctl
--- hl.bind("XF86AudioPause", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media playPause"), { locked = true }) -- playerctl play-pause
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media playPause"), { locked = true }) -- playerctl play-pause
-hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("playerctl stop"),                                { locked = true }) -- playerctl stop (no equivalent command in noctalia-shell)
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media previous"),  { locked = true }) -- playerctl previous
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("qs -c noctalia-shell ipc call media next"),      { locked = true }) -- playerctl next
+hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("noctalia msg media toggle"), { locked = true }) -- playerctl play-pause
+hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("noctalia msg media stop"),   { locked = true }) -- playerctl stop
+hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("noctalia msg media previous"),  { locked = true }) -- playerctl previous
+hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("noctalia msg media next"),      { locked = true }) -- playerctl next
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
@@ -406,6 +405,24 @@ hl.window_rule({
     center = true,
     size = {720, 450},
     workspace = "unset",
+})
+
+-- Window rules for Noctalia settings
+hl.window_rule({
+    name = "noctalia-fix",
+    match = { class = "dev.noctalia.Noctalia" },
+    float = true,
+    size = { 1080, 920 },
+})
+hl.layer_rule({
+  name = "noctalia",
+    match = {
+        namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
+    },
+    no_anim = true,
+    ignore_alpha = 0.5,
+    blur = true,
+    blur_popups = true,
 })
 
 -- Window rules for KeePassXC
