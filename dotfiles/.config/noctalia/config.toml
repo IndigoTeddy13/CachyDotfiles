@@ -1,0 +1,39 @@
+# [config]
+# mode = "dark"
+# type = "scheme-tonal-spot"
+# prefer = "less-saturation"
+# contrast = 0.25
+# base16_backend = "wal"
+
+[theme.templates.user.terminal-sequences]
+input_path = '~/.config/noctalia/templates/terminal-sequences'
+output_path = '~/.cache/terminal-sequences'
+post_hook = 'tee /dev/pts/[0-9]* < ~/.cache/terminal-sequences'
+
+[theme.templates.user.hyprcolors]
+input_path="~/.config/noctalia/templates/hyprcolors.lua"
+output_path="~/.config/hypr/hyprcolors.lua"
+
+[theme.templates.user.mangocolors]
+input_path="~/.config/noctalia/templates/mangocolors.conf"
+output_path="~/.config/mango/mangocolors.conf"
+
+[theme.templates.user.rofi]
+input_path="~/.config/noctalia/templates/rofi-colors.rasi"
+output_path="~/.config/rofi/noctalia.rasi"
+
+[theme.templates.user.gtk3]
+input_path = "~/.config/noctalia/templates/gtk3-colors.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[theme.templates.user.gtk4]
+input_path = "~/.config/noctalia/templates/gtk4-colors.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
+[theme.templates.user.kvantum1]
+input_path = "~/.config/noctalia/templates/kvantum-colors.kvconfig"
+output_path = "~/.config/Kvantum/noctalia/noctalia.kvconfig"
+
+[theme.templates.user.kvantum2]
+input_path = "~/.config/noctalia/templates/kvantum-colors.svg"
+output_path = "~/.config/Kvantum/noctalia/noctalia.svg"
