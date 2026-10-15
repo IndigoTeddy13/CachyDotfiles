@@ -5,10 +5,10 @@
 # contrast = 0.25
 # base16_backend = "wal"
 
-[theme.templates.user.terminal-sequences]
-input_path = '~/.config/noctalia/templates/terminal-sequences'
-output_path = '~/.cache/terminal-sequences'
-post_hook = 'tee /dev/pts/[0-9]* < ~/.cache/terminal-sequences'
+# [theme.templates.user.terminal-sequences]
+# input_path = '~/.config/noctalia/templates/terminal-sequences'
+# output_path = '~/.cache/terminal-sequences'
+# post_hook = 'tee /dev/pts/[0-9]* < ~/.cache/terminal-sequences'
 
 [theme.templates.user.hyprcolors]
 input_path="~/.config/noctalia/templates/hyprcolors.lua"

@@ -83,7 +83,7 @@ sudo pacman -S gnome gdm-settings gnome-tweaks gnome-shell-extensions extension-
 # GVfs-specific tools
 sudo pacman -S gvfs gvfs-afc gvfs-dnssd gvfs-goa gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb gvfs-wsdd
 # Install KDE tools
-sudo pacman -S breeze breeze5 breeze-gtk breeze-cursors ocean-sound-theme qt5-wayland qt6-wayland polkit-kde-agent
+sudo pacman -S breeze breeze5 breeze-gtk breeze-cursors ocean-sound-theme qt5-wayland qt6-wayland # polkit-kde-agent
 # Install Hyprland and relevant tools
 sudo pacman -S hyprland hypridle hyprpicker hyprland-protocols xdg-desktop-portal-hyprland
 # Install MangoWM
