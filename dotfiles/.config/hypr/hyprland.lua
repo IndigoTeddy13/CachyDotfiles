@@ -385,6 +385,7 @@ hl.window_rule({
     match = { class = "XEyes" },
     float = true,
     center = true,
+    size = { 150, 100 },
     pin = true,
 })
 
@@ -394,6 +395,7 @@ hl.window_rule({
     match = { title = "(?i)^(picture-in-picture).*" },
     float = true,
     center = true,
+    size = { 480, 270 },
     pin = true,
 })
 
