@@ -101,7 +101,7 @@ hl.config({
 
         col = {
             active_border   = { colors = {colors.on_primary_fixed_variant, colors.tertiary_fixed_dim}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            inactive_border = "rgba(" .. colors.surface_variant.dark.hex_stripped .. "aa)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -125,7 +125,7 @@ hl.config({
         --     enabled      = true,
         --     range        = 4,
         --     render_power = 3,
-        --     color        = 0x1a1a1aee,
+        --     color        = 0x000000ff,
         -- },
 
         blur = {
