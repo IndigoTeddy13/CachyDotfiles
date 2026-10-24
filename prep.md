@@ -74,7 +74,7 @@ ollama pull qwen3-vl:4b-instruct
 
 ```bash
 # Install open-source fonts (including metric-compatible fonts) and fcitx5 
-sudo pacman -S nerd-fonts otf-font-awesome ttf-croscore ttf-liberation ttf-carlito ttf-caladea fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n
+sudo pacman -S nerd-fonts otf-font-awesome ttf-croscore ttf-liberation ttf-carlito ttf-caladea otf-latinmodern-math fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-m17n
 ```
 
 ```bash
