@@ -3,7 +3,7 @@ configuration {
     show: "favorites";
     icon-theme: "breeze-dark";
     disable-history: true;
-    font: "JetBrainsMono Nerd Font Mono 12";
+    font: "monospace 12";
     // change following to current terminal emulator
     terminal: "ghostty";
 

@@ -1,6 +1,6 @@
 # This is the configuration file for Ghostty.
 # Fonts
-font-family = "JetBrainsMono Nerd Font Mono"
+font-family = "monospace"
 # Colors
 background = #000000
 background-opacity = 0.85

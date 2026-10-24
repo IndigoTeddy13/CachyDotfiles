@@ -6,7 +6,7 @@ local config = {}
 -- config.enable_wayland = false
 
 -- Set font and color scheme
-config.font = wezterm.font "JetBrainsMono Nerd Font Mono"
+config.font = wezterm.font "monospace"
 -- config.font_size = 15
 -- config.color_scheme = "Noctalia"
 
